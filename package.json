@@ -6,10 +6,18 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.2",
+    "d3-dsv": "^2.0.0",
+    "d3-format": "^1.2.1",
+    "d3-scale": "^1.0.7",
+    "d3-time-format": "^2.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-bootstrap": "^0.31.5",
     "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4"
+    "react-stockcharts": "^0.7.8",
+    "react-tooltip": "^4.2.13",
+    "web-vitals": "^0.2.4",
+    "shortid": "^2.2.8"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "raw.macro": "^0.4.2"
   }
 }
