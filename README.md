@@ -16,4 +16,4 @@ Add your API key from [Alphavantage](www.alphavantage.co) in an `.env` file:
 
 ### Images
 
-![](https://github.com/flaskoski/SmartInvestUI/blob/master/images/print.PNG)
+![Main screen](https://github.com/flaskoski/SmartInvestUI/blob/master/images/print.PNG)
