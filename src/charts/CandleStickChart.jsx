@@ -152,12 +152,12 @@ class CandleStickChart extends React.Component {
 	handleSelection(interactives, moreProps, e) {
 		if (this.state.enableInteractiveObject) {
 			if(this.state.comparingMarkersActive > 1){
-				// this.setState({ 
-				// 	enableInteractiveObject: true,
-				// 	yCoordinateList: [],
-				// 	textList: [],
-				// 	comparingMarkersActive: 0
-				//  });
+				this.setState({ 
+					enableInteractiveObject: true,
+					yCoordinateList: [],
+					textList: [],
+					comparingMarkersActive: 0
+				 });
 			}
 			else{
 				const independentCharts = moreProps.currentCharts.filter(d => d !== 2);
