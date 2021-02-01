@@ -5,7 +5,7 @@ import { format } from "d3-format";
 import { timeFormat } from "d3-time-format";
 
 import { ChartCanvas, Chart } from "react-stockcharts";
-import { CandlestickSeries } from "react-stockcharts/lib/series";
+import { CandlestickSeries, LineSeries } from "react-stockcharts/lib/series";
 import {MouseCoordinateY} from "react-stockcharts/lib/coordinates";
 import { XAxis, YAxis } from "react-stockcharts/lib/axes";
 import { fitWidth } from "react-stockcharts/lib/helper";
@@ -22,6 +22,9 @@ import { getMorePropsForChart } from "react-stockcharts/lib/interactive/utils";
 import {
 	getInteractiveNodes,
 } from "./interactiveutils";
+
+//exponential average
+import { ema } from "react-stockcharts/lib/indicator";
 
 function round(number, precision = 0) {
 	const d = Math.pow(10, precision);
@@ -66,6 +69,16 @@ class CandleStickChart extends React.Component {
 	}
 
 	render() {
+		const height = 400;
+		const { type, data: initialData, width, ratio } = this.props;
+		
+		const margin = { left: 70, right: 70, top: 20, bottom: 30 };
+
+		const gridHeight = height - margin.top - margin.bottom;
+		const gridWidth = width - margin.left - margin.right;
+
+		const showGrid = true;
+
 		const candlesAppearance = {
 			stroke: function stroke(d) { return d.close > d.open ? "#6BA583" : "#DB0000"},
 			wickStroke: function wickStroke(d) { return d.close > d.open ? "#6BA583" : "#DB0000"},
@@ -78,10 +91,23 @@ class CandleStickChart extends React.Component {
 			// candleStrokeWidth: 1,
 			// widthRatio: 0.8,
 			opacity: 0.7,
-		  }
-		// const { type, width, data, ratio } = this.props;
-		const { type, data: initialData, width, ratio } = this.props;
+		}
 
+		const ema10 = ema()
+			.id(1)
+			.options({ windowSize: 10 })
+			.merge((d, c) => {d.ema10 = c;})
+			.accessor(d => d.ema10);
+				
+		const ema20 = ema()
+			.id(2)
+			.options({ windowSize: 20 })
+			.merge((d, c) => {d.ema20 = c;})
+			.accessor(d => d.ema20);
+
+
+
+		const calculatedData = ema10(ema20(initialData));
 		const xScaleProvider = discontinuousTimeScaleProvider
 			.inputDateAccessor(d => d.date);
 		const {
@@ -89,29 +115,34 @@ class CandleStickChart extends React.Component {
 			xScale,
 			xAccessor,
 			displayXAccessor,
-		} = xScaleProvider(initialData);
+		} = xScaleProvider(calculatedData);
 
 		// const xAccessor = d => d.date;
 		const xExtents = [
 			xAccessor(last(data)),
-			xAccessor(data[data.length - 100])
+			xAccessor(data[Math.max(0, data.length - 100)])
 		];
 
 		return (
-			<ChartCanvas height={400}
-					ratio={ratio}
+			<ChartCanvas height={height}				
 					width={width}
-					margin={{ left: 50, right: 50, top: 10, bottom: 30 }}
+					ratio={ratio}
+					margin={margin}
+					//margin={{ left: 50, right: 50, top: 10, bottom: 30 }}
 					type={type}
 					seriesName="MSFT"
 					data={data}
 					xScale={xScale}
-					displayXAccessor={displayXAccessor}
-
 					xAccessor={xAccessor}
-					xExtents={xExtents}>
+					displayXAccessor={displayXAccessor}
+					xExtents={xExtents}
+				>
 
-				<Chart id={1} yExtents={d => [d.high, d.low]}>
+				<Chart id={1} 
+					yExtents={[d => [d.high, d.low], ema20.accessor(), ema10.accessor()]} 
+					padding={{ top: 10, bottom: 20 }}
+					>
+					
 					<XAxis axisAt="bottom" orient="bottom" ticks={6}/>
 					<YAxis axisAt="left" orient="left" ticks={5} />
 					
@@ -125,6 +156,9 @@ class CandleStickChart extends React.Component {
 						displayFormat={format(".2f")} />
 
 					<CandlestickSeries {...candlesAppearance}/>
+					<LineSeries yAccessor={ema20.accessor()} stroke={ema20.stroke()}/>
+					<LineSeries yAccessor={ema10.accessor()} stroke={ema10.stroke()}/>
+
 					<CrossHairCursor />
 					<InteractiveYCoordinate
 							yCoordinateList={this.state.yCoordinateList}

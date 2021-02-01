@@ -25,6 +25,7 @@ class ChartComponent extends React.Component {
 		if (this.state == null || this.state.data == null) {
             if(this.state.assetCode)
                 getData(process.env.REACT_APP_API_KEY_ALPHA, this.state.assetCode).then(assetData => {
+                    console.log(assetData);
                     if(Object.keys(assetData).length === 0)
                         this.setState({ message: "Error: Asset not found!" });
                     else

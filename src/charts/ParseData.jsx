@@ -25,11 +25,11 @@ function parseSeriesJson(json, parse){
 	let aux = Object.keys(content).reverse().forEach(day => {
 		series.push({
 			date : parse(day),
-			open : content[day]["1. open"],
-			high : content[day]["2. high"],
-			low : content[day]["3. low"],
-			close : content[day]["4. close"],
-			volume : content[day]["6. volume"]
+			open : parseFloat(content[day]["1. open"]),
+			high : parseFloat(content[day]["2. high"]),
+			low : parseFloat(content[day]["3. low"]),
+			close : parseFloat(content[day]["4. close"]),
+			volume : parseFloat(content[day]["6. volume"])
 		})
 	});
 	return {
