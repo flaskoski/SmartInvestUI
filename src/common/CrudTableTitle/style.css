@@ -8,7 +8,7 @@
 .row {
     display: -ms-flexbox;
     display: flex;
-    padding: 16px;
+    padding: 8px 16px 8px 16px;
 }
 
 .table-title .btn {

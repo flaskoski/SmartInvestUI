@@ -98,16 +98,29 @@ class CandleStickChart extends React.Component {
 			.options({ windowSize: 10 })
 			.merge((d, c) => {d.ema10 = c;})
 			.accessor(d => d.ema10);
-				
+		ema10(initialData);
+
 		const ema20 = ema()
-			.id(2)
-			.options({ windowSize: 20 })
-			.merge((d, c) => {d.ema20 = c;})
-			.accessor(d => d.ema20);
+				.id(2)
+				.options({ windowSize: 20 })
+				.merge((d, c) => {d.ema20 = c;})
+				.accessor(d => d.ema20);
+		ema20(initialData);
+		let lineseriesEma10 = '';
+		let lineseriesEma20 = '';
+		if(this.props.indicators["ema10"]){	
+			lineseriesEma10 = <LineSeries yAccessor={ema10.accessor()} stroke={ema10.stroke()}/>
+		}
+		if(this.props.indicators["ema20"]){
+			lineseriesEma20 = <LineSeries yAccessor={ema20.accessor()} stroke={ema20.stroke()}/>
+		}
 
 
-
-		const calculatedData = ema10(ema20(initialData));
+		const calculatedData = initialData;
+		console.log("initial")
+		console.log(initialData)
+		console.log("calc")
+		console.log(calculatedData)
 		const xScaleProvider = discontinuousTimeScaleProvider
 			.inputDateAccessor(d => d.date);
 		const {
@@ -156,8 +169,8 @@ class CandleStickChart extends React.Component {
 						displayFormat={format(".2f")} />
 
 					<CandlestickSeries {...candlesAppearance}/>
-					<LineSeries yAccessor={ema20.accessor()} stroke={ema20.stroke()}/>
-					<LineSeries yAccessor={ema10.accessor()} stroke={ema10.stroke()}/>
+					{lineseriesEma10}
+					{lineseriesEma20}
 
 					<CrossHairCursor />
 					<InteractiveYCoordinate
@@ -218,7 +231,7 @@ class CandleStickChart extends React.Component {
 							position,
 							text: round(percentDiff, 2) + '%',
 							//textFill: (percentDiff >= 0? "#10A015" : "#A01015"),
-							textFill: (percentDiff >= 0? "#50F055" : "#FF4855"),
+							textFill: (percentDiff >= 0? "#50F055" : "#FFA5A5"),
 							bgFill: "#303030",
 							opacity: 0.2
 						};
