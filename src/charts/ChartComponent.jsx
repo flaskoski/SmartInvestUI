@@ -21,7 +21,6 @@ class ChartComponent extends React.Component {
     }
     
     toggleOption(indicator, isChecked){
-        console.log(this.state);
         this.setState({
             indicators : {
                 ...this.state.indicators,
@@ -47,7 +46,6 @@ class ChartComponent extends React.Component {
             </section>
             )
         }
-        
 		return (
             <section>
                 <AssetSelector assetSelectedHandler={this.assetSelectedEvent} />
@@ -60,13 +58,11 @@ class ChartComponent extends React.Component {
     }
 
     assetSelectedEvent(newAssetCode){
-         console.log("valor:" + newAssetCode);
         this.setState({ assetCode: newAssetCode,
                         data: null,
                         message : ''});
 
         getData(process.env.REACT_APP_API_KEY_ALPHA, newAssetCode).then(assetData => {
-            console.log(assetData);
             if(Object.keys(assetData).length === 0)
                 this.setState({ message: "Error: Asset not found!" });
             else

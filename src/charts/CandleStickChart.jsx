@@ -117,10 +117,6 @@ class CandleStickChart extends React.Component {
 
 
 		const calculatedData = initialData;
-		console.log("initial")
-		console.log(initialData)
-		console.log("calc")
-		console.log(calculatedData)
 		const xScaleProvider = discontinuousTimeScaleProvider
 			.inputDateAccessor(d => d.date);
 		const {
@@ -237,7 +233,6 @@ class CandleStickChart extends React.Component {
 						};
 						this.handleChooseTextPosition(newText, percentDiff, e);
 					}
-					console.log(yValue)
 					const newMarker = {
 						...InteractiveYCoordinate.defaultProps.defaultPriceCoordinate,
 						yValue,
@@ -256,7 +251,6 @@ class CandleStickChart extends React.Component {
 	handleChooseTextPosition(text, value) {
 		// this.componentWillUnmount();
 		// const { id: chartId } = moreProps.chartConfig;
-		console.log(text);
 		this.setState({
 			[`textList`]: [
 				...this.state[`textList`],

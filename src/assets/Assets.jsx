@@ -20,18 +20,20 @@ class Assets extends Component {
         if(!this.state.assets)
             return null;
         return ( 
-            <section>
+            <section className="block_unit-5" style={{"float": "left", "flex" : "0.5"}}>
                 <CrudTableTitle title="Assets" />
-                <table className="table table-striped table-hover">
-                <CrudTableHeader headers={["ID", "Code", "Price"]}/>
-                <tbody>
-                    {this.state.assets.map((asset, i) =>{
-                        return (
-                            <Asset key={i} id={asset.id} code={asset.code} />
-                        );
-                    } )}
-                </tbody>
-                </table>
+                <div id="table-scroll">
+                    <table className="table table-striped table-hover fill">
+                    <CrudTableHeader headers={["ID", "Code", "Price"]}/>
+                    <tbody>
+                        {this.state.assets.map((asset, i) =>{
+                            return (
+                                <Asset key={i} id={asset.id} code={asset.code} />
+                            );
+                        } )}
+                    </tbody>
+                    </table>
+                </div>
             </section>
          );
     }

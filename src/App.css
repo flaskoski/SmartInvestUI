@@ -40,3 +40,36 @@
 input{
   margin: 10px
 }
+
+
+
+
+.block_unit-3{
+  width: 24%;
+}
+.block_unit-9{
+  width: 74%;
+}
+.block_unit-4{
+  width: 33%;
+}
+.block_unit-5{
+  width: 41%;
+}
+.block_unit-7{
+  width: 58%;
+}
+
+.block_unit-4, .block_unit-5, .block_unit-6, .block_unit-7, .block_unit-8, .block_unit{
+  border: 1px solid lightgray;
+  margin: 1px;
+}
+
+.fill{
+  width: 100%;
+}
+
+#table-scroll {
+  height:275px;
+  overflow:auto; 
+}
