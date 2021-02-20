@@ -2,9 +2,24 @@ import React, { Component } from 'react';
 import CrudTableTitle from '../common/CrudTableTitle/CrudTableTitle';
 import CrudTableHeader from '../common/CrudTableHeader/CrudTableHeader';
 import Asset from './asset/Asset';
+import CrudAddModal from '../common/CrudAddModal/CrudAddModal';
 
 class Assets extends Component {
-    state = { assets: []  };
+    constructor(props){
+        super(props);
+
+        this.addItemButtonClicked = this.addItemButtonClicked.bind(this);
+    }
+    state = { 
+        assets: [],
+        fields: [{
+                name: "Code",
+                type: "text",
+                isRequired: true
+            }
+        ],
+        openModal: false
+    };
 
     componentDidMount(){
         fetch('http://localhost:8080/assets?page=0&size=10')
@@ -17,14 +32,16 @@ class Assets extends Component {
     }
 
     render() { 
-        if(!this.state.assets)
+        console.log("rendered", this.state.openModal)
+        if(!this.state.assets.length)
             return null;
         return ( 
-            <section className="block_unit-5" style={{"float": "left", "flex" : "0.5"}}>
-                <CrudTableTitle title="Assets" />
+            <section className="block_unit-5" 
+                style={{"float": "left", "flex" : "0.5"}}>
+                <CrudTableTitle title="Assets" onAddClickedHandler={this.addItemButtonClicked}/>
                 <div id="table-scroll">
-                    <table className="table table-striped table-hover fill">
-                    <CrudTableHeader headers={["ID", "Code", "Price"]}/>
+                    <table className="custom-table table-striped table-hover fill">
+                    <CrudTableHeader headers={["ID",  "Code", "Price"]} tableData={this.state.assets}/>
                     <tbody>
                         {this.state.assets.map((asset, i) =>{
                             return (
@@ -34,8 +51,15 @@ class Assets extends Component {
                     </tbody>
                     </table>
                 </div>
+                <CrudAddModal open={this.state.openModal} itemType="Asset" itemFields={this.state.fields} />
             </section>
          );
+    }
+    addItemButtonClicked(){
+        
+        this.setState({
+            openModal: true
+        })
     }
 }
  

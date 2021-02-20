@@ -1,0 +1,5 @@
+{
+    "files.watcherExclude": {
+        "**/.hg/store/**": false
+    }
+}

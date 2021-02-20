@@ -51,7 +51,7 @@ class ChartComponent extends React.Component {
                 <AssetSelector assetSelectedHandler={this.assetSelectedEvent} />
                 <ChartOptions toggle={this.toggleOption}  />
                 <div style={{"clear": "both"}}></div>
-                <h3 align="center" style={{"margin": "0"}}> {this.state.assetCode} </h3>
+                <h5 align="center" style={{"margin": "0"}}> {this.state.assetCode} </h5>
                 <CandleStickChart type="hybrid" data={this.state.data} indicators={this.state.indicators} />
             </section>
         )

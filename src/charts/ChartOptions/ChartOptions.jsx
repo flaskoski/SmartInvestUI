@@ -6,7 +6,7 @@ class ChartOptions extends Component {
         super(props);
         this.toggleEma10 = this.toggleEma10.bind(this);
         this.toggleEma20 = this.toggleEma20.bind(this);
-        console.log(props);
+        
 
     }
 

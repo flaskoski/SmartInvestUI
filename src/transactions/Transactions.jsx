@@ -26,7 +26,7 @@ class Transactions extends Component {
             <section className="block_unit-7" style={{"float": "left"}}>
                 <CrudTableTitle title="Transactions" />
                 <div id="table-scroll" style={{"float": "left"}}>
-                    <table className="table table-striped table-hover">
+                    <table className="custom-table table-striped table-hover">
                     <CrudTableHeader headers={["Code", "Action", "Price", "Amount", "Date"]}/>
                     <tbody>
                         {this.state.transactions.map((transaction, i) =>{
