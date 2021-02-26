@@ -6,16 +6,15 @@ class Asset extends Component {
     //     super(props);
     // }
     componentDidMount(){
-        //TODO*****DELETE key
-        fetch('https://54kwimgt6h.execute-api.sa-east-1.amazonaws.com/prod/quoter?code='+ this.props.code,
-                    {"headers": {"x-api-key": "rsIFzOlWL479RdPojscyk5qgDlEHX4lR4MvdQMGL"}})
-        .then(res => res.json())
-        .then((data) => {
-          this.setState({ price: data })
-          console.log(this.state.price);
-        })
-        .catch(console.log)
-        // this.setState({ price: "12.34" })
+        // fetch(''+ this.props.code,
+        //             {"headers": {"x-api-key": ""}})
+        // .then(res => res.json())
+        // .then((data) => {
+        //   this.setState({ price: data })
+        //   console.log(this.state.price);
+        // })
+        // .catch(console.log)
+        // // this.setState({ price: "12.34" })
     }
     state = {  }
     render() { 

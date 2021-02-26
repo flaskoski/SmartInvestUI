@@ -8,10 +8,10 @@ import CrudTableRow from './CrudTableRow/CrudTableRow';
 /**
  * @param itemType*: word for describing the item on the table and dialogs
  * @param fields*: array with info about the fields. Each field has the following attributes:
- *      name: (String) Name of the field on the data
+ *     {name: (String) Name of the field on the data
         label: (String) String to appear as title of the field
         type: (String) types: "text" | "int" | "float" | "date"
-        isInput: (Boolean) true | false - indicates if the field should appear on new and edit dialogs
+        isInput: (Boolean) true | false - indicates if the field should appear on new and edit dialogs }
     @param items*: data array
     @param itemUpdateHandler: callback to customize changes on the data
  */

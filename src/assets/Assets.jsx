@@ -40,9 +40,8 @@ class Assets extends Component {
     }
 
     getCurrentAssetPrice(asset){
-        //TODO*****DELETE key
         return fetch('https://54kwimgt6h.execute-api.sa-east-1.amazonaws.com/prod/quoter?code='+ asset.code,
-                    {"headers": {"x-api-key": "rsIFzOlWL479RdPojscyk5qgDlEHX4lR4MvdQMGL"}})
+                    {"headers": {"x-api-key": process.env.REACT_APP_API_KEY_AWS}})
         .then(res => res.json())
         .then(price =>{
             console.log(`${(asset? asset.code: "")} price loaded: ${price}`)

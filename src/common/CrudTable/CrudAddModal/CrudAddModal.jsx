@@ -9,7 +9,7 @@ class CrudAddModal extends Component {
         this.state = {
             open: false
         }
-        // this.handleClickOpen = this.handleClickOpen.bind(this)
+        this.handleAdd = this.handleAdd.bind(this)
     }
     componentWillReceiveProps(newProps) {
         this.setState({open: newProps.open})
@@ -17,6 +17,10 @@ class CrudAddModal extends Component {
     // handleClickOpen () {
     //     this.setState({open: true});
     // };
+    handleAdd(){
+        
+    }
+
     render() {
         const handleClose = () => {
             this.setState({open: false});
@@ -33,22 +37,39 @@ class CrudAddModal extends Component {
                     <DialogContent>
                     {text}
                     
-                    {this.props.itemFields.map((field, i) =>{	
-                        if(field.isInput != false)
-                            return (	
-                                <TextField
-                                // autoFocus
-                                margin="dense"
-                                id={field.label}
-                                label={field.label}
-                                type={field.type}
-                                fullWidth
-                                // {field.size? field.size : fullWidth}
-                                />		
-                                //  required={field.isRequired} />
-                                
-                            );
-                        else return ""
+                    {this.props.itemFields.filter(f => f.isInput != false).map((field, i) =>{	
+                        switch(field.type){
+                            case 'date':
+                                return (	
+                                    <TextField
+                                    autoFocus={(i==0 ? true : undefined)}
+                                    margin="dense"
+                                    id={field.name}
+                                    label={field.label}
+                                    value={this.state[field.name]}
+                                    type={field.type}
+                                    InputLabelProps={{
+                                        shrink: true,
+                                        }}
+                                    />		
+                                    
+                                );
+                            default:
+                                return (	
+                                    <TextField
+                                    autoFocus={(i==0 ? true : undefined)}
+                                    margin="dense"
+                                    id={field.name}
+                                    value={this.state[field.name]}
+                                    label={field.label}
+                                    type={field.type}
+                                    fullWidth
+                                    // {field.size? field.size : fullWidth}
+                                    />		
+                                    //  required={field.isRequired} />
+                                    
+                                );
+                        }
                     }) }	
                    
                     </DialogContent>
@@ -56,7 +77,7 @@ class CrudAddModal extends Component {
                     <Button onClick={handleClose} color="primary">
                         Cancel
                     </Button>
-                    <Button onClick={handleClose} color="primary">
+                    <Button onClick={this.handleAdd} color="primary">
                         Add
                     </Button>
                     </DialogActions>
