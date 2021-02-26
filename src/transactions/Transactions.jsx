@@ -6,9 +6,32 @@ import Transaction from './Transaction';
 class Transactions extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-
-        }
+        this.state = { 
+            transactions: [],
+            fields: [
+                {
+                    label: "Code",
+                    type: "text",
+                    isInput: true,
+                },{
+                    label: "Action",
+                    type: "text",
+                    isRequired: true
+                },{
+                    label: "Price",
+                    type: "float",
+                    isInput: true
+                },{
+                    label: "Amount",
+                    type: "integer",
+                    isInput: true
+                },{
+                    label: "Date",
+                    type: "date",
+                    isInput: true
+                }
+            ]
+        };
     }
     componentDidMount(){
         fetch('http://localhost:8080/transactions?page=0&size=10&sort=date,desc')

@@ -24,7 +24,7 @@ class Transaction extends Component {
             <tr>
                 <td>
                     <span className="custom-checkbox">
-                        <input type="checkbox" id="checkbox5" name="options[]" value="1" />
+                        <input className="margin10" type="checkbox" id="checkbox5" name="options[]" value="1" />
                         <label htmlFor="checkbox5"></label>
                     </span>
                 </td>

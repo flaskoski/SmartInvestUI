@@ -18,7 +18,7 @@ class CrudTableHeader extends Component {
                 <TableFilter rows={this.state.data} onFilterUpdate={this._filterUpdated}>
                     <th>
                         <span className="custom-checkbox">
-                            <input type="checkbox" id="selectAll"/>
+                            <input className="margin10" type="checkbox" id="selectAll"/>
                             <label htmlFor="selectAll"></label>
                         </span>
                     </th>

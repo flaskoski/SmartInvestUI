@@ -23,7 +23,7 @@ class Asset extends Component {
             <tr key={"row_"+this.props.code}>
                 <td>
                     <span className="custom-checkbox">
-                        <input type="checkbox" id="checkbox5" name="options[]" value="1" />
+                        <input className="margin10" type="checkbox" id="checkbox5" name="options[]" value="1" />
                         <label htmlFor="checkbox5"></label>
                     </span>
                 </td>

@@ -21,9 +21,9 @@ class ChartOptions extends Component {
         return ( 
             <section id="chart_options" style={{float: "left"}}>
                 <label htmlFor="ema10" ><b>Chart Options:</b></label>
-                <input type="checkbox" defaultChecked id="ema10" onClick={this.toggleEma10} name="ema10" value="ema10" />
+                <input className="margin10" type="checkbox" defaultChecked id="ema10" onClick={this.toggleEma10} name="ema10" value="ema10" />
                 <label htmlFor="ema10">EMA10</label>
-                <input type="checkbox" defaultChecked id="ema20" onClick={this.toggleEma20} name="ema20" value="ema20" />
+                <input className="margin10" type="checkbox" defaultChecked id="ema20" onClick={this.toggleEma20} name="ema20" value="ema20" />
                 <label htmlFor="ema10">EMA20</label>
             </section>
 

@@ -1,6 +1,5 @@
 import { Modal } from 'react-bootstrap';
 import React, { Component } from 'react';
-import "./CrudModal.css";
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@material-ui/core';
 
 class CrudAddModal extends Component {
@@ -23,10 +22,7 @@ class CrudAddModal extends Component {
             this.setState({open: false});
         };  
         const text = "";
-        if(this.props.children)
-            text =  <DialogContentText>
-                        {this.props.children}
-                    </DialogContentText>
+        console.log(this.props.itemFields)
         return (
             <div>
                 {/* <Button variant="outlined" color="primary" onClick={this.handleClickOpen}>
@@ -42,8 +38,8 @@ class CrudAddModal extends Component {
                                 <TextField
                                 // autoFocus
                                 margin="dense"
-                                id={field.name}
-                                label={field.name}
+                                id={field.label}
+                                label={field.label}
                                 type={field.type}
                                 fullWidth
                                 // {field.size? field.size : fullWidth}

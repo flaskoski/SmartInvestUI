@@ -1,24 +1,29 @@
 import React, { Component } from 'react';
-import CrudTableTitle from '../common/CrudTableTitle/CrudTableTitle';
-import CrudTableHeader from '../common/CrudTableHeader/CrudTableHeader';
 import Asset from './asset/Asset';
-import CrudAddModal from '../common/CrudAddModal/CrudAddModal';
+import CrudTable from '../common/CrudTable/CrudTable';
 
 class Assets extends Component {
     constructor(props){
         super(props);
-
-        this.addItemButtonClicked = this.addItemButtonClicked.bind(this);
+        this.getCurrentAssetPrice = this.getCurrentAssetPrice.bind(this);
     }
     state = { 
         assets: [],
-        fields: [{
-                name: "Code",
+        fields: [
+            {
+                label: "ID",
+                type: "text",
+                isInput: false,
+            },{
+                label: "Code",
                 type: "text",
                 isRequired: true
+            },{
+                label: "Price",
+                type: "Float",
+                isInput: false
             }
-        ],
-        openModal: false
+        ]
     };
 
     componentDidMount(){
@@ -31,147 +36,44 @@ class Assets extends Component {
         .catch(console.log)
     }
 
-    render() { 
-        console.log("rendered", this.state.openModal)
-        if(!this.state.assets.length)
-            return null;
+    getCurrentAssetPrice(asset){
+        //TODO*****DELETE key
+        return fetch('https://54kwimgt6h.execute-api.sa-east-1.amazonaws.com/prod/quoter?code='+ asset.code,
+                    {"headers": {"x-api-key": "rsIFzOlWL479RdPojscyk5qgDlEHX4lR4MvdQMGL"}})
+        .then(res => res.json())
+        .catch(e => {
+            console.log("error fetching price for asset", asset.code)
+            return null
+        })
+        // return asset.price.promise
+        // this.setState({ price: "12.34" })
+    }
+
+    render() {        
+        let assets = this.state.assets 
+        assets.forEach(a => {
+            if(!a.price)
+                a.price = null
+        })
+        console.log(assets)
         return ( 
             <section className="block_unit-5" 
                 style={{"float": "left", "flex" : "0.5"}}>
-                <CrudTableTitle title="Assets" onAddClickedHandler={this.addItemButtonClicked}/>
-                <div id="table-scroll">
-                    <table className="custom-table table-striped table-hover fill">
-                    <CrudTableHeader headers={["ID",  "Code", "Price"]} tableData={this.state.assets}/>
-                    <tbody>
-                        {this.state.assets.map((asset, i) =>{
-                            return (
-                                <Asset key={i} id={asset.id} code={asset.code} />
-                            );
-                        } )}
-                    </tbody>
-                    </table>
-                </div>
-                <CrudAddModal open={this.state.openModal} itemType="Asset" itemFields={this.state.fields} />
+                <CrudTable 
+                    itemType={"Asset"}
+                    fields={this.state.fields}
+                    items={assets}
+                    itemUpdateHandler={this.getCurrentAssetPrice}
+                >
+                    {/* {this.state.assets.map((asset, i) =>{
+                        return (
+                            <Asset key={i} id={asset.id} code={asset.code} />
+                        );
+                    } )} */}
+                </CrudTable>
             </section>
          );
-    }
-    addItemButtonClicked(){
-        
-        this.setState({
-            openModal: true
-        })
     }
 }
  
 export default Assets;
-
-/* <div class="table-responsive">
-    <div class="table-wrapper">
-        <div class="table-title">
-            <div class="row">
-                <div class="col-sm-6">
-                    <h2>Manage <b>Employees</b></h2>
-                </div>
-                <div class="col-sm-6">
-                    <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons"></i> <span>Add New Employee</span></a>
-                    <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons"></i> <span>Delete</span></a>						
-                </div>
-            </div>
-        </div>
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th>
-                        <span class="custom-checkbox">
-                            <input type="checkbox" id="selectAll">
-                            <label for="selectAll"></label>
-                        </span>
-                    </th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Address</th>
-                    <th>Phone</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <span class="custom-checkbox">
-                            <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                            <label for="checkbox1"></label>
-                        </span>
-                    </td>
-                    <td>Thomas Hardy</td>
-                    <td>thomashardy@mail.com</td>
-                    <td>89 Chiaroscuro Rd, Portland, USA</td>
-                    <td>(171) 555-2222</td>
-                    <td>
-                        <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="" data-original-title="Edit"></i></a>
-                        <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="" data-original-title="Delete"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span class="custom-checkbox">
-                            <input type="checkbox" id="checkbox2" name="options[]" value="1">
-                            <label for="checkbox2"></label>
-                        </span>
-                    </td>
-                    <td>Dominique Perrier</td>
-                    <td>dominiqueperrier@mail.com</td>
-                    <td>Obere Str. 57, Berlin, Germany</td>
-                    <td>(313) 555-5735</td>
-                    <td>
-                        <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="" data-original-title="Edit"></i></a>
-                        <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="" data-original-title="Delete"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span class="custom-checkbox">
-                            <input type="checkbox" id="checkbox3" name="options[]" value="1">
-                            <label for="checkbox3"></label>
-                        </span>
-                    </td>
-                    <td>Maria Anders</td>
-                    <td>mariaanders@mail.com</td>
-                    <td>25, rue Lauriston, Paris, France</td>
-                    <td>(503) 555-9931</td>
-                    <td>
-                        <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="" data-original-title="Edit"></i></a>
-                        <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="" data-original-title="Delete"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span class="custom-checkbox">
-                            <input type="checkbox" id="checkbox4" name="options[]" value="1">
-                            <label for="checkbox4"></label>
-                        </span>
-                    </td>
-                    <td>Fran Wilson</td>
-                    <td>franwilson@mail.com</td>
-                    <td>C/ Araquil, 67, Madrid, Spain</td>
-                    <td>(204) 619-5731</td>
-                    <td>
-                        <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="" data-original-title="Edit"></i></a>
-                        <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="" data-original-title="Delete"></i></a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="clearfix">
-            <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-            <ul class="pagination">
-                <li class="page-item disabled"><a href="#">Previous</a></li>
-                <li class="page-item"><a href="#" class="page-link">1</a></li>
-                <li class="page-item"><a href="#" class="page-link">2</a></li>
-                <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                <li class="page-item"><a href="#" class="page-link">4</a></li>
-                <li class="page-item"><a href="#" class="page-link">5</a></li>
-                <li class="page-item"><a href="#" class="page-link">Next</a></li>
-            </ul>
-        </div>
-    </div>
-</div> */

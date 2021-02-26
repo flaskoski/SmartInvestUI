@@ -12,7 +12,7 @@ class AssetSelector extends Component {
         return ( 
         <section style={{float: "left"}}>
             <label>Choose an asset:</label>
-            <input onChange={this.changeAssetValue} type="text" maxLength="6" id="input_asset" />
+            <input style={{margin: "5px"}} onChange={this.changeAssetValue} type="text" maxLength="6" id="input_asset" />
             <button disabled={this.state.hasValue} className="btn-primary" onClick={this.confirmChange} >Confirm</button> 
         </section>);
     }
