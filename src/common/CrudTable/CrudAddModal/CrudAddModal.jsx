@@ -34,6 +34,7 @@ class CrudAddModal extends Component {
                     {text}
                     
                     {this.props.itemFields.map((field, i) =>{	
+                        if(field.isInput != false)
                             return (	
                                 <TextField
                                 // autoFocus
@@ -47,7 +48,8 @@ class CrudAddModal extends Component {
                                 //  required={field.isRequired} />
                                 
                             );
-                        }) }	
+                        else return ""
+                    }) }	
                    
                     </DialogContent>
                     <DialogActions>

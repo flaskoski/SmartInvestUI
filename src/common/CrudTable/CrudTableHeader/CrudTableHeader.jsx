@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import TableFilter from 'react-table-filter';
+import "./CrudTableHeader.css";
 import "react-table-filter/lib/styles.css";
+
 
 class CrudTableHeader extends Component {
     constructor(props){
@@ -10,13 +12,12 @@ class CrudTableHeader extends Component {
             data : this.props.tableData
         }
     }
-
     
     render() { 
         return (
-            <thead>
+            <thead className="crud-table">
                 <TableFilter rows={this.state.data} onFilterUpdate={this._filterUpdated}>
-                    <th>
+                    <th className="borderWhite">
                         <span className="custom-checkbox">
                             <input className="margin10" type="checkbox" id="selectAll"/>
                             <label htmlFor="selectAll"></label>

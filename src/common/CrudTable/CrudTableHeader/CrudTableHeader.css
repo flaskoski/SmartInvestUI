@@ -1,0 +1,4 @@
+thead.crud-table th{
+    border-right: 1px white solid;
+    text-align: center;
+}

@@ -11,14 +11,17 @@ class Assets extends Component {
         assets: [],
         fields: [
             {
+                name: "id",
                 label: "ID",
                 type: "text",
                 isInput: false,
             },{
+                name: "code",
                 label: "Code",
                 type: "text",
                 isRequired: true
             },{
+                name: "price",
                 label: "Price",
                 type: "Float",
                 isInput: false
@@ -31,9 +34,9 @@ class Assets extends Component {
         .then(res => res.json())
         .then((data) => {
           this.setState({ assets: data.content })
-          console.log(this.state.assets);
+          console.log(`Assets loaded ${(data.content? data.content.length :"")}`)
         })
-        .catch(console.log)
+        .catch(console.log("Error loading assets!"))
     }
 
     getCurrentAssetPrice(asset){
@@ -42,6 +45,7 @@ class Assets extends Component {
                     {"headers": {"x-api-key": "rsIFzOlWL479RdPojscyk5qgDlEHX4lR4MvdQMGL"}})
         .then(res => res.json())
         .then(price =>{
+            console.log(`${(asset? asset.code: "")} price loaded: ${price}`)
             asset.price = price
             return asset
         })
@@ -59,7 +63,7 @@ class Assets extends Component {
             if(!a.price)
                 a.price = null
         })
-        console.log(assets)
+        
         return ( 
             <section className="block_unit-5" 
                 style={{"float": "left", "flex" : "0.5"}}>

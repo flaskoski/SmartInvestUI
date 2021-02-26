@@ -1,7 +1,6 @@
 import './App.css';
 import Assets from './assets/Assets';
 import ChartComponent from './charts/ChartComponent';
-import CrudAddModal from './common/CrudAddModal/CrudAddModal';
 import Transactions from './transactions/Transactions';
 
 
