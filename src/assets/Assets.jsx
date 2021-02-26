@@ -41,6 +41,10 @@ class Assets extends Component {
         return fetch('https://54kwimgt6h.execute-api.sa-east-1.amazonaws.com/prod/quoter?code='+ asset.code,
                     {"headers": {"x-api-key": "rsIFzOlWL479RdPojscyk5qgDlEHX4lR4MvdQMGL"}})
         .then(res => res.json())
+        .then(price =>{
+            asset.price = price
+            return asset
+        })
         .catch(e => {
             console.log("error fetching price for asset", asset.code)
             return null

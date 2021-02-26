@@ -14,10 +14,8 @@ class CrudTableRow extends Component {
         
         if(typeof this.props.itemUpdateHandler === "function")
             // console.log("chegou", this.props.item.code)
-            this.props.itemUpdateHandler(this.state.item).then(price =>{
+            this.props.itemUpdateHandler(this.state.item).then(updatedItem =>{
                 console.log("async finished")
-                let updatedItem = this.state.item
-                updatedItem.price = price
                 this.setState({
                     item: updatedItem
                 })
