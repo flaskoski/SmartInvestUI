@@ -17,7 +17,7 @@ class CrudTableHeader extends Component {
         return (
             <thead className="crud-table">
                 <TableFilter rows={this.state.data} onFilterUpdate={this._filterUpdated}>
-                    <th className="borderWhite">
+                    <th key="checkbox" className="borderWhite">
                         <span className="custom-checkbox">
                             <input className="margin10" type="checkbox" id="selectAll"/>
                             <label htmlFor="selectAll"></label>
@@ -26,7 +26,7 @@ class CrudTableHeader extends Component {
                     {this.props.headers.map((h, i) =>{
                         return (<th key={h} filterkey={h.toLowerCase() }>{h}</th>);
                     })}
-                    <th>Actions</th>
+                    <th key="actions">Actions</th>
                 </TableFilter>
             </thead>
         );

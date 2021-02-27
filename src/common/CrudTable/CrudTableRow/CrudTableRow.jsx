@@ -8,6 +8,7 @@ class CrudTableRow extends Component {
         this.state = {
             item : props.item
         }
+        this.onItemDeleteClickedHandler = this.onItemDeleteClickedHandler.bind(this)
     }
     
     componentDidMount(){
@@ -22,10 +23,9 @@ class CrudTableRow extends Component {
         
     }
     shouldComponentUpdate(nextProps, nextState){
-        return nextState.item != undefined
+        return nextState.item !== undefined
     }
     render() {
-        let fieldValues = []; 
         // console.log(this.state.item)
         // Object.entries(this.state.item).forEach(([fieldKey, fieldValue]) => {
         //     fieldValues.push({key: fieldKey,value : fieldValue})
@@ -51,11 +51,14 @@ class CrudTableRow extends Component {
                 <td>
                 <a href="#editEmployeeModal" className="edit"  data-tip="Edit"><i className="material-icons"></i></a>
                 <ReactTooltip />
-                <a href="#deleteEmployeeModal" className="delete"  data-tip="Delete"><i className="material-icons"></i></a>
+                <a onClick={this.onItemDeleteClickedHandler} href="#deleteEmployeeModal" className="delete"  data-tip="Delete"><i className="material-icons"></i></a>
                 <ReactTooltip />
                 </td>
             </tr>
         );
+    }
+    onItemDeleteClickedHandler(){
+        this.props.onItemDeleteClickedHandler(this.state.item)
     }
 }
     

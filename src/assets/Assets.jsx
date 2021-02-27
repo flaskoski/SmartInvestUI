@@ -6,41 +6,43 @@ class Assets extends Component {
     constructor(props){
         super(props);
         this.getCurrentAssetPrice = this.getCurrentAssetPrice.bind(this);
+        this.getAssets = this.getAssets.bind(this);
+        this.state = { 
+            assets: [],
+            fields: [
+                {
+                    name: "id",
+                    label: "ID",
+                    type: "text",
+                    isInput: false,
+                },{
+                    name: "code",
+                    label: "Code",
+                    type: "text",
+                    isRequired: true
+                },{
+                    name: "price",
+                    label: "Price",
+                    type: "Float",
+                    isInput: false
+                }
+            ]
+        };
     }
-    state = { 
-        assets: [],
-        fields: [
-            {
-                name: "id",
-                label: "ID",
-                type: "text",
-                isInput: false,
-            },{
-                name: "code",
-                label: "Code",
-                type: "text",
-                isRequired: true
-            },{
-                name: "price",
-                label: "Price",
-                type: "Float",
-                isInput: false
-            }
-        ]
-    };
-
-    componentDidMount(){
-        fetch('http://localhost:8080/assets?page=0&size=10')
+    
+    getAssets(){
+        return fetch(process.env.REACT_APP_BACKEND_ASSETS+'?page=0&size=15')
         .then(res => res.json())
         .then((data) => {
-          this.setState({ assets: data.content })
-          console.log(`Assets loaded ${(data.content? data.content.length :"")}`)
-        })
-        .catch(console.log("Error loading assets!"))
+            // this.setState({ assets: data.content })
+            console.log(`Assets loaded ${(data.content? data.content.length :"")}`)
+            console.log(data.content)
+            return data.content
+        }).catch(e => console.log("Error loading assets!"))
     }
 
     getCurrentAssetPrice(asset){
-        return fetch('https://54kwimgt6h.execute-api.sa-east-1.amazonaws.com/prod/quoter?code='+ asset.code,
+        return fetch(process.env.REACT_APP_API_GET_CURRENT_PRICE + '?code='+ asset.code,
                     {"headers": {"x-api-key": process.env.REACT_APP_API_KEY_AWS}})
         .then(res => res.json())
         .then(price =>{
@@ -67,9 +69,11 @@ class Assets extends Component {
             <section className="block_unit-5" 
                 style={{"float": "left", "flex" : "0.5"}}>
                 <CrudTable 
+                    key="Table-Assets"
                     itemType={"Asset"}
                     fields={this.state.fields}
-                    items={assets}
+                    getItems={this.getAssets}
+                    backendUrl={process.env.REACT_APP_BACKEND_ASSETS}
                     itemUpdateHandler={this.getCurrentAssetPrice}
                 >
                     {/* {this.state.assets.map((asset, i) =>{

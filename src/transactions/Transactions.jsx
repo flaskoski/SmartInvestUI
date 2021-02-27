@@ -7,6 +7,7 @@ import CrudTable from '../common/CrudTable/CrudTable';
 class Transactions extends Component {
     constructor(props) {
         super(props);
+        this.getTransactions = this.getTransactions.bind(this);
         this.state = { 
             transactions: [],
             fields: [
@@ -40,13 +41,18 @@ class Transactions extends Component {
         };
     }
     componentDidMount(){
-        fetch('http://localhost:8080/transactions?page=0&size=10&sort=date,desc')
+        
+    }
+
+    getTransactions(){
+        return fetch(process.env.REACT_APP_BACKEND_TRANSACTIONS+'?page=0&size=10&sort=date,desc')
         .then(res => res.json())
         .then((data) => {
-          this.setState({ transactions: data.content })
-          console.log(this.state.transactions);
+            console.log(`Transactions loaded ${(data.content? data.content.length :"")}`)
+            console.log(data.content);
+            return data.content
         })
-        .catch(console.log)
+        .catch(e => console.log("Error loading transactions!"))
     }
 
     render() { 
@@ -55,9 +61,11 @@ class Transactions extends Component {
             <section className="block_unit-7" 
                 style={{"float": "left"}}>
                 <CrudTable
+                    key="Table-Transactions"
                     itemType={"Transaction"}
                     fields={this.state.fields}
-                    items={this.state.transactions}
+                    getItems={this.getTransactions}
+                    backendUrl={process.env.REACT_APP_BACKEND_TRANSACTIONS}
                 >
                     {/* {this.state.assets.map((asset, i) =>{
                         return (
