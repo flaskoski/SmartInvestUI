@@ -4,6 +4,7 @@ import CrudTableHeader from './CrudTableHeader/CrudTableHeader';
 import CrudAddModal from './CrudAddModal/CrudAddModal';
 import CrudDeleteItemModal from './CrudDeleteItemModal/CrudDeleteItemModal';
 import CrudTableRow from './CrudTableRow/CrudTableRow';
+import "./CrudTable.css"
 
 
 /**
@@ -44,7 +45,7 @@ class CrudTable extends Component {
 
     render() {
         return ( 
-            <section>
+            <section className="crudTable">
                 <CrudTableTitle title={this.props.itemType} onAddClickedHandler={this.addItemButtonClicked}/>
                     <div id="table-scroll">
                         <table className="custom-table table-striped table-hover fill">

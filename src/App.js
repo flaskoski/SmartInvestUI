@@ -1,11 +1,10 @@
 import './App.css';
 import Assets from './assets/Assets';
-// import { getData } from './BatchOperations/SavePortfolio';
+import { convertPortfolioData } from './BatchOperations/SavePortfolio';
 import Transactions from './transactions/Transactions';
 
-
 function App() {
-    // getData()
+    convertPortfolioData()
     return (
     <>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>

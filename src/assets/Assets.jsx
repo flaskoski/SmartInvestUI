@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Asset from './asset/Asset';
 import CrudTable from '../common/CrudTable/CrudTable';
+import Menu from './menu/Menu';
 
 class Assets extends Component {
     constructor(props){
@@ -21,6 +21,11 @@ class Assets extends Component {
                     type: "text",
                     isRequired: true
                 },{
+                    name: "type",
+                    label: "Tipo",
+                    type: "text",
+                    isRequired: true
+                },{
                     name: "price",
                     label: "Price",
                     type: "Float",
@@ -31,12 +36,13 @@ class Assets extends Component {
     }
     
     getAssets(){
-        return fetch(process.env.REACT_APP_BACKEND_ASSETS+'?page=0&size=15')
+        return fetch(process.env.REACT_APP_BACKEND_ASSETS+'?page=0&size=80')
         .then(res => res.json())
         .then((data) => {
             // this.setState({ assets: data.content })
             console.log(`Assets loaded ${(data.content? data.content.length :"")}`)
             console.log(data.content)
+            this.setState({assets: data.content})
             return data.content
         }).catch(e => console.log("Error loading assets!"))
     }
@@ -58,6 +64,8 @@ class Assets extends Component {
         // this.setState({ price: "12.34" })
     }
 
+
+
     render() {        
         let assets = this.state.assets 
         assets.forEach(a => {
@@ -66,23 +74,27 @@ class Assets extends Component {
         })
         
         return ( 
-            <section className="block_unit-5" 
-                style={{"float": "left", "flex" : "0.5"}}>
-                <CrudTable 
-                    key="Table-Assets"
-                    itemType={"Asset"}
-                    fields={this.state.fields}
-                    getItems={this.getAssets}
-                    backendUrl={process.env.REACT_APP_BACKEND_ASSETS}
-                    itemUpdateHandler={this.getCurrentAssetPrice}
-                >
-                    {/* {this.state.assets.map((asset, i) =>{
-                        return (
-                            <Asset key={i} id={asset.id} code={asset.code} />
-                        );
-                    } )} */}
-                </CrudTable>
-            </section>
+            <div>
+                <Menu assets={this.state.assets} />
+                <section className="block_unit-4" 
+                    style={{"float": "left", "flex" : "0.5"}}>
+                    <CrudTable 
+                        key="Table-Assets"
+                        itemType={"Asset"}
+                        fields={this.state.fields}
+                        getItems={this.getAssets}
+                        backendUrl={process.env.REACT_APP_BACKEND_ASSETS}
+                        // itemUpdateHandler={this.getCurrentAssetPrice}
+                    >
+                        {/* {this.state.assets.map((asset, i) =>{
+                            return (
+                                <Asset key={i} id={asset.id} code={asset.code} />
+                            );
+                        } )} */}
+                    </CrudTable>
+                    
+                </section>
+            </div>
          );
     }
 }

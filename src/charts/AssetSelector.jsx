@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
+import { TextField } from '@material-ui/core';
 
 class AssetSelector extends Component {
     state = { assetCode:'', hasValue : true }
@@ -8,12 +10,14 @@ class AssetSelector extends Component {
         this.confirmChange = this.confirmChange.bind(this);
     }
 
+
     render() { 
         return ( 
         <section style={{float: "left"}}>
-            <label>Choose an asset:</label>
-            <input style={{margin: "5px"}} onChange={this.changeAssetValue} type="text" maxLength="6" id="input_asset" />
-            <button disabled={this.state.hasValue} className="btn-primary" onClick={this.confirmChange} >Confirm</button> 
+            {/* <label>Choose an asset:</label> */}
+            {/* <input style={{margin: "5px"}} onChange={this.changeAssetValue} type="text" maxLength="6" id="input_asset" /> */}
+            <TextField style={{margin: "5px"}} label="Choose an Asset" onChange={this.changeAssetValue} type="text" maxLength="6" id="input_asset"></TextField>
+            <Button style={{"marginTop": "15px"}} disabled={this.state.hasValue} variant="outlined" color="primary" onClick={this.confirmChange} >Confirm</Button> 
         </section>);
     }
     changeAssetValue(event){

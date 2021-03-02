@@ -40,9 +40,6 @@ class Transactions extends Component {
             ]
         };
     }
-    componentDidMount(){
-        
-    }
 
     getTransactions(){
         return fetch(process.env.REACT_APP_BACKEND_TRANSACTIONS+'?page=0&size=10&sort=date,desc')
@@ -55,10 +52,20 @@ class Transactions extends Component {
         .catch(e => console.log("Error loading transactions!"))
     }
 
+    formatDate(date){
+        if(!date || date.length != 3)
+            return "";
+        // 
+        const dd = (date[2]<10 ? "0"+date[2] : date[2]) 
+        const mm = (date[1]<10 ? "0"+date[1] : date[1])
+        const yy = date[0]
+        return `${dd}/${mm}/${yy}`;
+    }
+
     render() { 
         
         return ( 
-            <section className="block_unit-7" 
+            <section className="block_unit-6" 
                 style={{"float": "left"}}>
                 <CrudTable
                     key="Table-Transactions"
