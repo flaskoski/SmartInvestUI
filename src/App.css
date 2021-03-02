@@ -70,6 +70,7 @@
 
 .block_unit-1, .block_unit-4, .block_unit-5, .block_unit-6, .block_unit-7, .block_unit-8, .block_unit{
   margin: 1px; 
+  display: 'flex',
 }
 
 .fill{

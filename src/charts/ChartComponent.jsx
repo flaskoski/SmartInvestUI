@@ -78,7 +78,4 @@ class ChartComponent extends React.Component {
 
 export default ChartComponent;
 
-ReactDOM.render(
-    <ChartComponent />,
-        document.getElementById('chart')
-)
+

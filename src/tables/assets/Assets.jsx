@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import CrudTable from '../common/CrudTable/CrudTable';
-import Menu from './menu/Menu';
+import CrudTable from '../../common/CrudTable/CrudTable';
+import Menu from '../../menu/Menu';
 
 class Assets extends Component {
     constructor(props){
@@ -22,7 +22,7 @@ class Assets extends Component {
                     isRequired: true
                 },{
                     name: "type",
-                    label: "Tipo",
+                    label: "Type",
                     type: "text",
                     isRequired: true
                 },{
@@ -76,7 +76,7 @@ class Assets extends Component {
         return ( 
             <div>
                 <Menu assets={this.state.assets} />
-                <section className="block_unit-4" 
+                <section className="block_unit-5" 
                     style={{"float": "left", "flex" : "0.5"}}>
                     <CrudTable 
                         key="Table-Assets"

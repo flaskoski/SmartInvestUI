@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import CrudTableTitle from '../common/CrudTable/CrudTableTitle/CrudTableTitle';
 // import CrudTableHeader from '../common/CrudTable/CrudTableHeader/CrudTableHeader';
 // import Transaction from './Transaction';
-import CrudTable from '../common/CrudTable/CrudTable';
+import CrudTable from '../../common/CrudTable/CrudTable';
 
 class Transactions extends Component {
     constructor(props) {
@@ -65,7 +65,7 @@ class Transactions extends Component {
     render() { 
         
         return ( 
-            <section className="block_unit-6" 
+            <section className="block_unit-7" 
                 style={{"float": "left"}}>
                 <CrudTable
                     key="Table-Transactions"
