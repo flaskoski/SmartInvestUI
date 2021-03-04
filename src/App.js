@@ -4,6 +4,7 @@ import Assets from './tables/assets/Assets';
 import Transactions from './tables/transactions/Transactions';
 import MainMenu from './MainMenu';
 import ChartComponent from './charts/ChartComponent';
+import AnnualReport from './AnnualReport';
 
 function App() {
     // convertPortfolioData()
@@ -18,7 +19,7 @@ function App() {
             </div>
             <div key="Get Assets Return"></div>
             <div key="Get Portfolio Return"></div>
-            <div key="Annual Report"></div>
+            <AnnualReport key="Annual Report"></AnnualReport>
         </MainMenu>
         
         {/* <CrudAddModal show={true} itemType="Asset" itemFields={[{

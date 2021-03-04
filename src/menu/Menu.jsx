@@ -11,8 +11,8 @@ class Menu extends Component {
     render() { 
         return ( 
             <section className="block_unit-2" style={{"float": "left"}}>
-                {/* <Button style={{"margin": "3px"}} variant="outlined" color="primary" onClick={this.getAssetReturn} >Load Assets Return</Button> 
-                <Button style={{"margin": "3px"}} variant="outlined" color="primary" onClick={this.getPortfolioReturn} >Portfolio Return</Button>          */}
+                <Button style={{"margin": "3px"}} variant="outlined" color="primary" onClick={this.getAssetReturn} >Load Assets Return</Button> 
+                <Button style={{"margin": "3px"}} variant="outlined" color="primary" onClick={this.getPortfolioReturn} >Portfolio Return</Button>         
             </section> 
         );
     }
@@ -21,14 +21,14 @@ class Menu extends Component {
     getAssetReturn(){
         let today = new Date()
         // this.props.assets.forEach(a =>{
-        let a = {code: "ITUB4"}
+        let a = {code: "CPTS11", type:"REIT"}
             fetch(process.env.REACT_APP_BACKEND_TRANSACTIONS+`?code=${a.code}&page=0&size=100&sort=date,asc`)
             .then(res => res.json())
             .then((data) => {
                 console.log(`${(data.content? data.content.length :"0")} transactions loaded from ${a.code}`)
                 console.log(data.content)
                 let body = {
-                    code : a.code,
+                    asset : a,
                     startDate : "2019-01-01",
                     endDate : `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`,
                     transactions : data.content
@@ -51,8 +51,8 @@ class Menu extends Component {
     getPortfolioReturn(){
         // let today = new Date()
         let body = {
-            startDate : "2021-01-02",
-            endDate : `2021-02-26`
+            startDate : "2021-02-02",
+            endDate : "2021-02-10"
         }
         const requestOptions = {
             method: 'POST',
@@ -61,9 +61,9 @@ class Menu extends Component {
             body: JSON.stringify(body)
         };
         fetch("https://5qx8xnn5e4.execute-api.sa-east-1.amazonaws.com/dev/portfolioReturn", requestOptions)
-        .then(res => res.json()).then((data) => {
-            console.log(data)
-        })
+            .then(res => res.json()).then((data) => {
+                console.log(data)
+            }).catch(e => console.log(e))
     }
 }
  

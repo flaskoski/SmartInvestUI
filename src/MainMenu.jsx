@@ -99,7 +99,7 @@ export default function MiniDrawer(props) {
         setOptionSelected(menuOptions[menuOptions.indexOf(event.target.innerText)])
     else //clicked on the icon
         setOptionSelected(menuOptions[event.target.id])
-    console.log(event.target)
+    // console.log(event.target)
   }
 
   return (
