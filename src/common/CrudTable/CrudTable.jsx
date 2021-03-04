@@ -53,6 +53,7 @@ class CrudTable extends Component {
                          {/* ["ID",  "Code", "Price"] */}
                         <tbody>
                             {this.state.items.map((item, i) =>{
+                                if(i >= this.props.maxRows) return ("")
                                 return (
                                     <CrudTableRow key={item.id} item={item} fields={this.props.fields}
                                     itemUpdateHandler={this.props.itemUpdateHandler} 

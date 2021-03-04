@@ -10,9 +10,11 @@ class AnnualReport extends Component {
                 { field: 'year', headerName: 'Year', type: 'number', width: 100 },
                 { field: 'month', headerName: 'Month', type: 'number',  width: 100 },
                 { field: 'stocksSales', headerName: 'Stocks - Sales', type: 'number',  width: 150 },
-                { field: 'stocksProfit', headerName: 'Stocks - Profit', type: 'number',  width: 150 },
+                { field: 'stocksProfit', headerName: 'Profit', type: 'number',  width: 150 },
+                { field: 'stocksFees', headerName: 'Fees', type: 'number',  width: 150 },
                 { field: 'reitSales', headerName: 'REIT - Sales', type: 'number',  width: 150 },
-                { field: 'reitProfit', headerName: 'REIT - Profit', type: 'number',  width: 150 },
+                { field: 'reitProfit', headerName: 'Profit', type: 'number',  width: 150 },
+                { field: 'reitFees', headerName: 'Fees', type: 'number',  width: 150 },
                 // {
                 //     field: 'age',
                 //     headerName: 'Age',
@@ -66,8 +68,10 @@ class AnnualReport extends Component {
                         'month': mon,
                         'stocksSales': totals[year][mon].stocks.sales,
                         'stocksProfit': Math.round(totals[year][mon].stocks.profit * 100)/100,
+                        "stocksFees" : Math.round(totals[year][mon].stocks.fees * 100)/100,
                         'reitSales': totals[year][mon].reit.sales,
-                        'reitProfit': Math.round(totals[year][mon].reit.profit * 100)/100 
+                        'reitProfit': Math.round(totals[year][mon].reit.profit * 100)/100 ,
+                        'reitFees' : Math.round(totals[year][mon].reit.fees * 100)/100,
                     })
                 })
             })

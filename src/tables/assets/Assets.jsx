@@ -94,6 +94,7 @@ class Assets extends Component {
                         itemType={"Asset"}
                         fields={this.state.fields}
                         getItems={this.getAssets}
+                        maxRows={8}
                         backendUrl={process.env.REACT_APP_BACKEND_ASSETS}
                         itemUpdateHandler={this.getCurrentAssetPrice}
                     >
