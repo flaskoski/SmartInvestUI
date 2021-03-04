@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import {ArrowUpwardIcon, ArrowDownwardIcon} from '@material-ui/icons/ArrowUpward';
 import CrudTable from '../../common/CrudTable/CrudTable';
 import Menu from '../../menu/Menu';
+import "./assets.css"
 
 class Assets extends Component {
     constructor(props){
@@ -48,12 +50,21 @@ class Assets extends Component {
     }
 
     getCurrentAssetPrice(asset){
-        return fetch(process.env.REACT_APP_API_GET_CURRENT_PRICE + '?code='+ asset.code,
+        return fetch(process.env.REACT_APP_API_GET_CURRENT_QUOTE + '?code='+ asset.code,
                     {"headers": {"x-api-key": process.env.REACT_APP_API_KEY_AWS}})
         .then(res => res.json())
-        .then(price =>{
-            console.log(`${(asset? asset.code: "")} price loaded: ${price}`)
-            asset.price = price
+        .then(assetLastValues =>{
+            console.log(`${(asset? asset.code: "")} price loaded: ${assetLastValues.currentPrice}`)
+            
+            asset.price = (
+            <div className="asset-price">
+                <div style={{"float": "left", "width" : "40%"}}><div  style={{"float": "center"}}> {Math.round(assetLastValues.currentPrice * 100) / 100} </div></div>
+                <div style={{"color": (assetLastValues.change>0? "green" : "red"), "float": "left", "width" : "40%"}}>
+                <p className="quote-change" >{Math.round(assetLastValues.change * 100) / 100}</p>
+                    <p className="quote-change-percentage" style={{"color": (assetLastValues.changePercent.split('%')[0]>0? "green" : "red")}}>{Math.round(assetLastValues.changePercent.split("%")[0] * 100) / 100}%</p>
+                </div>
+                <div style={{"float": "left", "width" : "20%"}}><span style={{"color": (assetLastValues.change>0? "green" : "red")}}  className="material-icons">{(assetLastValues.change>0? "arrow_upward" : "arrow_downward")}</span></div>
+            </div>)
             return asset
         })
         .catch(e => {
@@ -84,7 +95,7 @@ class Assets extends Component {
                         fields={this.state.fields}
                         getItems={this.getAssets}
                         backendUrl={process.env.REACT_APP_BACKEND_ASSETS}
-                        // itemUpdateHandler={this.getCurrentAssetPrice}
+                        itemUpdateHandler={this.getCurrentAssetPrice}
                     >
                         {/* {this.state.assets.map((asset, i) =>{
                             return (

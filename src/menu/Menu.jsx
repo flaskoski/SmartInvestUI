@@ -11,8 +11,8 @@ class Menu extends Component {
     render() { 
         return ( 
             <section className="block_unit-2" style={{"float": "left"}}>
-                <Button style={{"margin": "3px"}} variant="outlined" color="primary" onClick={this.getAssetReturn} >Load Assets Return</Button> 
-                <Button style={{"margin": "3px"}} variant="outlined" color="primary" onClick={this.getPortfolioReturn} >Portfolio Return</Button>         
+                {/* <Button style={{"margin": "3px"}} variant="outlined" color="primary" onClick={this.getAssetReturn} >Load Assets Return</Button> 
+                <Button style={{"margin": "3px"}} variant="outlined" color="primary" onClick={this.getPortfolioReturn} >Portfolio Return</Button>          */}
             </section> 
         );
     }

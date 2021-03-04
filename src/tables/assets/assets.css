@@ -1,0 +1,14 @@
+.asset-price div div{
+    text-align: center;
+    padding-top: 7px;
+}
+.asset-price div p{
+    font-size: smaller;
+    margin: 0px;
+    text-align: right;
+}
+.asset-price .material-icons{
+    font-size: large;
+    text-align: left;
+    padding-top: 7px;
+}
