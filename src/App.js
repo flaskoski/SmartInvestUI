@@ -5,7 +5,7 @@ import Transactions from './tables/transactions/Transactions';
 import MainMenu from './MainMenu';
 import ChartComponent from './charts/ChartComponent';
 import AnnualReport from './AnnualReport';
-import {GetAssetReturn, GetPortfolioReturn, getPortfolioReturn} from './reports/GetReports'
+import GetAssetsReturn from './reports/GetAssetsReturn';
 
 function App() {
     // convertPortfolioData()
@@ -18,8 +18,8 @@ function App() {
                 <Transactions/>
                 <ChartComponent/>
             </div>
-            <GetAssetReturn key="Get Assets Return" />
-            <GetPortfolioReturn key="Get Portfolio Return" />
+            <GetAssetsReturn key="Get Assets Return" />
+            {/* <GetPortfolioReturn key="Get Portfolio Return" /> */}
             <AnnualReport key="Annual Report"></AnnualReport>
         </MainMenu>
         
