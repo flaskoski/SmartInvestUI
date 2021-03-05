@@ -42,7 +42,7 @@ function round(number, precision = 0) {
 // 	}
 // };
 
-class CandleStickChart extends React.Component {
+class LineChart extends React.Component {
 	constructor(props){
 		super(props);
 		
@@ -54,7 +54,7 @@ class CandleStickChart extends React.Component {
 		this.handleSelection = this.handleSelection.bind(this);		
 
 		this.state = {
-			enableInteractiveObject: true,
+			enableInteractiveObject: false,
 			yCoordinateList: [],
 			textList: [],
 			showModal: false,
@@ -79,43 +79,43 @@ class CandleStickChart extends React.Component {
 
 		const showGrid = true;
 
-		const candlesAppearance = {
-			stroke: function stroke(d) { return d.close > d.open ? "#6BA583" : "#DB0000"},
-			wickStroke: function wickStroke(d) { return d.close > d.open ? "#6BA583" : "#DB0000"},
-			fill: function fill(d) { return d.close > d.open ? "#6BA583" : "#DB0000"},
-			// wickStroke: "#000000",
-			// fill: function fill(d) {
-			//   return d.close > d.open ? "rgba(11, 196, 15, 0.8)" : "rgba(210, 11, 15, 0.8)";
-			// },
-			// stroke: "#000000",
-			// candleStrokeWidth: 1,
-			// widthRatio: 0.8,
-			opacity: 0.7,
-		}
+		// const candlesAppearance = {
+		// 	stroke: function stroke(d) { return d.close > d.open ? "#6BA583" : "#DB0000"},
+		// 	wickStroke: function wickStroke(d) { return d.close > d.open ? "#6BA583" : "#DB0000"},
+		// 	fill: function fill(d) { return d.close > d.open ? "#6BA583" : "#DB0000"},
+		// 	// wickStroke: "#000000",
+		// 	// fill: function fill(d) {
+		// 	//   return d.close > d.open ? "rgba(11, 196, 15, 0.8)" : "rgba(210, 11, 15, 0.8)";
+		// 	// },
+		// 	// stroke: "#000000",
+		// 	// candleStrokeWidth: 1,
+		// 	// widthRatio: 0.8,
+		// 	opacity: 0.7,
+		// }
 
-		const ema10 = ema()
-			.id(1)
-			.options({ windowSize: 10 })
-			.merge((d, c) => {d.ema10 = c;})
-			.accessor(d => d.ema10);
-		ema10(initialData);
+		// const ema10 = ema()
+		// 	.id(1)
+		// 	.options({ windowSize: 10 })
+		// 	.merge((d, c) => {d.ema10 = c;})
+		// 	.accessor(d => d.ema10);
+		// ema10(initialData);
 
-		const ema20 = ema()
-				.id(2)
-				.options({ windowSize: 20 })
-				.merge((d, c) => {d.ema20 = c;})
-				.accessor(d => d.ema20);
-		ema20(initialData);
-		let lineseriesEma10 = '';
-		let lineseriesEma20 = '';
-		if(this.props.indicators){
-           if(this.props.indicators["ema10"]){	
-                lineseriesEma10 = <LineSeries yAccessor={ema10.accessor()} stroke={ema10.stroke()}/>
-            }
-            if(this.props.indicators["ema20"]){
-                lineseriesEma20 = <LineSeries yAccessor={ema20.accessor()} stroke={ema20.stroke()}/>
-            }
-        }
+		// const ema20 = ema()
+		// 		.id(2)
+		// 		.options({ windowSize: 20 })
+		// 		.merge((d, c) => {d.ema20 = c;})
+		// 		.accessor(d => d.ema20);
+		// ema20(initialData);
+		// let lineseriesEma10 = '';
+		// let lineseriesEma20 = '';
+		// if(this.props.indicators){
+        //    if(this.props.indicators["ema10"]){	
+        //         lineseriesEma10 = <LineSeries yAccessor={ema10.accessor()} stroke={ema10.stroke()}/>
+        //     }
+        //     if(this.props.indicators["ema20"]){
+        //         lineseriesEma20 = <LineSeries yAccessor={ema20.accessor()} stroke={ema20.stroke()}/>
+        //     }
+        // }
 
 		const calculatedData = initialData;
 		const xScaleProvider = discontinuousTimeScaleProvider
@@ -149,7 +149,8 @@ class CandleStickChart extends React.Component {
 				>
 
 				<Chart id={1} 
-					yExtents={[d => [d.high, d.low], ema20.accessor(), ema10.accessor()]} 
+					// yExtents={[d => [d.high, d.low], ema20.accessor(), ema10.accessor()]} 
+                    yExtents={[d => [d.close]]} 
 					padding={{ top: 10, bottom: 20 }}
 					>
 					
@@ -165,10 +166,8 @@ class CandleStickChart extends React.Component {
 						orient="right"
 						displayFormat={format(".2f")} />
 
-					<CandlestickSeries {...candlesAppearance}/>
-					{lineseriesEma10}
-					{lineseriesEma20}
-
+                    <LineSeries
+						yAccessor={d => d.close} />
 					<CrossHairCursor />
 					<InteractiveYCoordinate
 							yCoordinateList={this.state.yCoordinateList}
@@ -180,7 +179,7 @@ class CandleStickChart extends React.Component {
 
 				</Chart>
 				{/* to add new markers */}
-				<DrawingObjectSelector
+				{/* <DrawingObjectSelector
 						enabled
 						getInteractiveNodes={this.getInteractiveNodes}
 						drawingObjectMap={{
@@ -188,7 +187,7 @@ class CandleStickChart extends React.Component {
 							InteractiveText: "textList"
 						}}
 						onSelect={this.handleSelection}
-					/>
+					/> */}
 			</ChartCanvas>
 		);
 	}
@@ -292,16 +291,16 @@ class CandleStickChart extends React.Component {
 	  }
 }
 
-CandleStickChart.propTypes = {
+LineChart.propTypes = {
 	data: PropTypes.array.isRequired,
 	width: PropTypes.number.isRequired,
 	ratio: PropTypes.number.isRequired,
 	type: PropTypes.oneOf(["svg", "hybrid"]).isRequired,
 };
 
-CandleStickChart.defaultProps = {
+LineChart.defaultProps = {
 	type: "svg",
 };
-CandleStickChart = fitWidth(CandleStickChart);
+LineChart = fitWidth(LineChart);
 
-export default CandleStickChart;
+export default LineChart;

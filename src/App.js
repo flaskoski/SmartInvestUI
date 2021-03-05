@@ -6,6 +6,7 @@ import MainMenu from './MainMenu';
 import ChartComponent from './charts/ChartComponent';
 import AnnualReport from './AnnualReport';
 import GetAssetsReturn from './reports/GetAssetsReturn';
+import GetPortfolioReturn from './reports/GetPortfolioReturn';
 
 function App() {
     // convertPortfolioData()
@@ -19,7 +20,7 @@ function App() {
                 <ChartComponent/>
             </div>
             <GetAssetsReturn key="Get Assets Return" />
-            {/* <GetPortfolioReturn key="Get Portfolio Return" /> */}
+            <GetPortfolioReturn key="Get Portfolio Return" />
             <AnnualReport key="Annual Report"></AnnualReport>
         </MainMenu>
         
