@@ -70,8 +70,8 @@ class LineChart extends React.Component {
 
 	render() {
 		const height = 400;
-		const { type, data: initialData, width, ratio } = this.props;
-		
+		const { type, data: initialData, width, ratio, assetCodes } = this.props;
+
 		const margin = { left: 70, right: 70, top: 20, bottom: 30 };
 
 		const gridHeight = height - margin.top - margin.bottom;
@@ -150,7 +150,7 @@ class LineChart extends React.Component {
 
 				<Chart id={1} 
 					// yExtents={[d => [d.high, d.low], ema20.accessor(), ema10.accessor()]} 
-                    yExtents={[d => [d.portfolio, d["IBOV"]]]} 
+                    yExtents={[d => Object.keys(d).filter(attr => attr!="date").map(attr => d[attr])]} //[d.portfolio, d["IBOV"]]]} //
 					padding={{ top: 10, bottom: 20 }}
 					>
 					
@@ -168,8 +168,14 @@ class LineChart extends React.Component {
 
                     <LineSeries
 						yAccessor={d => d.portfolio} />
-                    <LineSeries
-						yAccessor={d => d["IBOV"]} />
+                        
+                    {this.props.assetCodes.map((attr, i) => {return (
+                        <LineSeries
+                            yAccessor={d => d[attr]} />)
+                    })}
+
+                    {/* <LineSeries
+						yAccessor={d => d['IBOV']} /> */}
 					<CrossHairCursor />
 					<InteractiveYCoordinate
 							yCoordinateList={this.state.yCoordinateList}

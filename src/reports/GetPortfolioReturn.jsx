@@ -3,7 +3,7 @@ import { Component } from 'react';
 import ChartComponent from '../charts/ChartComponent';
 import CandleStickChart from '../charts/CandleStickChart';
 import LineChart from '../charts/LineChart';
-import { getIndexTimeSeriesPercentage } from '../charts/ParseData';
+import { appendIndexTimeSeriesPercentage, downloadJson } from '../charts/ParseData';
 import { dateTimeInDays } from '../common/convert';
 
 const mockData = {
@@ -441,6 +441,71 @@ const mockData = {
         "cost": 178065.0929835391,
         "return": 1.013949432619511,
         "profit": 8289.3229835391
+    },
+    "2021-02-11": {
+        "cost": 179085.0929835391,
+        "return": 1.010780835994196,
+        "profit": 8289.3229835391
+    },
+    "2021-02-12": {
+        "cost": 179085.0929835391,
+        "return": 1.0112560290914119,
+        "profit": 8289.3229835391
+    },
+    "2021-02-17": {
+        "cost": 179085.0929835391,
+        "return": 1.0120444810929023,
+        "profit": 8289.3229835391
+    },
+    "2021-02-18": {
+        "cost": 179085.0929835391,
+        "return": 1.0077575246119932,
+        "profit": 8289.3229835391
+    },
+    "2021-02-19": {
+        "cost": 179085.0929835391,
+        "return": 1.0099492201543803,
+        "profit": 8289.3229835391
+    },
+    "2021-02-22": {
+        "cost": 180359.0929835391,
+        "return": 0.9826086784333886,
+        "profit": 8289.3229835391
+    },
+    "2021-02-23": {
+        "cost": 182245.5929835391,
+        "return": 1.0010579515987434,
+        "profit": 8289.3229835391
+    },
+    "2021-02-24": {
+        "cost": 182245.5929835391,
+        "return": 1.0036514299499195,
+        "profit": 8289.3229835391
+    },
+    "2021-02-25": {
+        "cost": 181071.5929835391,
+        "return": 0.9888040804737197,
+        "profit": 8604.3229835391
+    },
+    "2021-02-26": {
+        "cost": 182392.5929835391,
+        "return": 0.9755415891042148,
+        "profit": 8604.3229835391
+    },
+    "2021-03-01": {
+        "cost": 183976.35885655502,
+        "return": 0.975480171014406,
+        "profit": 7930.088856554971
+    },
+    "2021-03-02": {
+        "cost": 178068.15276959847,
+        "return": 0.9735455066145735,
+        "profit": 9066.98276959845
+    },
+    "2021-03-03": {
+        "cost": 178068.15276959847,
+        "return": 0.9690544733356763,
+        "profit": 9066.98276959845
     }
 }
 
@@ -453,7 +518,7 @@ class GetPortfolioReturn extends Component {
         let today = new Date()
         let body = {
             startDate : "2020-10-02",
-            endDate : "2021-02-10"
+            endDate : "2021-03-03"
         }
         const requestOptions = {
             method: 'POST',
@@ -463,25 +528,40 @@ class GetPortfolioReturn extends Component {
             body: JSON.stringify(body)
         };
         // fetch("https://5qx8xnn5e4.execute-api.sa-east-1.amazonaws.com/dev/portfolioReturn", requestOptions)
-        //     .then(res => res.json()).then((data) => {
+        // .then(res => res.json()).then((data) => {
         //         console.log(data)
-        let data = mockData
-        let firstPercent = 0
-        firstPercent = data[body.startDate].return
-        let returnPercentages = Object.keys(data).map(k => {return {'portfolio' : 1 + (data[k].return - firstPercent), 'date': new Date(k)} } )
-        
-        getIndexTimeSeriesPercentage("IBOV", new Date(body.startDate), new Date(body.endDate))
-        .then(ibov => { console.log(ibov)
-            returnPercentages.map(r => {
-                let ibovDay = ibov.find(i => dateTimeInDays(r.date, true) == dateTimeInDays(i.date, true))
-                if(ibovDay) 
-                    r["IBOV"] = ibovDay.close
-                return r
+        //     downloadJson(data, "portfolio return")
+            let data = mockData
+            let firstPercent = 0
+            firstPercent = data[body.startDate].return
+            
+            //remove unused attributes
+            let returnPercentages = {}
+            Object.keys(data).forEach(date => returnPercentages[date] = { 'portfolio' : 1 + (data[date].return - firstPercent)   } )
+            let codes = ["IBOV", "IFIX", "HGLG11"]
+            codes.forEach(assetCode =>{
+                appendIndexTimeSeriesPercentage(returnPercentages, assetCode, new Date(body.startDate), new Date(body.endDate))
+                .then(returnPercentages => { 
+                    console.log(returnPercentages)
+                    returnPercentages = Object.keys(returnPercentages).map(date => {
+                        let item = { "date": new Date(date) }
+                        Object.keys(returnPercentages[date]).forEach(attr =>{
+                                item[attr] = returnPercentages[date][attr]
+                        })
+                        return item
+                        // let ibovDay = ibov.find(i => dateTimeInDays(r.date, true) == dateTimeInDays(i.date, true))
+                        // if(ibovDay) 
+                        //     r["IBOV"] = ibovDay.close
+                        // return r
+                    })
+                    console.log(returnPercentages)
+                    this.setState({
+                        data : returnPercentages,
+                        assetCodes: codes
+                    })   
+                } )
             })
-            console.log(returnPercentages)
-            this.setState({data : returnPercentages})   
-        } )
-            // }).catch(e => console.log(e))
+        // }).catch(e => console.log(e))
         // this.setState({data : [
         //     {date: new Date('2021-04-01'), close: 14},
         //     {date: new Date('2021-04-02'), close: 16},
@@ -493,7 +573,7 @@ class GetPortfolioReturn extends Component {
         if(this.state.data.length) 
             return ( 
                 
-                <LineChart type="hybrid" data={this.state.data} />
+                <LineChart type="hybrid" data={this.state.data} assetCodes={this.state.assetCodes} />
             );
         return ("")
     }

@@ -56,21 +56,43 @@ export function getData( assetCode) {
 	return promiseMSFT;
 }
 
-export function getIndexTimeSeriesPercentage(assetCode, startDate, endDate = new Date()){
+export function appendIndexTimeSeriesPercentage(series = [], assetCode, startDate, endDate = new Date()){
     var outputSize = getOutputSize(startDate);
     const promiseMSFT = fetch("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol="+assetCode+".SA&apikey="+ API_KEY +"&outputsize="+outputSize)
 	.then(response => response.json())
-	.then(data => convertToPercentage(assetCode, data, parseDate, startDate, endDate));
+	.then(data => {
+        let content = data["Time Series (Daily)"]
+        if(!content){
+            console.info("indexTimeSeries: No content found")
+            return{};
+        }
+        return convertToPercentageAndAppend(series, assetCode, content, parseDate, startDate, endDate)
+    });
 	return promiseMSFT;
 }
 
-function convertToPercentage(assetCode, json, parse, startDate, endDate){
+function convertToPercentageAndAppend(series, assetCode, content, parse, startDate, endDate){
     let startDay = dateTimeInDays(startDate, true)
     let endDay = dateTimeInDays(endDate, true)
-	let content = json["Time Series (Daily)"];
-	if(!content)
-		return{};
 
+	let firstDayValue = null;
+	let aux = Object.keys(content).reverse().forEach(date => {
+        let day = dateTimeInDays(new Date(date), true)
+        if(day >= startDay && day <= endDay){
+            if(!firstDayValue) 
+                firstDayValue = parseFloat(content[date]["4. close"])
+            if(series[date])
+                series[date][assetCode] = parseFloat(content[date]["4. close"])/firstDayValue
+            else series[date] = { assetCode : parseFloat(content[date]["4. close"])/firstDayValue}
+        }
+	});
+	return series;
+}
+
+function convertToPercentage(content, parse, startDate, endDate){
+    let startDay = dateTimeInDays(startDate, true)
+    let endDay = dateTimeInDays(endDate, true)
+    
 	let series = [];
 	let firstDayValue = null;
 	let aux = Object.keys(content).reverse().forEach(date => {
@@ -91,4 +113,13 @@ function getOutputSize(startDate){
     if( (new Date().getTime() - startDate.getTime()) / (1000 * 3600 * 24) < 100 )
         return "compact";
     return "full";
+}
+
+export function downloadJson(json, fileName = "json.txt"){
+    const element = document.createElement("a");
+    const file = new Blob([JSON.stringify(json)], {type: 'text/plain'});
+    element.href = URL.createObjectURL(file);
+    element.download = fileName+".txt";
+    document.body.appendChild(element); // Required for this to work in FireFox
+    element.click();
 }
