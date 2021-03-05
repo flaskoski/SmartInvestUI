@@ -25,6 +25,9 @@ import {
 
 //exponential average
 import { ema } from "react-stockcharts/lib/indicator";
+import CurrentCoordinate from 'react-stockcharts/lib/coordinates/CurrentCoordinate';
+
+import {MovingAverageTooltip} from "react-stockcharts/lib/tooltip";
 
 function round(number, precision = 0) {
 	const d = Math.pow(10, precision);
@@ -78,6 +81,23 @@ class LineChart extends React.Component {
 		const gridWidth = width - margin.left - margin.right;
 
 		const showGrid = true;
+
+        const colors = ["green", "orange", "blue", "purple", "red", "#FF00FF", "gray"]
+        const yPortfolioAccessor = d => d.portfolio 
+        const legends = [{
+            yAccessor: yPortfolioAccessor,
+            type: "Portfolio",
+            stroke: "black",
+            windowSize: 1
+        }];
+        assetCodes.forEach( (code, i) =>{
+            legends.push({
+                yAccessor: d => d[code],
+                type: code,
+                stroke: colors[i],
+                windowSize: 1
+            })
+        })
 
 		// const candlesAppearance = {
 		// 	stroke: function stroke(d) { return d.close > d.open ? "#6BA583" : "#DB0000"},
@@ -166,13 +186,26 @@ class LineChart extends React.Component {
 						orient="right"
 						displayFormat={format(".2f")} />
 
+                    <CurrentCoordinate yAccessor={yPortfolioAccessor} fill="black"/>
+
+                    {this.props.assetCodes.map((attr, i) => {return (
+                        <CurrentCoordinate yAccessor={d => d[attr]} fill={colors[i]} />
+                    )})}
+                                            
                     <LineSeries
-						yAccessor={d => d.portfolio} />
-                        
+						yAccessor={yPortfolioAccessor} stroke="black" />
+
                     {this.props.assetCodes.map((attr, i) => {return (
                         <LineSeries
-                            yAccessor={d => d[attr]} />)
-                    })}
+                            yAccessor={d => d[attr]} 
+                            stroke={colors[i]} />
+                    )})}
+
+                    <MovingAverageTooltip
+						onClick={e => this.props.removeLine(e.type)}
+						origin={[15, 15]}
+						options={legends}
+					/>
 
                     {/* <LineSeries
 						yAccessor={d => d['IBOV']} /> */}

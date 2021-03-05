@@ -13,7 +13,7 @@ class AssetSelector extends Component {
 
     render() { 
         return ( 
-        <section style={{float: "left"}}>
+        <section style={{float: (this.props.float? this.props.float : "left") }}>
             {/* <label>Choose an asset:</label> */}
             {/* <input style={{margin: "5px"}} onChange={this.changeAssetValue} type="text" maxLength="6" id="input_asset" /> */}
             <TextField style={{margin: "5px"}} label="Choose an Asset" onChange={this.changeAssetValue} type="text" maxLength="6" id="input_asset"></TextField>

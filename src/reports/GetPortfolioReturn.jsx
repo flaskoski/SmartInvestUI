@@ -4,7 +4,8 @@ import ChartComponent from '../charts/ChartComponent';
 import CandleStickChart from '../charts/CandleStickChart';
 import LineChart from '../charts/LineChart';
 import { appendIndexTimeSeriesPercentage, downloadJson } from '../charts/ParseData';
-import { dateTimeInDays } from '../common/convert';
+import { dateObjectToArray, dateTimeInDays } from '../common/convert';
+import AssetSelector from '../charts/AssetSelector';
 
 const mockData = {
     "2020-10-02": {
@@ -512,7 +513,9 @@ const mockData = {
 class GetPortfolioReturn extends Component {
     constructor(props) {
         super(props);
-        this.state = { data: [] }
+        this.state = { data: {}, startDate: "2020-10-02", endDate: "2021-03-03"}
+        this.assetSelectedEvent = this.assetSelectedEvent.bind(this)
+        this.removeAssetHandler = this.removeAssetHandler.bind(this)
     }
     componentDidMount(){
         let today = new Date()
@@ -538,22 +541,11 @@ class GetPortfolioReturn extends Component {
             //remove unused attributes
             let returnPercentages = {}
             Object.keys(data).forEach(date => returnPercentages[date] = { 'portfolio' : 1 + (data[date].return - firstPercent)   } )
-            let codes = ["IBOV", "IFIX", "HGLG11"]
+            let codes = ["IBOV", "IFIX"]
             codes.forEach(assetCode =>{
                 appendIndexTimeSeriesPercentage(returnPercentages, assetCode, new Date(body.startDate), new Date(body.endDate))
                 .then(returnPercentages => { 
-                    console.log(returnPercentages)
-                    returnPercentages = Object.keys(returnPercentages).map(date => {
-                        let item = { "date": new Date(date) }
-                        Object.keys(returnPercentages[date]).forEach(attr =>{
-                                item[attr] = returnPercentages[date][attr]
-                        })
-                        return item
-                        // let ibovDay = ibov.find(i => dateTimeInDays(r.date, true) == dateTimeInDays(i.date, true))
-                        // if(ibovDay) 
-                        //     r["IBOV"] = ibovDay.close
-                        // return r
-                    })
+                    // console.log(returnPercentages)
                     console.log(returnPercentages)
                     this.setState({
                         data : returnPercentages,
@@ -570,12 +562,29 @@ class GetPortfolioReturn extends Component {
         return ("");
     }
     render() {
-        if(this.state.data.length) 
+        if(Object.keys(this.state.data).length > 0)
             return ( 
-                
-                <LineChart type="hybrid" data={this.state.data} assetCodes={this.state.assetCodes} />
+                <section>
+                    <div style={{"marginLeft": "30px" }} ><AssetSelector assetSelectedHandler={this.assetSelectedEvent} float="none" /></div>
+                    <LineChart data={dateObjectToArray(this.state.data)} assetCodes={this.state.assetCodes} removeLine={this.removeAssetHandler} />
+                </section>
             );
         return ("")
+    }
+
+    assetSelectedEvent(asset){
+        appendIndexTimeSeriesPercentage(this.state.data, asset, new Date(this.state.startDate), new Date(this.state.endDate))
+                .then(percentages => { 
+                    console.log(percentages)
+                    this.setState({
+                        data : percentages,
+                        assetCodes: [...this.state.assetCodes, asset]
+                    })   
+                } )
+    }
+
+    removeAssetHandler(asset){
+        console.log(asset)
     }
 }
 export default GetPortfolioReturn;
