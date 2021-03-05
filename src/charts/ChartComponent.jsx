@@ -62,7 +62,7 @@ class ChartComponent extends React.Component {
                         data: null,
                         message : ''});
 
-        getData(process.env.REACT_APP_API_KEY_ALPHA, newAssetCode).then(assetData => {
+        getData(newAssetCode).then(assetData => {
             if(Object.keys(assetData).length === 0)
                 this.setState({ message: "Error: Asset not found!" });
             else

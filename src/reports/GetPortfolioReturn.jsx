@@ -3,6 +3,8 @@ import { Component } from 'react';
 import ChartComponent from '../charts/ChartComponent';
 import CandleStickChart from '../charts/CandleStickChart';
 import LineChart from '../charts/LineChart';
+import { getIndexTimeSeriesPercentage } from '../charts/ParseData';
+import { dateTimeInDays } from '../common/convert';
 
 const mockData = {
     "2020-10-02": {
@@ -463,9 +465,22 @@ class GetPortfolioReturn extends Component {
         // fetch("https://5qx8xnn5e4.execute-api.sa-east-1.amazonaws.com/dev/portfolioReturn", requestOptions)
         //     .then(res => res.json()).then((data) => {
         //         console.log(data)
-                let data = mockData
-                let returnPercentages = Object.keys(data).map(k => {return {'close' : data[k].return, 'date': new Date(k)} } )
-                this.setState({data : returnPercentages})
+        let data = mockData
+        let firstPercent = 0
+        firstPercent = data[body.startDate].return
+        let returnPercentages = Object.keys(data).map(k => {return {'portfolio' : 1 + (data[k].return - firstPercent), 'date': new Date(k)} } )
+        
+        getIndexTimeSeriesPercentage("IBOV", new Date(body.startDate), new Date(body.endDate))
+        .then(ibov => { console.log(ibov)
+            returnPercentages.map(r => {
+                let ibovDay = ibov.find(i => dateTimeInDays(r.date, true) == dateTimeInDays(i.date, true))
+                if(ibovDay) 
+                    r["IBOV"] = ibovDay.close
+                return r
+            })
+            console.log(returnPercentages)
+            this.setState({data : returnPercentages})   
+        } )
             // }).catch(e => console.log(e))
         // this.setState({data : [
         //     {date: new Date('2021-04-01'), close: 14},

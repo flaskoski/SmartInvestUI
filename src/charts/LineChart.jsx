@@ -150,7 +150,7 @@ class LineChart extends React.Component {
 
 				<Chart id={1} 
 					// yExtents={[d => [d.high, d.low], ema20.accessor(), ema10.accessor()]} 
-                    yExtents={[d => [d.close]]} 
+                    yExtents={[d => [d.portfolio, d["IBOV"]]]} 
 					padding={{ top: 10, bottom: 20 }}
 					>
 					
@@ -167,7 +167,9 @@ class LineChart extends React.Component {
 						displayFormat={format(".2f")} />
 
                     <LineSeries
-						yAccessor={d => d.close} />
+						yAccessor={d => d.portfolio} />
+                    <LineSeries
+						yAccessor={d => d["IBOV"]} />
 					<CrossHairCursor />
 					<InteractiveYCoordinate
 							yCoordinateList={this.state.yCoordinateList}
