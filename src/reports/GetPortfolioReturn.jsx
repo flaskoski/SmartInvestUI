@@ -584,7 +584,14 @@ class GetPortfolioReturn extends Component {
     }
 
     removeAssetHandler(asset){
-        console.log(asset)
+        // console.log(asset)
+        let newData = this.state.data
+        Object.keys(this.state.data).map(date => {
+            delete newData[date][asset];
+        })
+        let newAssets = this.state.assetCodes
+        newAssets.splice(newAssets.indexOf(asset), 1)
+        this.setState({data: newData, assetCodes: newAssets})
     }
 }
 export default GetPortfolioReturn;
