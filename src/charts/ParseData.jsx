@@ -57,7 +57,7 @@ export function getData( assetCode) {
 }
 
 export function appendIndexTimeSeriesPercentage(series = [], assetCode, startDate, endDate = new Date()){
-    var outputSize = getOutputSize(startDate);
+    var outputSize = getAlphaApiOutputSize(startDate);
     const promiseMSFT = fetch("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol="+assetCode+".SA&apikey="+ API_KEY +"&outputsize="+outputSize)
 	.then(response => response.json())
 	.then(data => {
@@ -83,7 +83,8 @@ function convertToPercentageAndAppend(series, assetCode, content, parse, startDa
                 firstDayValue = parseFloat(content[date]["4. close"])
             if(series[date])
                 series[date][assetCode] = parseFloat(content[date]["4. close"])/firstDayValue
-            else series[date] = { assetCode : parseFloat(content[date]["4. close"])/firstDayValue}
+            else if(content[date]) 
+                series[date] = { assetCode : parseFloat(content[date]["4. close"])/firstDayValue}
         }
 	});
 	return series;
@@ -109,7 +110,7 @@ function convertToPercentage(content, parse, startDate, endDate){
 	return series;
 }
 
-function getOutputSize(startDate){
+function getAlphaApiOutputSize(startDate){
     if( (new Date().getTime() - startDate.getTime()) / (1000 * 3600 * 24) < 100 )
         return "compact";
     return "full";
@@ -123,3 +124,4 @@ export function downloadJson(json, fileName = "json.txt"){
     document.body.appendChild(element); // Required for this to work in FireFox
     element.click();
 }
+

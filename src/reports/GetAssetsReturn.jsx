@@ -8,9 +8,9 @@ class GetAssetsReturn extends Component {
     }
     componentDidMount(){
         let today = new Date()
-        // getAssets().then( assets =>{
-            // assets.forEach(a =>{
-            let a = {code: "BBAS3", type:"Stocks"}
+        getAssets().then( assets =>{
+            assets.forEach(a =>{
+            // let a = {code: "BBAS3", type:"Stocks"}
                 fetch(process.env.REACT_APP_BACKEND_TRANSACTIONS+`?code=${a.code}&page=0&size=100&sort=date,asc`)
                 .then(res => res.json())
                 .then((data) => {
@@ -35,8 +35,8 @@ class GetAssetsReturn extends Component {
                     })
                 })
                 .catch(e => console.log(`Error getting return from asset ${a.code}!`))
-        //     })
-        // })
+            })
+        })
     }
     render() { 
         return ( "" );

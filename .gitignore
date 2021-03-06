@@ -13,6 +13,7 @@
 
 # misc
 /src/BatchOperations
+/src/reports/mockPortfolioReturn.json
 .DS_Store
 .env
 .env.local
