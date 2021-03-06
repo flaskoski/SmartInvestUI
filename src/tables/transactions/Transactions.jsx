@@ -19,7 +19,8 @@ class Transactions extends Component {
                 },{
                     name: "type",
                     label: "Action",
-                    type: "text",
+                    type: "choice",
+                    choices: ["BUY", "SELL", "DIVIDEND", "JCP"],
                     isRequired: true
                 },{
                     name: "price",
@@ -30,6 +31,7 @@ class Transactions extends Component {
                     name: "shares_number",
                     label: "Amount",
                     type: "int",
+                    defaultValue: 100,
                     isInput: true
                 },{
                     name: "date",

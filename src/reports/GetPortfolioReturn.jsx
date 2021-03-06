@@ -13,7 +13,7 @@ import raw from "raw.macro";
 class GetPortfolioReturn extends Component {
     constructor(props) {
         super(props);
-        this.state = { data: {}, startDate: "2019-11-01", endDate: "2021-03-04"}
+        this.state = { data: {}, startDate: "2020-08-01", endDate: "2021-03-04"}
         this.assetSelectedEvent = this.assetSelectedEvent.bind(this)
         this.removeAssetHandler = this.removeAssetHandler.bind(this)
     }

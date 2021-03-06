@@ -1,6 +1,7 @@
 import { Modal } from 'react-bootstrap';
 import React, { Component } from 'react';
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@material-ui/core';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, TextField } from '@material-ui/core';
+import "./CrudAddModal.css"
 
 class CrudAddModal extends Component {
     constructor(props) {
@@ -20,19 +21,24 @@ class CrudAddModal extends Component {
     // };
     handleAdd(event){
         event.preventDefault();
+
+        let newItem = this.state.newItem
+        this.props.itemFields.filter(f => f.defaultValue != undefined).forEach(f=>{
+            if(!newItem[f.name]) newItem[f.name] = f.defaultValue 
+        })
+
         console.log(this.state);
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(this.state.newItem)
+            body: JSON.stringify(newItem)
         };
         fetch(this.props.backendUrl, requestOptions)
             .then(response => response.json())
             .then(data => {
                 console.log(`New ${this.props.itemType} added`)
                 console.log(data)
-                this.state.newItem.id = data.id
-                this.props.handleAddToTable(true, this.state.newItem)
+                this.props.handleAddToTable(true, data)
             })
             .catch(e => {
                 console.error(`Error trying to add new ${this.props.itemType}!`)
@@ -41,7 +47,7 @@ class CrudAddModal extends Component {
     }
 
     handleInput(event){
-        const name = event.target.id;
+        const name = (event.target.id ?event.target.id : event.target.name);
         const newValue = event.target.value;
         this.setState({ 
             newItem : {
@@ -85,6 +91,19 @@ class CrudAddModal extends Component {
                                         />		
                                         
                                     );
+                                case 'choice':
+                                    // if(field.choices.length < 5)
+                                        return (	
+                                        <div className="material-ui-radioGroup" >
+                                            <FormLabel component="legend">{field.label}</FormLabel>
+                                            <RadioGroup aria-label={field.label} name={field.name} id={field.name} onChange={this.handleInput}>
+                                                {field.choices.map(choice => 
+                                                    <FormControlLabel value={choice} control={<Radio />} label={choice} />)}
+                                                {/* <FormControlLabel value="disabled" disabled control={<Radio />} label="(Disabled option)" /> */}
+                                            </RadioGroup>
+                                        </div>
+                                            
+                                        );
                                 default:
                                     return (	
                                         <TextField
@@ -94,6 +113,7 @@ class CrudAddModal extends Component {
                                         id={field.name}
                                         onChange={this.handleInput}
                                         label={field.label}
+                                        defaultValue={field.defaultValue}
                                         type={field.type}
                                         fullWidth
                                         // {field.size? field.size : fullWidth}

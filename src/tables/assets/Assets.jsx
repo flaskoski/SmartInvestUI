@@ -25,7 +25,8 @@ class Assets extends Component {
                 },{
                     name: "type",
                     label: "Type",
-                    type: "text",
+                    type: "choice",
+                    choices: ["Stocks", "REIT"],
                     isRequired: true
                 },{
                     name: "price",
