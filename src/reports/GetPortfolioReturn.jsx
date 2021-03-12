@@ -8,6 +8,7 @@ import { dateObjectToArray, dateTimeInDays, getShortDate } from '../common/conve
 import AssetSelector from '../charts/AssetSelector';
 import raw from "raw.macro";
 import Auth from '@aws-amplify/auth';
+import { buildPostCall } from '../common/apiCalls/LambdaCallBuilder';
 
 
 
@@ -24,36 +25,26 @@ class GetPortfolioReturn extends Component {
             startDate : this.state.startDate,
             endDate : this.state.endDate
         }
-        Auth.currentSession().then(sessionInfo => {
-            const requestOptions = {
-                method: 'POST',
-                headers: {  'Content-Type': 'application/json',
-                            'Accept': 'application/json',
-                            "x-api-key": process.env.REACT_APP_API_KEY_AWS,
-                            "Authorization": `Bearer ${sessionInfo.getIdToken().getJwtToken()}`},
-                body: JSON.stringify(body)
-            };
-            fetch("https://5qx8xnn5e4.execute-api.sa-east-1.amazonaws.com/dev/portfolioReturn", requestOptions)
-            .then(res => res.json()).then((data) => {
-                    console.log(data)
-                downloadJson(data, "portfolio return")
-                // let data = JSON.parse(raw("./mockPortfolioReturn.json"))
-                let returnPercentages = this.setPortfolioSeries(data)
-                
-                let codes = ["IBOV", "IFIX"]
-                codes.forEach(assetCode =>{
-                    appendIndexTimeSeriesPercentage(returnPercentages, assetCode, new Date(this.state.startDate), new Date(this.state.endDate))
-                    .then(returnPercentages => { 
-                        // console.log(returnPercentages)
-                        console.log(returnPercentages)
-                        this.setState({
-                            data : returnPercentages,
-                            assetCodes: codes
-                        })   
-                    } )
-                })
-            }).catch(e => console.log(e))
-        })
+        buildPostCall(process.env.REACT_APP_API_GET_PORTFOLIO_RETURN, body).then(data => {
+            // downloadJson(data, "portfolio return")
+            // let data = JSON.parse(raw("./mockPortfolioReturn.json"))
+            
+            console.log(data)
+            let returnPercentages = this.setPortfolioSeries(data)
+            
+            let codes = ["IBOV", "IFIX"]
+            codes.forEach(assetCode =>{
+                appendIndexTimeSeriesPercentage(returnPercentages, assetCode, new Date(this.state.startDate), new Date(this.state.endDate))
+                .then(returnPercentages => { 
+                    // console.log(returnPercentages)
+                    console.log(returnPercentages)
+                    this.setState({
+                        data : returnPercentages,
+                        assetCodes: codes
+                    })   
+                } )
+            })
+        }).catch(e => console.log(e))
         // return ("");
     }
     setPortfolioSeries(data){

@@ -1,10 +1,11 @@
 import getAssets from '../common/apiCalls/getAssets';
 import { Component } from 'react';
+import { buildPostCall } from '../common/apiCalls/LambdaCallBuilder';
 
 class GetAssetsReturn extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { updatedAssets : [] }
     }
     componentDidMount(){
         let today = new Date()
@@ -15,31 +16,32 @@ class GetAssetsReturn extends Component {
                 .then(res => res.json())
                 .then((data) => {
                     console.log(`${(data.content? data.content.length :"0")} transactions loaded from ${a.code}`)
-                    console.log(data.content)
+                    // console.log(data.content)
                     let body = {
                         asset : a,
                         startDate : "2019-01-01",
                         endDate : `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`,
                         transactions : data.content
                     }
-                    const requestOptions = {
-                        method: 'POST',
-                        headers: {  'Content-Type': 'application/json',
-                                    'Accept': 'application/json',
-                                    "x-api-key": process.env.REACT_APP_API_KEY_AWS },
-                        body: JSON.stringify(body)
-                    };
-                    fetch(process.env.REACT_APP_API_GET_ASSET_RETURN, requestOptions)
-                    .then(res => res.json()).then((data) => {
-                        console.log(data)
-                    })
+                    buildPostCall(process.env.REACT_APP_API_GET_ASSET_RETURN, body).then(updated => {
+                        this.setState({ updatedAssets: 
+                            [...this.state.updatedAssets, updated]
+                        })
+                    }).catch(e => console.warn(`Error getting return from asset ${a.code}!`))
                 })
-                .catch(e => console.log(`Error getting return from asset ${a.code}!`))
+                .catch(e => console.warn(`Error getting return from asset ${a.code}!`))
             })
         })
     }
     render() { 
-        return ( "" );
+        return ( 
+            <div style={{margin:"5px"}}>
+                <h4>Updated Assets</h4>
+                {this.state.updatedAssets.map((assetInfo, i) =>
+                    <p>{JSON.stringify(assetInfo)}</p> 
+                )}
+            </div>
+        );
     }
 }
  
@@ -62,5 +64,5 @@ function GetPortfolioReturn(props){
         .then(res => res.json()).then((data) => {
             console.log(data)
         }).catch(e => console.log(e))
-    return ("");
+    
 }

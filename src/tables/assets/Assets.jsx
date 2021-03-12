@@ -4,6 +4,7 @@ import CrudTable from '../../common/CrudTable/CrudTable';
 import Menu from '../../menu/Menu';
 import "./assets.css"
 import Auth from '@aws-amplify/auth';
+import { getAuthorizationHeader } from '../../common/apiCalls/LambdaCallBuilder';
 
 class Assets extends Component {
     constructor(props){
@@ -52,30 +53,27 @@ class Assets extends Component {
     }
 
     getCurrentAssetPrice(asset){
-        return Auth.currentSession().then(sessionInfo => 
-            fetch(process.env.REACT_APP_API_GET_CURRENT_QUOTE + '?code='+ asset.code,
-                {"headers": {"Authorization": `Bearer ${sessionInfo.getIdToken().getJwtToken()}`,
-                                "x-api-key": process.env.REACT_APP_API_KEY_AWS}
-            }))
-            .then(res => res.json())
-            .then(assetLastValues =>{
-                console.log(`${(asset? asset.code: "")} price loaded: ${assetLastValues.currentPrice}`)
-            
-                asset.price = (
-                <div className="asset-price">
-                    <div style={{"float": "left", "width" : "40%"}}><div  style={{"float": "center"}}> {Math.round(assetLastValues.currentPrice * 100) / 100} </div></div>
-                    <div style={{"color": (assetLastValues.change>0? "green" : "red"), "float": "left", "width" : "40%"}}>
-                    <p className="quote-change" >{Math.round(assetLastValues.change * 100) / 100}</p>
-                        <p className="quote-change-percentage" style={{"color": (assetLastValues.changePercent.split('%')[0]>0? "green" : "red")}}>{Math.round(assetLastValues.changePercent.split("%")[0] * 100) / 100}%</p>
-                    </div>
-                    <div style={{"float": "left", "width" : "20%"}}><span style={{"color": (assetLastValues.change>0? "green" : "red")}}  className="material-icons">{(assetLastValues.change>0? "arrow_upward" : "arrow_downward")}</span></div>
-                </div>)
-                return asset
-            })
-            .catch(e => {
-                console.log("error fetching price for asset", asset.code)
-                return asset
-            })
+        return getAuthorizationHeader().then(headers =>
+            fetch(process.env.REACT_APP_API_GET_CURRENT_QUOTE + '?code='+ asset.code, { ...headers }))
+                .then(res => res.json())
+                .then(assetLastValues =>{
+                    console.log(`${(asset? asset.code: "")} price loaded: ${assetLastValues.currentPrice}`)
+                
+                    asset.price = (
+                    <div className="asset-price">
+                        <div style={{"float": "left", "width" : "40%"}}><div  style={{"float": "center"}}> {Math.round(assetLastValues.currentPrice * 100) / 100} </div></div>
+                        <div style={{"color": (assetLastValues.change>0? "green" : "red"), "float": "left", "width" : "40%"}}>
+                        <p className="quote-change" >{Math.round(assetLastValues.change * 100) / 100}</p>
+                            <p className="quote-change-percentage" style={{"color": (assetLastValues.changePercent.split('%')[0]>0? "green" : "red")}}>{Math.round(assetLastValues.changePercent.split("%")[0] * 100) / 100}%</p>
+                        </div>
+                        <div style={{"float": "left", "width" : "20%"}}><span style={{"color": (assetLastValues.change>0? "green" : "red")}}  className="material-icons">{(assetLastValues.change>0? "arrow_upward" : "arrow_downward")}</span></div>
+                    </div>)
+                    return asset
+                })
+                .catch(e => {
+                    console.log("error fetching price for asset", asset.code)
+                    return asset
+                })
         // return asset.price.promise
         // this.setState({ price: "12.34" })
     }

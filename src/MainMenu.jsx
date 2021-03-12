@@ -16,8 +16,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import Auth from '@aws-amplify/auth';
+import {AccountBox, Assessment, TableChart, Update, TrendingUp} from '@material-ui/icons';
 
 const drawerWidth = 240;
 
@@ -87,6 +87,7 @@ export default function MiniDrawer(props) {
     //Get menu options
   const signInScreenOption = "Profile"
   const menuOptions = props.children.map((child, i) => child.key)
+  const menuIcons = props.children.map((child, i) => child.props.children)
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -96,11 +97,12 @@ export default function MiniDrawer(props) {
     setOpen(!open);
   };
 
+  Auth.currentSession().then(sessionInfo => console.log(sessionInfo)).catch(e => {})
   // componentDidMount/componentDidUpdate:
   useEffect(() => {
     Auth.currentAuthenticatedUser().catch(e => {
         setOptionSelected(signInScreenOption)
-        console.log("Not signed in!")
+        console.info("Not signed in!")
     })
     // if(!optionSelected) setOptionSelected(1);
   });
@@ -137,7 +139,7 @@ export default function MiniDrawer(props) {
         <List>
           {menuOptions.map((text, index) => (
             <ListItem button key={text} selected={optionSelected==text? true: false} id={index} onClick={selectOption}>
-              <ListItemIcon> <InboxIcon id={index}/> </ListItemIcon>
+              <ListItemIcon> {menuIcons[index]} </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           ))}

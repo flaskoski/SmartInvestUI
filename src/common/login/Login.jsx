@@ -72,7 +72,7 @@ class Login extends Component {
         <section>
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
-                    <h4 className="display-4">Smart Invest - Login</h4>
+                    <h2>Smart Invest - Login</h2>
                     {/* <p class="lead">Integração cognito via javascript</p> */}
                 </div>
             </div>
