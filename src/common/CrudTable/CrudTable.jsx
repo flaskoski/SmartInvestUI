@@ -94,7 +94,7 @@ class CrudTable extends Component {
 
     //---Dialogs events handlers
     handleAdd(isAdded, newItem){
-        if(isAdded){
+        if(isAdded){ //TODO validation
             let allItems = this.state.items
             allItems.push(newItem)
             this.setState({

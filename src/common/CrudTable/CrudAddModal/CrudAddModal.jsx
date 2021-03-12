@@ -24,7 +24,7 @@ class CrudAddModal extends Component {
 
         let newItem = this.state.newItem
         this.props.itemFields.filter(f => f.defaultValue != undefined).forEach(f=>{
-            if(!newItem[f.name]) newItem[f.name] = f.defaultValue 
+            if(!newItem[f.name]) newItem[f.name] = f.defaultValue //TODO if field is empty
         })
 
         console.log(this.state);

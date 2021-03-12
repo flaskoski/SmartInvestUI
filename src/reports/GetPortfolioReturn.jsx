@@ -13,7 +13,7 @@ import raw from "raw.macro";
 class GetPortfolioReturn extends Component {
     constructor(props) {
         super(props);
-        this.state = { data: {}, startDate: "2020-08-01", endDate: "2021-03-04"}
+        this.state = { data: {}, startDate: "2020-08-01", endDate: "2021-03-10"}
         this.assetSelectedEvent = this.assetSelectedEvent.bind(this)
         this.removeAssetHandler = this.removeAssetHandler.bind(this)
     }
@@ -30,11 +30,11 @@ class GetPortfolioReturn extends Component {
                         "x-api-key": process.env.REACT_APP_API_KEY_AWS },
             body: JSON.stringify(body)
         };
-        // fetch("https://5qx8xnn5e4.execute-api.sa-east-1.amazonaws.com/dev/portfolioReturn", requestOptions)
-        // .then(res => res.json()).then((data) => {
-        //         console.log(data)
+        fetch("https://5qx8xnn5e4.execute-api.sa-east-1.amazonaws.com/dev/portfolioReturn", requestOptions)
+        .then(res => res.json()).then((data) => {
+                console.log(data)
         //     downloadJson(data, "portfolio return")
-            let data = JSON.parse(raw("./mockPortfolioReturn.json"))
+            // let data = JSON.parse(raw("./mockPortfolioReturn.json"))
             let returnPercentages = this.setPortfolioSeries(data)
             
             let codes = ["IBOV", "IFIX"]
@@ -49,12 +49,7 @@ class GetPortfolioReturn extends Component {
                     })   
                 } )
             })
-        // }).catch(e => console.log(e))
-        // this.setState({data : [
-        //     {date: new Date('2021-04-01'), close: 14},
-        //     {date: new Date('2021-04-02'), close: 16},
-        //     {date: new Date('2021-04-03'), close: 15},
-        // ]})
+        }).catch(e => console.log(e))
         return ("");
     }
     setPortfolioSeries(data){
