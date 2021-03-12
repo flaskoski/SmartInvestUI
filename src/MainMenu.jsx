@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -88,11 +88,16 @@ export default function MiniDrawer(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  const [optionSelected, setOptionSelected] = React.useState(null);
+  const [optionSelected, setOptionSelected] = React.useState("Profile"); //start on the login page 
 
   const handleDrawerToggle = () => {
     setOpen(!open);
   };
+
+  // componentDidMount/componentDidUpdate:
+//   useEffect(() => {
+//     if(!optionSelected) setOptionSelected(1);
+//   });
 
   const selectOption = (event) => {
     if(event.target.innerText) //clicked on the text
@@ -101,7 +106,6 @@ export default function MiniDrawer(props) {
         setOptionSelected(menuOptions[event.target.id])
     // console.log(event.target)
   }
-
   return (
     <div className={classes.root}>
       {/* <CssBaseline /> */}

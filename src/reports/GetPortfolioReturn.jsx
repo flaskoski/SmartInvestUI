@@ -30,11 +30,11 @@ class GetPortfolioReturn extends Component {
                         "x-api-key": process.env.REACT_APP_API_KEY_AWS },
             body: JSON.stringify(body)
         };
-        fetch("https://5qx8xnn5e4.execute-api.sa-east-1.amazonaws.com/dev/portfolioReturn", requestOptions)
-        .then(res => res.json()).then((data) => {
-                console.log(data)
+        // fetch("https://5qx8xnn5e4.execute-api.sa-east-1.amazonaws.com/dev/portfolioReturn", requestOptions)
+        // .then(res => res.json()).then((data) => {
+        //         console.log(data)
         //     downloadJson(data, "portfolio return")
-            // let data = JSON.parse(raw("./mockPortfolioReturn.json"))
+            let data = JSON.parse(raw("./mockPortfolioReturn.json"))
             let returnPercentages = this.setPortfolioSeries(data)
             
             let codes = ["IBOV", "IFIX"]
@@ -49,7 +49,7 @@ class GetPortfolioReturn extends Component {
                     })   
                 } )
             })
-        }).catch(e => console.log(e))
+        // }).catch(e => console.log(e))
         return ("");
     }
     setPortfolioSeries(data){
