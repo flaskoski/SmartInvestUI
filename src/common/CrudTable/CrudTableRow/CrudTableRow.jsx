@@ -32,7 +32,7 @@ class CrudTableRow extends Component {
         //     fieldValues.push({key: fieldKey,value : fieldValue})
         // });
         return ( 
-            <tr key={"row_"+this.props.itemKey} className="crud-table-row">
+            <tr key={"row_"+this.props.key} className="crud-table-row">
                 <td>
                     <span className="custom-checkbox">
                         <input className="margin10" type="checkbox" id="checkbox5" name="options[]" value="1" />
@@ -42,7 +42,7 @@ class CrudTableRow extends Component {
                 {this.props.fields.map((field, i) =>{
                     if(field.name)
                         return(
-                            <td>{this.state.item[field.name]}</td>
+                            <td>{this.state.item? this.state.item[field.name] : "" }</td>
                         )
                     else{
                         console.warning(`Parameter 'name' for field number ${i} not informed`)

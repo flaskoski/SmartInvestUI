@@ -12,7 +12,8 @@ class Login extends Component {
         this.signIn = this.signIn.bind(this)
         this.signOut = this.signOut.bind(this)
         
-        Auth.currentUserCredentials().then(info => {
+        Auth.currentAuthenticatedUser().then(info => {
+            console.log(info)
             if(info) 
                 this.setState({isSignedIn: true, username: info.username})
         }).catch(e => console.log("Not signed in!"))
@@ -60,11 +61,12 @@ class Login extends Component {
     }
 
     render() { 
-        Auth.currentUserPoolUser()
+        Auth.currentAuthenticatedUser()
         .catch(e => {
             console.log(e)
             if(this.state.isSignedIn) this.setState({isSignedIn: false})
         })
+        console.log(localStorage.getItem("IdToken"))
         return ( 
             
         <section>

@@ -17,6 +17,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import Auth from '@aws-amplify/auth';
 
 const drawerWidth = 240;
 
@@ -84,20 +85,25 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MiniDrawer(props) {
     //Get menu options
+  const signInScreenOption = "Profile"
   const menuOptions = props.children.map((child, i) => child.key)
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  const [optionSelected, setOptionSelected] = React.useState("Profile"); //start on the login page 
+  const [optionSelected, setOptionSelected] = React.useState(signInScreenOption); //start on the login page 
 
   const handleDrawerToggle = () => {
     setOpen(!open);
   };
 
   // componentDidMount/componentDidUpdate:
-//   useEffect(() => {
-//     if(!optionSelected) setOptionSelected(1);
-//   });
+  useEffect(() => {
+    Auth.currentAuthenticatedUser().catch(e => {
+        setOptionSelected(signInScreenOption)
+        console.log("Not signed in!")
+    })
+    // if(!optionSelected) setOptionSelected(1);
+  });
 
   const selectOption = (event) => {
     if(event.target.innerText) //clicked on the text
