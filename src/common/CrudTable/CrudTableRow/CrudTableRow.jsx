@@ -13,8 +13,6 @@ class CrudTableRow extends Component {
     }
     
     componentDidMount(){
-        console.log("row didmount")
-        
         if(typeof this.props.itemUpdateHandler === "function")
             this.props.itemUpdateHandler(this.state.item).then(updatedItem =>{
                 this.setState({

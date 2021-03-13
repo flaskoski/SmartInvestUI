@@ -1,6 +1,7 @@
 import getAssets from '../common/apiCalls/getAssets';
 import { Component } from 'react';
 import { buildPostCall } from '../common/apiCalls/LambdaCallBuilder';
+import Auth from '@aws-amplify/auth';
 
 class GetAssetsReturn extends Component {
     constructor(props) {
@@ -9,36 +10,38 @@ class GetAssetsReturn extends Component {
     }
     componentDidMount(){
         let today = new Date()
-        getAssets().then( assets =>{
-            assets.forEach(a =>{
-            // let a = {code: "BBAS3", type:"Stocks"}
+        // getAssets().then( assets =>{
+        //     assets.forEach(a =>{
+            let a = {code: "BBAS3", type:"Stocks"}
                 fetch(process.env.REACT_APP_BACKEND_TRANSACTIONS+`?code=${a.code}&page=0&size=100&sort=date,asc`)
                 .then(res => res.json())
-                .then((data) => {
-                    console.log(`${(data.content? data.content.length :"0")} transactions loaded from ${a.code}`)
-                    // console.log(data.content)
-                    let body = {
-                        asset : a,
-                        startDate : "2019-01-01",
-                        endDate : `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`,
-                        transactions : data.content
-                    }
-                    buildPostCall(process.env.REACT_APP_API_GET_ASSET_RETURN, body).then(updated => {
-                        this.setState({ updatedAssets: 
-                            [...this.state.updatedAssets, updated]
-                        })
-                    }).catch(e => console.warn(`Error getting return from asset ${a.code}!`))
-                })
-                .catch(e => console.warn(`Error getting return from asset ${a.code}!`))
-            })
-        })
+                .then(data => 
+                    Auth.currentAuthenticatedUser().then(user => {
+                        console.log(`${(data.content? data.content.length :"0")} transactions loaded from ${a.code}`)
+                        // console.log(data.content)
+                        let body = {
+                            asset : a,
+                            startDate : "2019-01-01",
+                            endDate : `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`,
+                            transactions : data.content,
+                            username: user.username
+                        }
+                        buildPostCall(process.env.REACT_APP_API_GET_ASSET_RETURN, body).then(updated => {
+                            this.setState({ updatedAssets: 
+                                [...this.state.updatedAssets, updated]
+                            })
+                        }).catch(e => console.warn(`Error trying to update asset ${a.code}!`))
+                    })
+                ).catch(e => console.warn(`Error getting return from asset ${a.code}!`))
+        //     })
+        // })
     }
     render() { 
         return ( 
             <div style={{margin:"5px"}}>
                 <h4>Updated Assets</h4>
                 {this.state.updatedAssets.map((assetInfo, i) =>
-                    <p>{JSON.stringify(assetInfo)}</p> 
+                    <p key={`updatedAsset-${i}`}>{JSON.stringify(assetInfo)}</p> 
                 )}
             </div>
         );

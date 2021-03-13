@@ -15,7 +15,6 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import Auth from '@aws-amplify/auth';
 import {AccountBox, Assessment, TableChart, Update, TrendingUp} from '@material-ui/icons';
 
@@ -97,7 +96,7 @@ export default function MiniDrawer(props) {
     setOpen(!open);
   };
 
-  Auth.currentSession().then(sessionInfo => console.log(sessionInfo)).catch(e => {})
+  Auth.currentAuthenticatedUser().then(user => console.log(user)).catch(e => {})
   // componentDidMount/componentDidUpdate:
   useEffect(() => {
     Auth.currentAuthenticatedUser().catch(e => {

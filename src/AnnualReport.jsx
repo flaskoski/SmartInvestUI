@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { DataGrid } from '@material-ui/data-grid';
 import getAllTransactions from './common/apiCalls/getTransactions';
 import Auth from '@aws-amplify/auth';
+import { buildPostCall } from './common/apiCalls/LambdaCallBuilder';
 
 class AnnualReport extends Component {
     constructor(props) {
@@ -31,19 +32,8 @@ class AnnualReport extends Component {
         getAllTransactions(this.getTotalsPerMonth)
     }
 
-
-        
-            // let a = {code: "ITUB4"}
-            
-        // fetch("https://5qx8xnn5e4.execute-api.sa-east-1.amazonaws.com/dev/.....", requestOptions)
-        // .then(res => res.json()).then((data) => {
-        //     console.log(data)
-        // })
-    // }
-
     getTotalsPerMonth(transactions){
         let today = new Date()
-        // this.setState({ transactions: transactions })
         console.log("terminou:"+ transactions.length)
         //TODO call lambda with transactions    
         let body = {
@@ -51,36 +41,26 @@ class AnnualReport extends Component {
             endDate : `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`,
             transactions : transactions
         }
-        Auth.currentSession().then(sessionInfo => {
-            const requestOptions = {
-                method: 'POST',
-                headers: {  'Content-Type': 'application/json',
-                            "x-api-key": process.env.REACT_APP_API_KEY_AWS,
-                            "Authorization": `Bearer ${sessionInfo.getIdToken().getJwtToken()}`},
-                body: JSON.stringify(body)
-            };
-            fetch("https://5qx8xnn5e4.execute-api.sa-east-1.amazonaws.com/dev/totalsPerMonth", requestOptions)
-            .then(res => res.json()).then((totals) => {
-                console.log(totals)
-                let rows = [] 
-                Object.keys(totals).forEach(year => {
-                    Object.keys(totals[year]).sort((a,b)=> parseInt(a)-parseInt(b)).forEach(mon => {
-                        rows.push({
-                            'id': year+"-"+mon,
-                            'year': year,
-                            'month': mon,
-                            'stocksSales': totals[year][mon].stocks.sales,
-                            'stocksProfit': Math.round(totals[year][mon].stocks.profit * 100)/100,
-                            "stocksFees" : Math.round(totals[year][mon].stocks.fees * 100)/100,
-                            'reitSales': totals[year][mon].reit.sales,
-                            'reitProfit': Math.round(totals[year][mon].reit.profit * 100)/100 ,
-                            'reitFees' : Math.round(totals[year][mon].reit.fees * 100)/100,
-                        })
+        buildPostCall(REACT_APP_API_GET_TOTALS_PER_MONTH, body).then((totals) => {
+            console.log(totals)
+            let rows = [] 
+            Object.keys(totals).forEach(year => {
+                Object.keys(totals[year]).sort((a,b)=> parseInt(a)-parseInt(b)).forEach(mon => {
+                    rows.push({
+                        'id': year+"-"+mon,
+                        'year': year,
+                        'month': mon,
+                        'stocksSales': totals[year][mon].stocks.sales,
+                        'stocksProfit': Math.round(totals[year][mon].stocks.profit * 100)/100,
+                        "stocksFees" : Math.round(totals[year][mon].stocks.fees * 100)/100,
+                        'reitSales': totals[year][mon].reit.sales,
+                        'reitProfit': Math.round(totals[year][mon].reit.profit * 100)/100 ,
+                        'reitFees' : Math.round(totals[year][mon].reit.fees * 100)/100,
                     })
                 })
-                console.log(rows)
-                this.setState({ rows: rows })
             })
+            console.log(rows)
+            this.setState({ rows: rows })
         })
     }
 

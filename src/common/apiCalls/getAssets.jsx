@@ -1,7 +1,8 @@
-import React from 'react';
+import Auth from '@aws-amplify/auth';
+
 
 export default function getAssets(page=0, size=80){
-    return fetch(process.env.REACT_APP_BACKEND_ASSETS+`?page=${page}&size=${size}`)
+    return Auth.currentAuthenticatedUser().then(user => fetch(process.env.REACT_APP_BACKEND_ASSETS+`?username=${user.username}&page=${page}&size=${size}`))
     .then(res => res.json())
     .then((data) => {
         console.log(`Assets loaded ${(data.content? data.content.length :"")}`)

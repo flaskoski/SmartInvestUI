@@ -13,9 +13,8 @@ class Login extends Component {
         this.signOut = this.signOut.bind(this)
         
         Auth.currentAuthenticatedUser().then(info => {
-            console.log(info)
             if(info) 
-                this.setState({isSignedIn: true, username: info.username})
+                this.setState({isSignedIn: true, currentUser: info.username})
         }).catch(e => console.log("Not signed in!"))
     }
     handleInput(event){
@@ -45,7 +44,7 @@ class Login extends Component {
         try {
             const user = await Auth.signIn(this.state.username, this.state.password);
             console.log(user)
-            this.setState({isSignedIn: true, username: user.username})
+            this.setState({isSignedIn: true, currentUser: user.username})
         } catch (error) {
             console.log('error signing in', error);
         }
@@ -63,10 +62,8 @@ class Login extends Component {
     render() { 
         Auth.currentAuthenticatedUser()
         .catch(e => {
-            console.log(e)
             if(this.state.isSignedIn) this.setState({isSignedIn: false})
         })
-        console.log(localStorage.getItem("IdToken"))
         return ( 
             
         <section>
@@ -95,7 +92,7 @@ class Login extends Component {
             </div>
             <div id="sign-out-form" className="container" hidden={!this.state.isSignedIn}>
                 <div className="form-group" id="userNameDiv">
-                    <p className="lead" style={{verticalAlign: "bottom", paddingBottom: "11px" }}>Bem-vindo {this.state.username}!</p>
+                    <p className="lead" style={{verticalAlign: "bottom", paddingBottom: "11px" }}>Bem-vindo(a) {this.state.currentUser}!</p>
                         <Button variant="contained" color="primary" onClick={this.signOut} >Sign Out</Button> 
                 </div>
             </div>
