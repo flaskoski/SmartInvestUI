@@ -19,6 +19,14 @@ class Assets extends Component {
                     type: "text",
                     isInput: false,
                 },{
+                    name: "username",
+                    label: "Username",
+                    type: "text",
+                    isInput: true,
+                    isReadOnly: true,
+                    hide: true,
+                    defaultValue: this.props.username
+                },{
                     name: "code",
                     label: "Code",
                     type: "text",
@@ -27,7 +35,7 @@ class Assets extends Component {
                     name: "type",
                     label: "Type",
                     type: "choice",
-                    choices: ["Stocks", "REIT"],
+                    choices: ["Stocks", "REIT", "BDR"],
                     isRequired: true
                 },{
                     name: "price",

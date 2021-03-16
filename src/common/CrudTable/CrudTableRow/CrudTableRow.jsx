@@ -38,11 +38,12 @@ class CrudTableRow extends Component {
                     </span>
                 </td>
                 {this.props.fields.map((field, i) =>{
-                    if(field.name)
-                        return(
-                            <td>{this.state.item? this.state.item[field.name] : "" }</td>
-                        )
-                    else{
+                    if(field.name){
+                        if(!field.hide)
+                            return(
+                                <td>{this.state.item? this.state.item[field.name] : "" }</td>
+                            )
+                    }else{
                         console.warning(`Parameter 'name' for field number ${i} not informed`)
                         return ("")
                     }

@@ -9,6 +9,14 @@ class Transactions extends Component {
             transactions: [],
             fields: [
                 {
+                    name: "username",
+                    label: "Username",
+                    type: "text",
+                    isInput: true,
+                    isReadOnly: true,
+                    hide: true,
+                    defaultValue: this.props.username
+                },{
                     name: "asset",
                     label: "Code",
                     type: "text",

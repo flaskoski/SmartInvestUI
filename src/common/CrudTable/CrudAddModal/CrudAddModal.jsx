@@ -86,7 +86,10 @@ class CrudAddModal extends Component {
                                         onChange={this.handleInput}
                                         type={field.type}
                                         InputLabelProps={{
-                                            shrink: true,
+                                            shrink: true
+                                            }}
+                                        InputProps={{
+                                            readOnly: field.isReadOnly
                                             }}
                                         />		
                                         
@@ -116,6 +119,9 @@ class CrudAddModal extends Component {
                                         defaultValue={field.defaultValue}
                                         type={field.type}
                                         fullWidth
+                                        InputProps={{
+                                            readOnly: field.isReadOnly
+                                            }}
                                         // {field.size? field.size : fullWidth}
                                         />		
                                         //  required={field.isRequired} />

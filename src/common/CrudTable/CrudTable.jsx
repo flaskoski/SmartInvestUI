@@ -49,7 +49,7 @@ class CrudTable extends Component {
                 <CrudTableTitle title={this.props.itemType} onAddClickedHandler={this.addItemButtonClicked}/>
                     <div id="table-scroll">
                         <table className="custom-table table-striped table-hover fill">
-                        <CrudTableHeader headers={this.props.fields.map(f => f.label)} tableData={this.state.items}/>
+                        <CrudTableHeader headers={this.props.fields.filter(f=> !f.hide).map(f => f.label)} tableData={this.state.items}/>
                          {/* ["ID",  "Code", "Price"] */}
                         <tbody>
                             {this.state.items.map((item, i) =>{
