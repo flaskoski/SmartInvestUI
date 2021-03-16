@@ -39,13 +39,12 @@ export default function getAllTransactions(callback){
         }).catch(e => console.warn(`Error getting transactions from page 0: ${e}`)) 
 }
 
-export function getTransactions(page=0, size=80){
+export function getTransactions(code=null, size=30, page=0){
     return Auth.currentAuthenticatedUser().then(user => 
-        fetch(process.env.REACT_APP_BACKEND_TRANSACTIONS+`?username=${user.username}&page=${page}&size=${size}&sort=date,desc`))
+        fetch(process.env.REACT_APP_BACKEND_TRANSACTIONS+`?username=${user.username}&${code?"code="+code:""}&page=${page}&size=${size}&sort=date,desc`))
         .then(res => res.json())
         .then((data) => {
-            console.log(`Transactions loaded ${(data.content? data.content.length :"")}`)
-            console.log(data.content);
+            console.log(`${code? code+" " : ""}transactions loaded ${(data.content? data.content.length :"")}`)
             return data.content
         })
         .catch(e => console.log("Error loading transactions: "+ e))

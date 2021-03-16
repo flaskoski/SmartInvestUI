@@ -1,18 +1,17 @@
 import './App.css';
 import MainMenu from './MainMenu';
 import {AccountBox, Assessment, TableChart, Update, TrendingUp} from '@material-ui/icons';
-// import { convertPortfolioData } from './BatchOperations/SavePortfolio';
-import AnnualReport from './AnnualReport';
+import AnnualReport from './reports/AnnualReport';
 import GetAssetsReturn from './reports/GetAssetsReturn';
 import GetPortfolioReturn from './reports/GetPortfolioReturn';
 import Login from './common/login/Login';
 import Amplify from '@aws-amplify/core';
 import Auth from '@aws-amplify/auth';
 import AssetsTransactions from './tables/AssetsTransactions';
+import PortfolioPosition from './reports/PortfolioPosition';
 
 function App() {
     configureCognito();
-    // convertPortfolioData()
     return (
     <>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
@@ -22,6 +21,7 @@ function App() {
             <GetAssetsReturn key="Update Assets Return"><Update/></GetAssetsReturn>
             <GetPortfolioReturn key="Get Portfolio Return"><TrendingUp/></GetPortfolioReturn> 
             <AnnualReport key="Annual Report"><TableChart/></AnnualReport>
+            <PortfolioPosition key="Portfolio Position"><TableChart/></PortfolioPosition>
         </MainMenu>
         
         {/* <CrudAddModal show={true} itemType="Asset" itemFields={[{
