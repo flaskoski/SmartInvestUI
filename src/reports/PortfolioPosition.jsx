@@ -21,8 +21,8 @@ class PortfolioPosition extends Component {
         }
     }
     componentDidMount(){
-        getAuthorizationHeader().then(headers =>
-            fetch("https://5qx8xnn5e4.execute-api.sa-east-1.amazonaws.com/dev/portfolioPosition" + '?year='+ "2020", { ...headers }))
+        Auth.currentAuthenticatedUser().then(user => getAuthorizationHeader().then(headers =>
+            fetch(process.env.REACT_APP_API_GET_PORTFOLIO_POSITION + '?username='+user.username+'&year='+ "2020", { ...headers })))
             .then(res => res.json()).then(portfolio =>{
                 console.log(portfolio)
                 let totalCost = 0

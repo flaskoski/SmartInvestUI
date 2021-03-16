@@ -15,23 +15,21 @@ class GetAssetsReturn extends Component {
         //     assets.forEach(a =>{
             let a = {code: "VALE3", type:"Stocks"}
             getTransactions(a.code, 200)    
-                .then(transactions => 
-                    Auth.currentAuthenticatedUser().then(user => {
-                        // console.log(transactions)
-                        let body = {
-                            asset : a,
-                            startDate : "2019-01-01",
-                            endDate : `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`,
-                            transactions : transactions,
-                            username: user.username
-                        }
-                        buildPostCall(process.env.REACT_APP_API_GET_ASSET_RETURN, body).then(updated => {
+                .then(transactions => {
+                    // console.log(transactions)
+                    let body = {
+                        asset : a,
+                        startDate : "2019-01-01",
+                        endDate : `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`,
+                        transactions : transactions
+                    }
+                    Auth.currentAuthenticatedUser().then(user => 
+                        buildPostCall(process.env.REACT_APP_API_GET_ASSET_RETURN, {...body, username: user.username}).then(updated => {
                             this.setState({ updatedAssets: 
                                 [...this.state.updatedAssets, updated]
                             })
-                        }).catch(e => console.warn(`Error trying to update asset ${a.code}!`))
-                    })
-                ).catch(e => console.warn(`Error getting return from asset ${a.code}!`))
+                    })).catch(e => console.warn(`Error trying to update asset ${a.code}!`))
+                }).catch(e => console.warn(`Error getting return from asset ${a.code}!`))
         //     })
         // })
     }

@@ -8,6 +8,7 @@ import { dateObjectToArray, dateTimeInDays, getShortDate } from '../common/conve
 import AssetSelector from '../charts/AssetSelector';
 import raw from "raw.macro";
 import { buildPostCall } from '../common/apiCalls/LambdaCallBuilder';
+import Auth from '@aws-amplify/auth';
 
 
 
@@ -24,7 +25,9 @@ class GetPortfolioReturn extends Component {
             startDate : this.state.startDate,
             endDate : this.state.endDate
         }
-        buildPostCall(process.env.REACT_APP_API_GET_PORTFOLIO_RETURN, body).then(data => {
+        Auth.currentAuthenticatedUser().then(user => 
+                buildPostCall(process.env.REACT_APP_API_GET_PORTFOLIO_RETURN, 
+                    {...body, username: user.username})).then(data => {
             // downloadJson(data, "portfolio return")
             // let data = JSON.parse(raw("./mockPortfolioReturn.json"))
             
@@ -41,7 +44,7 @@ class GetPortfolioReturn extends Component {
                         data : returnPercentages,
                         assetCodes: codes
                     })   
-                } )
+                })
             })
         }).catch(e => console.log(e))
         // return ("");
