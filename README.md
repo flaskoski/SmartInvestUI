@@ -68,4 +68,4 @@ Add the following variables to the env files:
 
 * Full Application Architecture Diagram
 
-![Full architecture diagram](https://github.com/flaskoski/SmartInvestUI/blob/master/images/diagram.v2.PNG)
+![Full architecture diagram](https://github.com/flaskoski/SmartInvestUI/blob/master/images/diagram.v2.png)
