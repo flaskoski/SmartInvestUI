@@ -5,7 +5,8 @@ import CrudAddModal from './CrudAddModal/CrudAddModal';
 import CrudDeleteItemModal from './CrudDeleteItemModal/CrudDeleteItemModal';
 import CrudTableRow from './CrudTableRow/CrudTableRow';
 import "./CrudTable.css"
-
+import CrudEditItemModal from './CrudEditItemModal/CrudEditItemModal';
+import { v4 } from 'uuid';
 
 /**
  * @param itemType*: word for describing the item on the table and dialogs
@@ -25,13 +26,15 @@ class CrudTable extends Component {
         super(props);
         this.state = {
             items: [],
-            openModal: false
+            openModal: false,
+            updatedHash: 0
         }
         console.log("table construct - this.props.items")
         console.log(this.props.items)
         this.addItemButtonClicked = this.addItemButtonClicked.bind(this);
         this.deleteItemButtonClicked = this.deleteItemButtonClicked.bind(this);
-        this.handleUpdate = this.handleUpdate.bind(this);
+        this.editItemButtonClicked = this.editItemButtonClicked.bind(this);
+        this.handleUpdateItem = this.handleUpdateItem.bind(this);
         this.handleAdd = this.handleAdd.bind(this);
         this.handleDeleteItem = this.handleDeleteItem.bind(this);
     }
@@ -55,9 +58,10 @@ class CrudTable extends Component {
                             {this.state.items.map((item, i) =>{
                                 if(i >= this.props.maxRows) return ("")
                                 return (
-                                    <CrudTableRow key={item.id} item={item} fields={this.props.fields}
+                                    <CrudTableRow key={`${item.id}-${this.state.updatedHash}`} item={item} fields={this.props.fields}
                                     itemUpdateHandler={this.props.itemUpdateHandler} 
                                     onItemDeleteClickedHandler={this.deleteItemButtonClicked}
+                                    onItemEditClickedHandler={this.editItemButtonClicked}
                                     />
                                 );
                             } )}
@@ -75,6 +79,12 @@ class CrudTable extends Component {
                     backendUrl={this.props.backendUrl}
                     handleDeleteItem={this.handleDeleteItem}
                     />
+                <CrudEditItemModal key={"editItemModal-"+this.state.openEditItemModal} open={this.state.openEditItemModal} itemType={this.props.itemType} 
+                    itemFields={this.props.fields}  
+                    item={this.state.itemClicked} 
+                    backendUrl={this.props.backendUrl}
+                    handleAction={this.handleUpdateItem}
+                    />
             </section>
          );
     }
@@ -88,6 +98,12 @@ class CrudTable extends Component {
     deleteItemButtonClicked(item){
         this.setState({
             openDeleteItemModal: true,
+            itemClicked: item
+        })
+    }
+    editItemButtonClicked(item){
+        this.setState({
+            openEditItemModal: true,
             itemClicked: item
         })
     }
@@ -105,8 +121,19 @@ class CrudTable extends Component {
             this.setState({openModal: false})
     }
 
-    handleUpdate(){
-
+    handleUpdateItem(isUpdated, updatedItem){
+        if(isUpdated){
+            let allItems = this.state.items
+            allItems.splice(allItems.indexOf(updatedItem), 1)
+            allItems.push(updatedItem)
+            this.setState({
+                items: allItems,
+                openEditItemModal: false,
+                //set a new uuid to change the item row's key and update 
+                updatedHash: v4()
+            })
+        }else
+            this.setState({openEditItemModal: false})
     }
 
     handleDeleteItem(isDeleted, deletedItem){

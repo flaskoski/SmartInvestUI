@@ -84,7 +84,7 @@ function convertToPercentageAndAppend(series, assetCode, content, parse, startDa
             if(series[date])
                 series[date][assetCode] = parseFloat(content[date]["4. close"])/firstDayValue
             else if(content[date]) 
-                series[date] = { assetCode : parseFloat(content[date]["4. close"])/firstDayValue}
+                series[date] = { [assetCode] : parseFloat(content[date]["4. close"])/firstDayValue}
         }
 	});
 	return series;

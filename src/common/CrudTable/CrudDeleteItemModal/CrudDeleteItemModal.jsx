@@ -19,11 +19,9 @@ class CrudDeleteItemModal extends Component {
         console.log(this.state);
         const requestOptions = {
             method: 'DELETE',
-            headers: {},
-            body: {}
+            headers: { 'Content-Type': 'application/json' },
         };
         fetch(this.props.backendUrl + this.props.item.id, requestOptions)
-            //.then(response => response.json())
             .then(data => {
                 console.log(`${this.props.itemType} deleted!`)
                 console.log(data)

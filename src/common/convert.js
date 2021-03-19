@@ -10,7 +10,14 @@ export function getFullDate(date){
 }
 
 export function getShortDate(date, sign = '-'){
+    if(typeof date != "Date")
+        date = new Date(date)
     return `${date.getFullYear()}${sign}${date.getMonth()+1<10? "0":""}${date.getMonth()+1}${sign}${date.getDate()+1<10? "0":""}${date.getDate()}`;
+}
+export function getUsaShortDate(date, sign = '-'){
+    if(typeof date != "Date")
+        date = new Date(date)
+    return `${date.getMonth()+1<10? "0":""}${date.getMonth()+1}${sign}${date.getDate()+1<10? "0":""}${date.getDate()}${sign}${date.getFullYear()}`;
 }
 
 export function dateTimeInDays(dateTime, round = false){

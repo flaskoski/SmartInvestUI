@@ -10,6 +10,7 @@ class CrudTableRow extends Component {
             item : props.item
         }
         this.onItemDeleteClickedHandler = this.onItemDeleteClickedHandler.bind(this)
+        this.onItemEditClickedHandler = this.onItemEditClickedHandler.bind(this)
     }
     
     componentDidMount(){
@@ -49,13 +50,16 @@ class CrudTableRow extends Component {
                     }
                 })}
                 <td>
-                <a href="#editEmployeeModal" className="edit"  data-tip="Edit"><i className="material-icons"></i></a>
+                <a onClick={this.onItemEditClickedHandler} href="#editEmployeeModal" className="edit"  data-tip="Edit"><i className="material-icons"></i></a>
                 <ReactTooltip />
                 <a onClick={this.onItemDeleteClickedHandler} href="#deleteEmployeeModal" className="delete"  data-tip="Delete"><i className="material-icons"></i></a>
                 <ReactTooltip />
                 </td>
             </tr>
         );
+    }
+    onItemEditClickedHandler(){
+        this.props.onItemEditClickedHandler(this.state.item)
     }
     onItemDeleteClickedHandler(){
         this.props.onItemDeleteClickedHandler(this.state.item)

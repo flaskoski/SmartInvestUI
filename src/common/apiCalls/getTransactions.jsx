@@ -20,7 +20,7 @@ export default function getAllTransactions(callback){
         .then((data) => {
             console.log(`${(data.content? data.content.length :"0")} transactions loaded.`)
             let transactions = data.content
-            let pagesLoaded=1
+            let pagesLoaded = 1
             let totalPages = data.totalPages
             if(totalPages == 1) 
                 callback(transactions);

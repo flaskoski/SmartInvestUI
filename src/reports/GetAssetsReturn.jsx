@@ -3,6 +3,7 @@ import { Component } from 'react';
 import { buildPostCall } from '../common/apiCalls/LambdaCallBuilder';
 import Auth from '@aws-amplify/auth';
 import { getTransactions } from '../common/apiCalls/getTransactions';
+import { getShortDate } from '../common/convert';
 
 class GetAssetsReturn extends Component {
     constructor(props) {
@@ -10,17 +11,16 @@ class GetAssetsReturn extends Component {
         this.state = { updatedAssets : [] }
     }
     componentDidMount(){
-        let today = new Date()
-        // getAssets().then( assets =>{
-        //     assets.forEach(a =>{
-            let a = {code: "VALE3", type:"Stocks"}
+        getAssets().then( assets =>{
+            assets.forEach(a =>{
+            // let a = {code: "VALE3", type:"Stocks"}
             getTransactions(a.code, 200)    
                 .then(transactions => {
                     // console.log(transactions)
                     let body = {
                         asset : a,
                         startDate : "2019-01-01",
-                        endDate : `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`,
+                        endDate : getShortDate(new Date()),
                         transactions : transactions
                     }
                     Auth.currentAuthenticatedUser().then(user => 
@@ -30,8 +30,8 @@ class GetAssetsReturn extends Component {
                             })
                     })).catch(e => console.warn(`Error trying to update asset ${a.code}!`))
                 }).catch(e => console.warn(`Error getting return from asset ${a.code}!`))
-        //     })
-        // })
+            })
+        })
     }
     render() { 
         return ( 

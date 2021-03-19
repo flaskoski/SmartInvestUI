@@ -57,7 +57,6 @@ class Assets extends Component {
                 .then(res => res.json())
                 .then(assetLastValues =>{
                     console.log(`${(asset? asset.code: "")} price loaded: ${assetLastValues.currentPrice}`)
-                
                     asset.price = (
                     <div className="asset-price">
                         <div style={{"float": "left", "width" : "40%"}}><div  style={{"float": "center"}}> {Math.round(assetLastValues.currentPrice * 100) / 100} </div></div>

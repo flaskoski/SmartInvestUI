@@ -92,7 +92,7 @@ class Login extends Component {
             </div>
             <div id="sign-out-form" className="container" hidden={!this.state.isSignedIn}>
                 <div className="form-group" id="userNameDiv">
-                    <p className="lead" style={{verticalAlign: "bottom", paddingBottom: "11px" }}>Bem-vindo(a) {this.state.currentUser}!</p>
+                    <p className="lead" style={{verticalAlign: "bottom", paddingBottom: "11px" }}>Welcome {this.state.currentUser}!</p>
                         <Button variant="contained" color="primary" onClick={this.signOut} >Sign Out</Button> 
                 </div>
             </div>
