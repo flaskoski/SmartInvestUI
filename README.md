@@ -5,9 +5,7 @@
 
 ### Getting Started
 
-Add the following variables to the env files:
-
-* On the `.env` files:
+Add the following variables to the `.env` files:
 
 1. API Keys
     1. REACT_APP_API_KEY_ALPHA - Your API key from [Alphavantage](www.alphavantage.co) as 
@@ -48,7 +46,7 @@ Add the following variables to the env files:
 
 * Portfolio historical return compared to any other asset
 
-![Portfolio return](https://github.com/flaskoski/SmartInvestUI/blob/master/images/portfolio-return.PNG))
+![Portfolio return](https://github.com/flaskoski/SmartInvestUI/blob/master/images/portfolio-return.PNG)
 
 
 * Login/Logout page (AWS Cognito)
@@ -58,12 +56,12 @@ Add the following variables to the env files:
 
 * Summarized table of sales and profits per asset type (for federal tax filing purposes)
 
-![Annual Sales/Profit Report](https://github.com/flaskoski/SmartInvestUI/blob/master/images/annual.PNG))
+![Annual Sales/Profit Report](https://github.com/flaskoski/SmartInvestUI/blob/master/images/annual.PNG)
 
 
 * Portfolio situation by the end of the year (for federal tax filing purposes)
 
-![Portfolio position](https://github.com/flaskoski/SmartInvestUI/blob/master/images/position.PNG))
+![Portfolio position](https://github.com/flaskoski/SmartInvestUI/blob/master/images/position.PNG)
 
 
 * Full Application Architecture Diagram
