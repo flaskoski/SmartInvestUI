@@ -43,9 +43,24 @@ export function getTransactions(code=null, size=30, page=0){
     return Auth.currentAuthenticatedUser().then(user => 
         fetch(process.env.REACT_APP_BACKEND_TRANSACTIONS+`?username=${user.username}&${code?"code="+code:""}&page=${page}&size=${size}&sort=date,desc`))
         .then(res => res.json())
-        .then((data) => {
-            console.log(`${code? code+" " : ""}transactions loaded ${(data.content? data.content.length :"")}`)
-            return data.content
+        .then((page) => {
+            console.log(`${code? code+" " : ""}transactions loaded ${(page.content? page.content.length :"")}`)
+            return page
         })
         .catch(e => console.log("Error loading transactions: "+ e))
+}
+export function getTransactionsWithFilter(removedOptions, size=50, page=0){
+    return Auth.currentAuthenticatedUser().then(user => 
+        fetch(process.env.REACT_APP_BACKEND_TRANSACTIONS+`filter?username=${user.username}&page=${page}&size=${size}`, 
+            {
+                method: "POST",
+                body: JSON.stringify(removedOptions),
+                headers: {"content-type": "application/json"}
+            }
+    )).then(res => res.json())
+    .then((page) => {
+        console.log(`Transactions with filter loaded ${(page.content? page.content.length :"")}`)
+        return page
+    })
+    .catch(e => console.log("Error loading transactions: "+ e))
 }

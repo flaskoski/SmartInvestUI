@@ -37,13 +37,11 @@ class CrudTable extends Component {
         this.handleUpdateItem = this.handleUpdateItem.bind(this);
         this.handleAdd = this.handleAdd.bind(this);
         this.handleDeleteItem = this.handleDeleteItem.bind(this);
+        this.onFilterChangedHandler = this.onFilterChangedHandler.bind(this);
     }
 
     componentDidMount(){
-        this.props.getItems().then(items => {
-            if(items)
-                this.setState({items: items})
-        }).catch(`Error loading ${this.props.itemType}`)
+        this.getItems()
     }
 
     render() {
@@ -52,7 +50,9 @@ class CrudTable extends Component {
                 <CrudTableTitle title={this.props.itemType} onAddClickedHandler={this.addItemButtonClicked}/>
                     <div id="table-scroll">
                         <table className="custom-table table-striped table-hover fill">
-                        <CrudTableHeader headers={this.props.fields.filter(f=> !f.hide).map(f => f.label)} tableData={this.state.items}/>
+                        <CrudTableHeader key={`${this.props.itemType}-headers-${this.props.fields.filter(f=> f.choices && f.choices.length>0).length}`} 
+                            headers={this.props.fields.filter(f=> !f.hide)}
+                            onFilterChanged={this.onFilterChangedHandler}/>
                          {/* ["ID",  "Code", "Price"] */}
                         <tbody>
                             {this.state.items.map((item, i) =>{
@@ -65,9 +65,9 @@ class CrudTable extends Component {
                                     />
                                 );
                             } )}
-
                         </tbody>
                         </table>
+                        <p style={{paddingLeft:"20px" }}>{this.state.total? `Items found: ${this.state.total}`: ""}</p>
                     </div>
                 <CrudAddModal open={this.state.openModal} itemType={this.props.itemType} 
                     itemFields={this.props.fields} 
@@ -87,6 +87,23 @@ class CrudTable extends Component {
                     />
             </section>
          );
+    }
+
+    getItems(removedOptions = {}){
+        this.props.getItems(removedOptions).then(items => {
+            if(items){
+                if(items.content && items.pageable)//for java pageable backend
+                    this.setState({items: items.content, total: items.totalElements})
+                else
+                    this.setState({items: items, total: undefined})
+            }
+        }).catch(`Error loading ${this.props.itemType}`)
+    }
+
+    //--filter header used
+    onFilterChangedHandler(removedOptions){
+        console.log(removedOptions)
+        this.getItems(removedOptions)
     }
     
     //--Buttons clicked handlers

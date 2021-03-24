@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { DataGrid } from '@material-ui/data-grid';
-import getAllTransactions from '../common/apiCalls/getTransactions';
 import Auth from '@aws-amplify/auth';
 import { buildPostCall, getAuthorizationHeader } from '../common/apiCalls/LambdaCallBuilder';
 

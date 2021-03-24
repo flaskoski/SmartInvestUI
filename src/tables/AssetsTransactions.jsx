@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Assets from '../tables/assets/Assets';
-import Transactions from '../tables/transactions/Transactions';
+import Assets from './Assets';
+import Transactions from './Transactions';
 import ChartComponent from '../charts/ChartComponent';
 import Auth from '@aws-amplify/auth';
 

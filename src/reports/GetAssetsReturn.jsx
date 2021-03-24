@@ -11,11 +11,13 @@ class GetAssetsReturn extends Component {
         this.state = { updatedAssets : [] }
     }
     componentDidMount(){
-        getAssets().then( assets =>{
+        getAssets().then( page =>{
+            let assets = page.content
             assets.forEach(a =>{
             // let a = {code: "VALE3", type:"Stocks"}
             getTransactions(a.code, 200)    
-                .then(transactions => {
+                .then(data => {
+                    let transactions = data.content
                     // console.log(transactions)
                     let body = {
                         asset : a,

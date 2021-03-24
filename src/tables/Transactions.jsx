@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import { getTransactions } from '../../common/apiCalls/getTransactions';
-import CrudTable from '../../common/CrudTable/CrudTable';
+import { first } from 'react-stockcharts/lib/utils';
+import getAssets from '../common/apiCalls/getAssets';
+import { getTransactions, getTransactionsWithFilter } from '../common/apiCalls/getTransactions';
+import CrudTable from '../common/CrudTable/CrudTable';
 
 class Transactions extends Component {
     constructor(props) {
         super(props);
         this.state = { 
+            removedOptions: [],
             transactions: [],
             fields: [
                 {
@@ -19,7 +22,8 @@ class Transactions extends Component {
                 },{
                     name: "asset",
                     label: "Code",
-                    type: "text",
+                    type: "choice",
+                    choices: [],
                     isInput: true,
                 },{
                     name: "type",
@@ -46,7 +50,19 @@ class Transactions extends Component {
                 }
             ]
         };
+        this.getTransactions = this.getTransactions.bind(this)
+        this.addFilter = this.addFilter.bind(this)
     }
+    componentDidMount(){
+        //***TODO get all assets
+        getAssets().then(page => {
+            let assets = page.content
+            let fields = this.state.fields
+            fields.find(f => f.name == "asset").choices = (assets? assets.map(a => a.code): [])
+            this.setState({fields: fields})
+        })
+    }
+
     formatDate(date){
         if(!date || date.length != 3)
             return "";
@@ -66,13 +82,22 @@ class Transactions extends Component {
                     key="Table-Transactions"
                     itemType={"Transaction"}
                     fields={this.state.fields}
-                    getItems={getTransactions}
+                    getItems={this.getTransactions}
                     backendUrl={process.env.REACT_APP_BACKEND_TRANSACTIONS}
                 >
                 </CrudTable>
             </section>
 
          );
+    }
+    getTransactions(removedOptions){ //***TODO */
+        if(removedOptions && Object.keys(removedOptions).length > 0)
+            return getTransactionsWithFilter(removedOptions)
+        else
+            return getTransactions()
+    }
+
+    addFilter(){
     }
 }
  

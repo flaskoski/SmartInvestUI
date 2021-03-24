@@ -1,6 +1,6 @@
-import { Modal } from 'react-bootstrap';
+import { MenuItem, Modal } from 'react-bootstrap';
 import React, { Component } from 'react';
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, TextField } from '@material-ui/core';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControl, FormControlLabel, FormLabel, InputLabel, Radio, RadioGroup, Select, TextField } from '@material-ui/core';
 import "./CrudAddModal.css"
 
 class CrudAddModal extends Component {
@@ -94,7 +94,7 @@ class CrudAddModal extends Component {
                                         
                                     );
                                 case 'choice':
-                                    // if(field.choices.length < 5)
+                                    if(field.choices.length < 5)
                                         return (	
                                         <div className="material-ui-radioGroup" >
                                             <FormLabel component="legend">{field.label}</FormLabel>
@@ -105,6 +105,20 @@ class CrudAddModal extends Component {
                                             </RadioGroup>
                                         </div>
                                             
+                                        );
+                                    else
+                                        return (
+                                            <FormControl className={`form-select-label`}>
+                                                <InputLabel id={`select-label-${field.name}`}>{field.label}</InputLabel>
+                                                <Select className={`select-label`} labelId="demo-simple-select-label"
+                                                    name={field.name}
+                                                    value={this.state.newItem[field.name]?this.state.newItem[field.name]:''}
+                                                    onChange={this.handleInput}
+                                                    >
+                                                    {field.choices.map(choice => 
+                                                        <MenuItem value={choice}>{choice}</MenuItem>)}
+                                                </Select>
+                                            </FormControl>
                                         );
                                 default:
                                     return (	

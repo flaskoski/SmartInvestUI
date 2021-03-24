@@ -7,34 +7,41 @@ import "react-table-filter/lib/styles.css";
 class CrudTableHeader extends Component {
     constructor(props){
         super(props);
-        this._filterUpdated = this._filterUpdated.bind(this);
+        this.filterUpdated = this.filterUpdated.bind(this);
         this.state = {
-            data : this.props.tableData
+            removedOptions: {}
         }
     }
     
     render() { 
+        //--make an array with all the possible values options
+        let tableData = []
+        this.props.headers.forEach(h =>{
+            if(h.type == "choice")
+                h.choices.forEach((choice, i) =>{
+                    if(!tableData[i]) 
+                        tableData[i] = {}
+                    tableData[i][h.name] = choice
+                })
+        })
         return (
-            <thead className="crud-table">
-                <TableFilter rows={this.state.data} onFilterUpdate={this._filterUpdated}>
-                    <th key="checkbox" className="borderWhite">
-                        <span className="custom-checkbox">
-                            <input className="margin10" type="checkbox" id="selectAll"/>
-                            <label htmlFor="selectAll"></label>
-                        </span>
-                    </th>
-                    {this.props.headers.map((h, i) =>{
-                        return (<th key={h} filterkey={h.toLowerCase() }>{h}</th>);
-                    })}
-                    <th key="actions">Actions</th>
-                </TableFilter>
-            </thead>
+            <TableFilter rows={tableData} onFilterUpdate={this.filterUpdated} initialFilters={this.state.removedOptions}>
+                <th key="checkbox" className="borderWhite">
+                    <span className="custom-checkbox">
+                        <input className="margin10" type="checkbox" id="selectAll"/>
+                        <label htmlFor="selectAll"></label>
+                    </span>
+                </th>
+                {this.props.headers.map((h, i) =>{
+                    return (<th key={h.name} filterkey={h.type == "choice"? h.name.toLowerCase(): undefined}>{h.label}</th>);
+                })}
+                <th key="actions">Actions</th>
+            </TableFilter>
         );
     }
-    _filterUpdated = (newData, filterConfiguration) => {
-		this.setState({
-			data : newData
-		});
+    filterUpdated = (newData, removedOptions) => {
+        this.setState({removedOptions: removedOptions})
+        this.props.onFilterChanged(removedOptions)
 	}
 }
 

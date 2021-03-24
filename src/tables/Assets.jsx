@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {ArrowUpwardIcon, ArrowDownwardIcon} from '@material-ui/icons/ArrowUpward';
-import CrudTable from '../../common/CrudTable/CrudTable';
+import CrudTable from '../common/CrudTable/CrudTable';
 import "./assets.css"
-import { getAuthorizationHeader } from '../../common/apiCalls/LambdaCallBuilder';
-import getAssets from '../../common/apiCalls/getAssets';
+import { getAuthorizationHeader } from '../common/apiCalls/LambdaCallBuilder';
+import getAssets from '../common/apiCalls/getAssets';
 
 class Assets extends Component {
     constructor(props){
@@ -47,8 +47,8 @@ class Assets extends Component {
         };
     }
     
-    getAssets(){
-        return getAssets().then(assets => assets)
+    getAssets(removedOptions = {}){
+        return getAssets()
     }
 
     getCurrentAssetPrice(asset){

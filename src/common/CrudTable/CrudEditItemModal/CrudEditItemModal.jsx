@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, TextField } from '@material-ui/core';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControl, FormControlLabel, FormLabel, InputLabel, MenuItem, Radio, RadioGroup, Select, TextField  } from '@material-ui/core';
 import "../CrudAddModal/CrudAddModal.css"
 import { getShortDate, getUsaShortDate } from '../../convert';
 
@@ -9,7 +9,7 @@ class CrudEditItemModal extends Component {
         super(props);
         this.state = {
             open: (props.open? props.open : false),
-            newItem: props.item
+            newItem: (props.item? props.item: {})
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleInput = this.handleInput.bind(this)
@@ -88,7 +88,7 @@ class CrudEditItemModal extends Component {
                                         
                                     );
                                 case 'choice':
-                                    // if(field.choices.length < 5)
+                                    if(field.choices.length < 5)
                                         return (	
                                         <div className="material-ui-radioGroup" >
                                             <FormLabel component="legend">{field.label}</FormLabel>
@@ -101,6 +101,20 @@ class CrudEditItemModal extends Component {
                                             </RadioGroup>
                                         </div>
                                             
+                                        );
+                                    else
+                                        return (
+                                            <FormControl className={`form-select-label`}>
+                                                <InputLabel id={`select-label-${field.name}`}>{field.label}</InputLabel>
+                                                <Select className={`select-label`} labelId="demo-simple-select-label"
+                                                    name={field.name}
+                                                    value={this.state.newItem[field.name]?this.state.newItem[field.name]:''}
+                                                    onChange={this.handleInput}
+                                                    >
+                                                    {field.choices.map(choice => 
+                                                        <MenuItem value={choice}>{choice}</MenuItem>)}
+                                                </Select>
+                                            </FormControl>
                                         );
                                 default:
                                     return (	
