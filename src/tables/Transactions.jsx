@@ -56,7 +56,7 @@ class Transactions extends Component {
     componentDidMount(){
         //***TODO get all assets
         getAssets().then(page => {
-            let assets = page.content
+            let assets = (page && page.content? page.content : page)
             let fields = this.state.fields
             fields.find(f => f.name == "asset").choices = (assets? assets.map(a => a.code): [])
             this.setState({fields: fields})

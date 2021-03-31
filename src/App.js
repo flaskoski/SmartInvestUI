@@ -9,9 +9,11 @@ import Amplify from '@aws-amplify/core';
 import Auth from '@aws-amplify/auth';
 import AssetsTransactions from './tables/AssetsTransactions';
 import PortfolioPosition from './reports/PortfolioPosition';
+import { withAuthenticator } from '@aws-amplify/ui-react';
+configureCognito();
 
 function App() {
-    configureCognito();
+    
     return (
     <>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
@@ -88,4 +90,4 @@ function configureCognito(){
     console.log(currentConfig)
 }
 
-export default App;
+export default withAuthenticator(App);
