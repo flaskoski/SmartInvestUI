@@ -14,17 +14,22 @@ class CrudDeleteItemModal extends Component {
     //     this.setState({open: newProps.open})
     // }
 
-    handleDelete(event){
+    async handleDelete(event){
         event.preventDefault();
-        console.log(this.state);
+        let headers = { headers: {'Content-Type': 'application/json'}}
+        if(this.props.backendHeaders)
+            headers = await this.props.backendHeaders
         const requestOptions = {
             method: 'DELETE',
-            headers: { 'Content-Type': 'application/json' },
+            ...headers,
         };
         fetch(this.props.backendUrl + this.props.item.id, requestOptions)
             .then(data => {
+                if(data.status != 200){
+                    console.error(data)
+                    return;
+                }
                 console.log(`${this.props.itemType} deleted!`)
-                console.log(data)
                 let deletedItem = this.props.item
                 this.props.handleDeleteItem(true, deletedItem )
             })

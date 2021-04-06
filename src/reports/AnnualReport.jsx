@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { DataGrid } from '@material-ui/data-grid';
 import getAllTransactions from '../common/apiCalls/getTransactions';
 import Auth from '@aws-amplify/auth';
-import { buildPostCall } from '../common/apiCalls/LambdaCallBuilder';
+import { buildPostCall } from '../common/apiCalls/ApiCallBuilder';
 
 class AnnualReport extends Component {
     constructor(props) {

@@ -9,7 +9,8 @@ Add the following variables to the `.env` files:
 
 1. API Keys
     1. REACT_APP_API_KEY_ALPHA - Your API key from [Alphavantage](www.alphavantage.co) as 
-    1. REACT_APP_API_KEY_AWS - API Key generated for the API gateway
+    1. REACT_APP_API_KEY_AWS_LAMBDAS - API Key generated for the API gateway to call the lambda functions 
+    1. REACT_APP_API_KEY_AWS_TRANSACTIONS - API Key generated for the API gateway to call the transactions app 
 1. Lambdas endpoints
     1. REACT_APP_API_GET_CURRENT_QUOTE
     1. REACT_APP_API_GET_ASSET_RETURN 

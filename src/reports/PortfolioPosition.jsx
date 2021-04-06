@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { DataGrid } from '@material-ui/data-grid';
 import Auth from '@aws-amplify/auth';
-import { buildPostCall, getAuthorizationHeader } from '../common/apiCalls/LambdaCallBuilder';
+import { buildPostCall, getAuthorizationHeader } from '../common/apiCalls/ApiCallBuilder';
 
 class PortfolioPosition extends Component {
     constructor(props) {

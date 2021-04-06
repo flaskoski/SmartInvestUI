@@ -1,22 +1,12 @@
 import React from 'react';
 import Auth from '@aws-amplify/auth';
+import { buildGetCall, buildPostCall, getUserAndAuthorizationHeader } from './ApiCallBuilder';
 
-// export default function getAssets(page=0, size=80){
-//     return fetch(process.env.REACT_APP_BACKEND_ASSETS+`?page=${page}&size=${size}`)
-//     .then(res => res.json())
-//     .then((data) => {
-//         console.log(`Assets loaded ${(data.content? data.content.length :"")}`)
-//         return data.content
-//     }).catch(e => console.log("Error loading assets!"))
-// }
-
-
+//premise: pagination on the api response
 export default function getAllTransactions(callback){
     let today = new Date()
-    let username = ""
-    return Auth.currentAuthenticatedUser().then(user => { username = user.username;
-        return fetch(process.env.REACT_APP_BACKEND_TRANSACTIONS+`?username=${username}&page=0&size=100&sort=date,asc`)})
-        .then(res => res.json())
+    let callInfo = {}
+    return buildGetCall(process.env.REACT_APP_BACKEND_TRANSACTIONS, `page=0&size=100&sort=date,asc`, true, false)
         .then((data) => {
             console.log(`${(data.content? data.content.length :"0")} transactions loaded.`)
             let transactions = data.content
@@ -26,8 +16,8 @@ export default function getAllTransactions(callback){
                 callback(transactions);
             else{
                 for(let page=1; page < totalPages; page++){
-                    fetch(process.env.REACT_APP_BACKEND_TRANSACTIONS+`?username=${username}&page=${page}&size=100&sort=date,asc`)
-                    .then(res => res.json()).then((data) => {
+                    buildGetCall(process.env.REACT_APP_BACKEND_TRANSACTIONS, `page=${page}&size=100&sort=date,asc`, true, false)
+                    .then(data => {
                         console.log(`${(data.content? data.content.length :"0")} transactions loaded.`)
                         transactions = [...transactions, ...data.content]
                         pagesLoaded++
@@ -40,25 +30,16 @@ export default function getAllTransactions(callback){
 }
 
 export function getTransactions(code=null, size=30, page=0){
-    return Auth.currentAuthenticatedUser().then(user => 
-        fetch(process.env.REACT_APP_BACKEND_TRANSACTIONS+`?username=${user.username}&${code?"code="+code:""}&page=${page}&size=${size}&sort=date,desc`))
-        .then(res => res.json())
-        .then((page) => {
-            console.log(`${code? code+" " : ""}transactions loaded ${(page.content? page.content.length :"")}`)
-            return page
-        })
-        .catch(e => console.log("Error loading transactions: "+ e))
+    return buildGetCall(process.env.REACT_APP_BACKEND_TRANSACTIONS, `${code?"code="+code:""}&page=${page}&size=${size}&sort=date,desc`, true, false)
+    .then(page => {
+        console.log(`${code? code+" " : ""}transactions loaded ${(page.content? page.content.length : page.length)}`)
+        return page
+    }).catch(e => console.log("Error loading transactions: "+ e))
 }
+
 export function getTransactionsWithFilter(removedOptions, size=50, page=0){
-    return Auth.currentAuthenticatedUser().then(user => 
-        fetch(process.env.REACT_APP_BACKEND_TRANSACTIONS+`filter?username=${user.username}&page=${page}&size=${size}`, 
-            {
-                method: "POST",
-                body: JSON.stringify(removedOptions),
-                headers: {"content-type": "application/json"}
-            }
-    )).then(res => res.json())
-    .then((page) => {
+    return buildPostCall(process.env.REACT_APP_BACKEND_TRANSACTIONS_WITH_FILTER, removedOptions, `page=${page}&size=${size}`, true, false)
+    .then(page => {
         console.log(`Transactions with filter loaded ${(page.content? page.content.length :"")}`)
         return page
     })

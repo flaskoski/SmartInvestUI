@@ -1,6 +1,6 @@
 import getAssets from '../common/apiCalls/getAssets';
 import { Component } from 'react';
-import { buildPostCall } from '../common/apiCalls/LambdaCallBuilder';
+import { buildPostCall } from '../common/apiCalls/ApiCallBuilder';
 import Auth from '@aws-amplify/auth';
 import { getTransactions } from '../common/apiCalls/getTransactions';
 import { getShortDate } from '../common/convert';

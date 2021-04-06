@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { first } from 'react-stockcharts/lib/utils';
+import { getAuthorizationHeader } from '../common/apiCalls/ApiCallBuilder';
 import getAssets from '../common/apiCalls/getAssets';
 import { getTransactions, getTransactionsWithFilter } from '../common/apiCalls/getTransactions';
 import CrudTable from '../common/CrudTable/CrudTable';
@@ -56,10 +57,12 @@ class Transactions extends Component {
     componentDidMount(){
         //***TODO get all assets
         getAssets().then(page => {
-            let assets = (page && page.content? page.content : page)
-            let fields = this.state.fields
-            fields.find(f => f.name == "asset").choices = (assets? assets.map(a => a.code): [])
-            this.setState({fields: fields})
+            // if(page && (page.content || page.length)){
+                let assets = (page.content? page.content : page)
+                let fields = this.state.fields
+                fields.find(f => f.name == "asset").choices = (assets? assets.map(a => a.code): [])
+                this.setState({fields: fields})
+            // }
         })
     }
 
@@ -84,6 +87,7 @@ class Transactions extends Component {
                     fields={this.state.fields}
                     getItems={this.getTransactions}
                     backendUrl={process.env.REACT_APP_BACKEND_TRANSACTIONS}
+                    backendHeaders={getAuthorizationHeader(false)}
                 >
                 </CrudTable>
             </section>

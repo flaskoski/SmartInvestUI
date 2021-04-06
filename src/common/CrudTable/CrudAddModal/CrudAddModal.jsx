@@ -19,7 +19,7 @@ class CrudAddModal extends Component {
     // handleClickOpen () {
     //     this.setState({open: true});
     // };
-    handleSubmit(event){
+    async handleSubmit(event){
         event.preventDefault();
 
         let newItem = this.state.newItem
@@ -27,14 +27,21 @@ class CrudAddModal extends Component {
             if(!newItem[f.name]) newItem[f.name] = f.defaultValue //TODO if field is empty
         })
         // console.log(this.state);
+        
+        let headers = { headers: {'Content-Type': 'application/json'}}
+        if(this.props.backendHeaders)
+            headers = await this.props.backendHeaders
         const requestOptions = {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            ...headers,
             body: JSON.stringify(newItem)
         };
         fetch(this.props.backendUrl, requestOptions)
-            .then(response => response.json())
-            .then(data => {
+            .then(response => {
+                if([200, 201].indexOf(response.status) < 0)
+                    throw new Error(response)
+                return response.json()
+            }).then(data => {
                 console.log(`New ${this.props.itemType} added`)
                 console.log(data)
                 this.props.handleAddToTable(true, data)

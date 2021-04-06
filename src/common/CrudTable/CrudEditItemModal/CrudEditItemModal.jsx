@@ -27,7 +27,7 @@ class CrudEditItemModal extends Component {
                 [name]: newValue} });
     };
 
-    handleSubmit(event){
+    async handleSubmit(event){
         event.preventDefault();
 
         let newItem = this.state.newItem
@@ -35,16 +35,21 @@ class CrudEditItemModal extends Component {
             if(!newItem[f.name]) newItem[f.name] = f.defaultValue //TODO if field is empty. Now filling again with default value
         })
 
+        let headers = { headers: {'Content-Type': 'application/json'}}
+        if(this.props.backendHeaders)
+            headers = await this.props.backendHeaders
         const requestOptions = {
             method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
+            ...headers,
             body: JSON.stringify(newItem)
         };
         fetch(this.props.backendUrl + this.props.item.id, requestOptions)
-            .then(response => response.json())
-            .then(data => {
+            .then(response => {
+                if(response.status != 200)
+                    throw new Error(response)
+                return response.json()
+            }).then(data => {
                 console.log(`Item ${this.props.itemType} updated`)
-                console.log(data)
                 this.props.handleAction(true, data)
             })
             .catch(e => {

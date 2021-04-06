@@ -7,7 +7,7 @@ import { appendIndexTimeSeriesPercentage, downloadJson } from '../charts/ParseDa
 import { dateObjectToArray, getShortDate } from '../common/convert';
 import AssetSelector from '../charts/AssetSelector';
 import raw from "raw.macro";
-import { buildPostCall } from '../common/apiCalls/LambdaCallBuilder';
+import { buildPostCall } from '../common/apiCalls/ApiCallBuilder';
 import Auth from '@aws-amplify/auth';
 
 

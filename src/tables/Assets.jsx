@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {ArrowUpwardIcon, ArrowDownwardIcon} from '@material-ui/icons/ArrowUpward';
 import CrudTable from '../common/CrudTable/CrudTable';
 import "./assets.css"
-import { getAuthorizationHeader } from '../common/apiCalls/LambdaCallBuilder';
+import { getAuthorizationHeader } from '../common/apiCalls/ApiCallBuilder';
 import getAssets from '../common/apiCalls/getAssets';
 
 class Assets extends Component {
@@ -89,6 +89,7 @@ class Assets extends Component {
                     getItems={this.getAssets}
                     maxRows={8}
                     backendUrl={process.env.REACT_APP_BACKEND_ASSETS}
+                    backendHeaders={getAuthorizationHeader(false)}
                     itemUpdateHandler={this.getCurrentAssetPrice}
                 />
                 

@@ -72,17 +72,20 @@ class CrudTable extends Component {
                 <CrudAddModal open={this.state.openModal} itemType={this.props.itemType} 
                     itemFields={this.props.fields} 
                     backendUrl={this.props.backendUrl}
+                    backendHeaders={this.props.backendHeaders}
                     handleAddToTable={this.handleAdd}
                     />
                 <CrudDeleteItemModal key={"deleteItemModal-"+this.state.openDeleteItemModal} open={this.state.openDeleteItemModal} itemType={this.props.itemType} 
                     item={this.state.itemClicked} 
                     backendUrl={this.props.backendUrl}
+                    backendHeaders={this.props.backendHeaders}
                     handleDeleteItem={this.handleDeleteItem}
                     />
                 <CrudEditItemModal key={"editItemModal-"+this.state.openEditItemModal} open={this.state.openEditItemModal} itemType={this.props.itemType} 
                     itemFields={this.props.fields}  
                     item={this.state.itemClicked} 
                     backendUrl={this.props.backendUrl}
+                    backendHeaders={this.props.backendHeaders}
                     handleAction={this.handleUpdateItem}
                     />
             </section>
@@ -94,7 +97,7 @@ class CrudTable extends Component {
             if(items){
                 if(items.content && items.pageable)//for java pageable backend
                     this.setState({items: items.content, total: items.totalElements})
-                else
+                else if(items.length)
                     this.setState({items: items, total: undefined})
             }
         }).catch(`Error loading ${this.props.itemType}`)
@@ -141,7 +144,7 @@ class CrudTable extends Component {
     handleUpdateItem(isUpdated, updatedItem){
         if(isUpdated){
             let allItems = this.state.items
-            allItems.splice(allItems.indexOf(updatedItem), 1)
+            allItems.splice(allItems.indexOf(allItems.find(i =>i.id == updatedItem.id)), 1)
             allItems.push(updatedItem)
             this.setState({
                 items: allItems,
