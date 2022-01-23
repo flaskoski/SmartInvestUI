@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { DataGrid } from '@material-ui/data-grid';
 import Auth from '@aws-amplify/auth';
-import { buildPostCall, getAuthorizationHeader } from '../common/apiCalls/ApiCallBuilder';
+import { getAuthorizationHeader } from '../common/apiCalls/ApiCallBuilder';
 
 class PortfolioPosition extends Component {
     constructor(props) {
@@ -21,7 +21,7 @@ class PortfolioPosition extends Component {
     }
     componentDidMount(){
         Auth.currentAuthenticatedUser().then(user => getAuthorizationHeader().then(headers =>
-            fetch(process.env.REACT_APP_API_GET_PORTFOLIO_POSITION + '?username='+user.username+'&year='+ "2020", { ...headers })))
+            fetch(process.env.REACT_APP_API_GET_PORTFOLIO_POSITION + '?username='+user.username+'&year='+ "2021", { ...headers })))
             .then(res => res.json()).then(portfolio =>{
                 console.log(portfolio)
                 let totalCost = 0

@@ -1,0 +1,5748 @@
+[
+{
+    "id": 220,
+    "date": [
+        2021,
+        1,
+        5
+    ],
+    "asset": "SAPR11",
+    "shares_number": 100,
+    "price": 24.36,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 221,
+    "date": [
+        2021,
+        1,
+        4
+    ],
+    "asset": "SAPR11",
+    "shares_number": 100,
+    "price": 25.84,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 249,
+    "date": [
+        2020,
+        12,
+        23
+    ],
+    "asset": "SAPR11",
+    "shares_number": 100,
+    "price": 27.42,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 256,
+    "date": [
+        2020,
+        12,
+        4
+    ],
+    "asset": "SAPR11",
+    "shares_number": 100,
+    "price": 26.68,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 257,
+    "date": [
+        2020,
+        12,
+        3
+    ],
+    "asset": "SAPR11",
+    "shares_number": 100,
+    "price": 27.19,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 264,
+    "date": [
+        2020,
+        11,
+        25
+    ],
+    "asset": "SAPR11",
+    "shares_number": 100,
+    "price": 25.03,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 272,
+    "date": [
+        2020,
+        11,
+        16
+    ],
+    "asset": "SAPR11",
+    "shares_number": 100,
+    "price": 25.0,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 305,
+    "date": [
+        2020,
+        9,
+        28
+    ],
+    "asset": "SAPR11",
+    "shares_number": 100,
+    "price": 26.71,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 318,
+    "date": [
+        2020,
+        9,
+        1
+    ],
+    "asset": "SAPR11",
+    "shares_number": 100,
+    "price": 26.88,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 322,
+    "date": [
+        2020,
+        8,
+        27
+    ],
+    "asset": "SAPR11",
+    "shares_number": 100,
+    "price": 26.99,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 325,
+    "date": [
+        2020,
+        8,
+        26
+    ],
+    "asset": "SAPR11",
+    "shares_number": 100,
+    "price": 28.48,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 138,
+    "date": [
+        2021,
+        7,
+        2
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 25.89,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 144,
+    "date": [
+        2021,
+        6,
+        28
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 23.98,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 146,
+    "date": [
+        2021,
+        6,
+        15
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 22.22,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 147,
+    "date": [
+        2021,
+        6,
+        8
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 22.78,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 151,
+    "date": [
+        2021,
+        6,
+        1
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 23.98,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 155,
+    "date": [
+        2021,
+        5,
+        14
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 21.91,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 159,
+    "date": [
+        2021,
+        5,
+        7
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 23.92,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 181,
+    "date": [
+        2021,
+        3,
+        9
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 20.17,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 182,
+    "date": [
+        2021,
+        3,
+        9
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 19.79,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 184,
+    "date": [
+        2021,
+        3,
+        5
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 20.17,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 191,
+    "date": [
+        2021,
+        3,
+        1
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 22.02,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 205,
+    "date": [
+        2021,
+        2,
+        2
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 22.97,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 222,
+    "date": [
+        2021,
+        1,
+        4
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 24.14,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 259,
+    "date": [
+        2020,
+        12,
+        2
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 21.39,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 267,
+    "date": [
+        2020,
+        11,
+        18
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 21.8,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 278,
+    "date": [
+        2020,
+        11,
+        10
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 21.81,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 283,
+    "date": [
+        2020,
+        10,
+        28
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 21.82,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 296,
+    "date": [
+        2020,
+        10,
+        6
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 22.29,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 311,
+    "date": [
+        2020,
+        9,
+        21
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 22.17,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 314,
+    "date": [
+        2020,
+        9,
+        11
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 23.31,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 328,
+    "date": [
+        2020,
+        8,
+        20
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 24.94,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 339,
+    "date": [
+        2020,
+        8,
+        12
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 24.5,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 346,
+    "date": [
+        2020,
+        7,
+        2
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 22.85,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 350,
+    "date": [
+        2020,
+        6,
+        12
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 18.7,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 355,
+    "date": [
+        2020,
+        6,
+        5
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 20.15,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 368,
+    "date": [
+        2020,
+        5,
+        21
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 19.69,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 392,
+    "date": [
+        2020,
+        3,
+        11
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 17.0,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 393,
+    "date": [
+        2020,
+        3,
+        10
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 17.97,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 395,
+    "date": [
+        2020,
+        3,
+        6
+    ],
+    "asset": "SQIA3",
+    "shares_number": 200,
+    "price": 21.3,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 474,
+    "date": [
+        2021,
+        7,
+        20
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 29.59,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 476,
+    "date": [
+        2021,
+        7,
+        27
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 30.74,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 482,
+    "date": [
+        2021,
+        8,
+        6
+    ],
+    "asset": "SQIA3",
+    "shares_number": 100,
+    "price": 28.51,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 139,
+    "date": [
+        2021,
+        7,
+        2
+    ],
+    "asset": "TRPL4",
+    "shares_number": 100,
+    "price": 24.61,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 154,
+    "date": [
+        2021,
+        5,
+        24
+    ],
+    "asset": "TRPL4",
+    "shares_number": 100,
+    "price": 26.95,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 160,
+    "date": [
+        2021,
+        5,
+        5
+    ],
+    "asset": "TRPL4",
+    "shares_number": 100,
+    "price": 25.61,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 163,
+    "date": [
+        2021,
+        4,
+        29
+    ],
+    "asset": "TRPL4",
+    "shares_number": 100,
+    "price": 26.59,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 201,
+    "date": [
+        2021,
+        2,
+        4
+    ],
+    "asset": "TRPL4",
+    "shares_number": 100,
+    "price": 26.34,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 244,
+    "date": [
+        2020,
+        12,
+        29
+    ],
+    "asset": "TRPL4",
+    "shares_number": 200,
+    "price": 28.07,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 246,
+    "date": [
+        2020,
+        12,
+        28
+    ],
+    "asset": "TRPL4",
+    "shares_number": 200,
+    "price": 28.13,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 250,
+    "date": [
+        2020,
+        12,
+        17
+    ],
+    "asset": "TRPL4",
+    "shares_number": 100,
+    "price": 27.89,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 258,
+    "date": [
+        2020,
+        12,
+        3
+    ],
+    "asset": "TRPL4",
+    "shares_number": 50,
+    "price": 26.85,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 261,
+    "date": [
+        2020,
+        12,
+        1
+    ],
+    "asset": "TRPL4",
+    "shares_number": 50,
+    "price": 27.0,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 268,
+    "date": [
+        2020,
+        11,
+        17
+    ],
+    "asset": "TRPL4",
+    "shares_number": null,
+    "price": 104.41,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 317,
+    "date": [
+        2020,
+        9,
+        3
+    ],
+    "asset": "TRPL4",
+    "shares_number": 100,
+    "price": 21.51,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 323,
+    "date": [
+        2020,
+        8,
+        27
+    ],
+    "asset": "TRPL4",
+    "shares_number": 100,
+    "price": 21.42,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 485,
+    "date": [
+        2021,
+        8,
+        26
+    ],
+    "asset": "TRPL4",
+    "shares_number": 100,
+    "price": 24.65,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 156,
+    "date": [
+        2021,
+        5,
+        14
+    ],
+    "asset": "VALE3",
+    "shares_number": 10,
+    "price": 110.82,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 162,
+    "date": [
+        2021,
+        5,
+        4
+    ],
+    "asset": "VALE3",
+    "shares_number": 20,
+    "price": 107.01,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 170,
+    "date": [
+        2021,
+        4,
+        5
+    ],
+    "asset": "VALE3",
+    "shares_number": 20,
+    "price": 101.89,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 187,
+    "date": [
+        2021,
+        3,
+        4
+    ],
+    "asset": "VALE3",
+    "shares_number": 20,
+    "price": 98.6,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 190,
+    "date": [
+        2021,
+        3,
+        2
+    ],
+    "asset": "VALE3",
+    "shares_number": 30,
+    "price": 101.89,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 200,
+    "date": [
+        2021,
+        2,
+        8
+    ],
+    "asset": "VALE3",
+    "shares_number": 30,
+    "price": 93.79,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 204,
+    "date": [
+        2021,
+        2,
+        3
+    ],
+    "asset": "VALE3",
+    "shares_number": 20,
+    "price": 90.8,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 208,
+    "date": [
+        2021,
+        2,
+        2
+    ],
+    "asset": "VALE3",
+    "shares_number": 30,
+    "price": 88.44,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 209,
+    "date": [
+        2021,
+        2,
+        2
+    ],
+    "asset": "VALE3",
+    "shares_number": 20,
+    "price": 87.91,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 252,
+    "date": [
+        2020,
+        12,
+        10
+    ],
+    "asset": "VALE3",
+    "shares_number": 10,
+    "price": 84.14,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 301,
+    "date": [
+        2020,
+        9,
+        30
+    ],
+    "asset": "VALE3",
+    "shares_number": null,
+    "price": 155.11,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 302,
+    "date": [
+        2020,
+        9,
+        30
+    ],
+    "asset": "VALE3",
+    "shares_number": null,
+    "price": 93.25,
+    "type": "JCP",
+    "username": "flaskoski"
+},
+{
+    "id": 335,
+    "date": [
+        2020,
+        8,
+        13
+    ],
+    "asset": "VALE3",
+    "shares_number": 40,
+    "price": 60.9,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 336,
+    "date": [
+        2020,
+        8,
+        13
+    ],
+    "asset": "VALE3",
+    "shares_number": 35,
+    "price": 60.85,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 344,
+    "date": [
+        2020,
+        7,
+        7
+    ],
+    "asset": "VALE3",
+    "shares_number": 35,
+    "price": 56.33,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 449,
+    "date": [
+        2019,
+        3,
+        6
+    ],
+    "asset": "VALE3",
+    "shares_number": 100,
+    "price": 47.66,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 458,
+    "date": [
+        2019,
+        2,
+        13
+    ],
+    "asset": "VALE3",
+    "shares_number": 100,
+    "price": 45.62,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 460,
+    "date": [
+        2019,
+        2,
+        12
+    ],
+    "asset": "VALE3",
+    "shares_number": 100,
+    "price": 43.2,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 462,
+    "date": [
+        2019,
+        2,
+        11
+    ],
+    "asset": "VALE3",
+    "shares_number": 100,
+    "price": 42.19,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 465,
+    "date": [
+        2019,
+        2,
+        4
+    ],
+    "asset": "VALE3",
+    "shares_number": 100,
+    "price": 44.66,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 471,
+    "date": [
+        2019,
+        1,
+        28
+    ],
+    "asset": "VALE3",
+    "shares_number": 100,
+    "price": 43.26,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 480,
+    "date": [
+        2021,
+        8,
+        3
+    ],
+    "asset": "VALE3",
+    "shares_number": 20,
+    "price": 112.54,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 225,
+    "date": [
+        2020,
+        12,
+        30
+    ],
+    "asset": "BBAS3",
+    "shares_number": null,
+    "price": 19.89,
+    "type": "JCP",
+    "username": "flaskoski"
+},
+{
+    "id": 226,
+    "date": [
+        2020,
+        12,
+        30
+    ],
+    "asset": "BBAS3",
+    "shares_number": null,
+    "price": 0.5,
+    "type": "JCP",
+    "username": "flaskoski"
+},
+{
+    "id": 263,
+    "date": [
+        2020,
+        11,
+        27
+    ],
+    "asset": "BBAS3",
+    "shares_number": null,
+    "price": 33.11,
+    "type": "JCP",
+    "username": "flaskoski"
+},
+{
+    "id": 303,
+    "date": [
+        2020,
+        9,
+        30
+    ],
+    "asset": "BBAS3",
+    "shares_number": null,
+    "price": 17.49,
+    "type": "JCP",
+    "username": "flaskoski"
+},
+{
+    "id": 320,
+    "date": [
+        2020,
+        8,
+        31
+    ],
+    "asset": "BBAS3",
+    "shares_number": null,
+    "price": 74.91,
+    "type": "JCP",
+    "username": "flaskoski"
+},
+{
+    "id": 361,
+    "date": [
+        2020,
+        5,
+        28
+    ],
+    "asset": "BBAS3",
+    "shares_number": 100,
+    "price": 30.45,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 363,
+    "date": [
+        2020,
+        5,
+        25
+    ],
+    "asset": "BBAS3",
+    "shares_number": 100,
+    "price": 31.06,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 391,
+    "date": [
+        2020,
+        3,
+        18
+    ],
+    "asset": "BBAS3",
+    "shares_number": 100,
+    "price": 27.67,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 397,
+    "date": [
+        2020,
+        3,
+        5
+    ],
+    "asset": "BBAS3",
+    "shares_number": null,
+    "price": 52.45,
+    "type": "JCP",
+    "username": "flaskoski"
+},
+{
+    "id": 403,
+    "date": [
+        2019,
+        12,
+        30
+    ],
+    "asset": "BBAS3",
+    "shares_number": null,
+    "price": 14.97,
+    "type": "JCP",
+    "username": "flaskoski"
+},
+{
+    "id": 408,
+    "date": [
+        2019,
+        11,
+        29
+    ],
+    "asset": "BBAS3",
+    "shares_number": null,
+    "price": 31.03,
+    "type": "JCP",
+    "username": "flaskoski"
+},
+{
+    "id": 417,
+    "date": [
+        2019,
+        10,
+        9
+    ],
+    "asset": "BBAS3",
+    "shares_number": 100,
+    "price": 43.99,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 418,
+    "date": [
+        2019,
+        10,
+        7
+    ],
+    "asset": "BBAS3",
+    "shares_number": 100,
+    "price": 43.77,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 419,
+    "date": [
+        2019,
+        9,
+        30
+    ],
+    "asset": "BBAS3",
+    "shares_number": null,
+    "price": 19.8,
+    "type": "JCP",
+    "username": "flaskoski"
+},
+{
+    "id": 421,
+    "date": [
+        2019,
+        8,
+        30
+    ],
+    "asset": "BBAS3",
+    "shares_number": null,
+    "price": 37.52,
+    "type": "JCP",
+    "username": "flaskoski"
+},
+{
+    "id": 422,
+    "date": [
+        2019,
+        8,
+        30
+    ],
+    "asset": "BBAS3",
+    "shares_number": null,
+    "price": 0.37,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 427,
+    "date": [
+        2019,
+        6,
+        28
+    ],
+    "asset": "BBAS3",
+    "shares_number": null,
+    "price": 14.54,
+    "type": "JCP",
+    "username": "flaskoski"
+},
+{
+    "id": 430,
+    "date": [
+        2019,
+        5,
+        31
+    ],
+    "asset": "BBAS3",
+    "shares_number": null,
+    "price": 35.26,
+    "type": "JCP",
+    "username": "flaskoski"
+},
+{
+    "id": 432,
+    "date": [
+        2019,
+        3,
+        27
+    ],
+    "asset": "BBAS3",
+    "shares_number": 100,
+    "price": 47.21,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 466,
+    "date": [
+        2019,
+        2,
+        4
+    ],
+    "asset": "BBAS3",
+    "shares_number": 100,
+    "price": 52.33,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 472,
+    "date": [
+        2019,
+        1,
+        16
+    ],
+    "asset": "BBAS3",
+    "shares_number": 100,
+    "price": 49.11,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 152,
+    "date": [
+        2021,
+        6,
+        1
+    ],
+    "asset": "SBFG3",
+    "shares_number": 100,
+    "price": 35.69,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 174,
+    "date": [
+        2021,
+        3,
+        22
+    ],
+    "asset": "SBFG3",
+    "shares_number": 100,
+    "price": 25.49,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 199,
+    "date": [
+        2021,
+        2,
+        8
+    ],
+    "asset": "SBFG3",
+    "shares_number": 100,
+    "price": 24.61,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 206,
+    "date": [
+        2021,
+        2,
+        2
+    ],
+    "asset": "SBFG3",
+    "shares_number": 100,
+    "price": 25.59,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 210,
+    "date": [
+        2021,
+        2,
+        1
+    ],
+    "asset": "SBFG3",
+    "shares_number": 100,
+    "price": 24.58,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 273,
+    "date": [
+        2020,
+        11,
+        13
+    ],
+    "asset": "SBFG3",
+    "shares_number": 100,
+    "price": 28.4,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 304,
+    "date": [
+        2020,
+        9,
+        29
+    ],
+    "asset": "SBFG3",
+    "shares_number": 100,
+    "price": 26.4,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 324,
+    "date": [
+        2020,
+        8,
+        27
+    ],
+    "asset": "SBFG3",
+    "shares_number": 100,
+    "price": 29.96,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 329,
+    "date": [
+        2020,
+        8,
+        20
+    ],
+    "asset": "SBFG3",
+    "shares_number": 100,
+    "price": 27.27,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 374,
+    "date": [
+        2020,
+        5,
+        19
+    ],
+    "asset": "SBFG3",
+    "shares_number": 100,
+    "price": 27.41,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 381,
+    "date": [
+        2020,
+        5,
+        11
+    ],
+    "asset": "SBFG3",
+    "shares_number": 100,
+    "price": 24.89,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 388,
+    "date": [
+        2020,
+        4,
+        14
+    ],
+    "asset": "SBFG3",
+    "shares_number": 100,
+    "price": 25.74,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 390,
+    "date": [
+        2020,
+        4,
+        1
+    ],
+    "asset": "SBFG3",
+    "shares_number": 100,
+    "price": 21.01,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 406,
+    "date": [
+        2019,
+        12,
+        3
+    ],
+    "asset": "SBFG3",
+    "shares_number": 200,
+    "price": 29.94,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 158,
+    "date": [
+        2021,
+        5,
+        12
+    ],
+    "asset": "PETR4",
+    "shares_number": 100,
+    "price": 24.95,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 207,
+    "date": [
+        2021,
+        2,
+        2
+    ],
+    "asset": "PETR4",
+    "shares_number": 100,
+    "price": 28.82,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 223,
+    "date": [
+        2021,
+        1,
+        4
+    ],
+    "asset": "PETR4",
+    "shares_number": 100,
+    "price": 29.14,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 248,
+    "date": [
+        2020,
+        12,
+        25
+    ],
+    "asset": "PETR4",
+    "shares_number": null,
+    "price": 0.26,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 265,
+    "date": [
+        2020,
+        11,
+        25
+    ],
+    "asset": "PETR4",
+    "shares_number": 100,
+    "price": 26.44,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 319,
+    "date": [
+        2020,
+        9,
+        1
+    ],
+    "asset": "PETR4",
+    "shares_number": 100,
+    "price": 22.88,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 371,
+    "date": [
+        2020,
+        5,
+        20
+    ],
+    "asset": "PETR4",
+    "shares_number": 100,
+    "price": 19.34,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 394,
+    "date": [
+        2020,
+        3,
+        10
+    ],
+    "asset": "PETR4",
+    "shares_number": 100,
+    "price": 16.81,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 396,
+    "date": [
+        2020,
+        3,
+        6
+    ],
+    "asset": "PETR4",
+    "shares_number": 200,
+    "price": 23.21,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 399,
+    "date": [
+        2020,
+        3,
+        2
+    ],
+    "asset": "PETR4",
+    "shares_number": 100,
+    "price": 26.35,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 400,
+    "date": [
+        2020,
+        2,
+        7
+    ],
+    "asset": "PETR4",
+    "shares_number": null,
+    "price": 141.69,
+    "type": "JCP",
+    "username": "flaskoski"
+},
+{
+    "id": 407,
+    "date": [
+        2019,
+        12,
+        3
+    ],
+    "asset": "PETR4",
+    "shares_number": 100,
+    "price": 28.81,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 428,
+    "date": [
+        2019,
+        6,
+        21
+    ],
+    "asset": "PETR4",
+    "shares_number": null,
+    "price": 3.87,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 437,
+    "date": [
+        2019,
+        3,
+        18
+    ],
+    "asset": "PETR4",
+    "shares_number": 100,
+    "price": 27.75,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 438,
+    "date": [
+        2019,
+        3,
+        18
+    ],
+    "asset": "PETR4",
+    "shares_number": 100,
+    "price": 27.0,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 450,
+    "date": [
+        2019,
+        3,
+        5
+    ],
+    "asset": "PETR4",
+    "shares_number": null,
+    "price": 51.0,
+    "type": "JCP",
+    "username": "flaskoski"
+},
+{
+    "id": 452,
+    "date": [
+        2019,
+        2,
+        19
+    ],
+    "asset": "PETR4",
+    "shares_number": 100,
+    "price": 27.1,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 453,
+    "date": [
+        2019,
+        2,
+        18
+    ],
+    "asset": "PETR4",
+    "shares_number": 100,
+    "price": 26.74,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 457,
+    "date": [
+        2019,
+        2,
+        14
+    ],
+    "asset": "PETR4",
+    "shares_number": 100,
+    "price": 26.69,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 463,
+    "date": [
+        2019,
+        2,
+        5
+    ],
+    "asset": "PETR4",
+    "shares_number": 200,
+    "price": 25.92,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 469,
+    "date": [
+        2019,
+        1,
+        31
+    ],
+    "asset": "PETR4",
+    "shares_number": 100,
+    "price": 25.58,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 470,
+    "date": [
+        2019,
+        1,
+        31
+    ],
+    "asset": "PETR4",
+    "shares_number": 100,
+    "price": 25.82,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 473,
+    "date": [
+        2019,
+        1,
+        14
+    ],
+    "asset": "PETR4",
+    "shares_number": 100,
+    "price": 24.89,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 483,
+    "date": [
+        2021,
+        8,
+        13
+    ],
+    "asset": "PETR4",
+    "shares_number": 100,
+    "price": 29.19,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 198,
+    "date": [
+        2021,
+        2,
+        11
+    ],
+    "asset": "OIBR3",
+    "shares_number": 500,
+    "price": 2.04,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 211,
+    "date": [
+        2021,
+        2,
+        1
+    ],
+    "asset": "OIBR3",
+    "shares_number": 500,
+    "price": 2.27,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 212,
+    "date": [
+        2021,
+        1,
+        29
+    ],
+    "asset": "OIBR3",
+    "shares_number": 500,
+    "price": 2.11,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 224,
+    "date": [
+        2021,
+        1,
+        4
+    ],
+    "asset": "OIBR3",
+    "shares_number": 1000,
+    "price": 2.28,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 194,
+    "date": [
+        2021,
+        2,
+        23
+    ],
+    "asset": "CYRE3",
+    "shares_number": 50,
+    "price": 25.97,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 197,
+    "date": [
+        2021,
+        2,
+        22
+    ],
+    "asset": "CYRE3",
+    "shares_number": 50,
+    "price": 25.48,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 157,
+    "date": [
+        2021,
+        5,
+        13
+    ],
+    "asset": "PETZ3",
+    "shares_number": 100,
+    "price": 21.63,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 164,
+    "date": [
+        2021,
+        4,
+        29
+    ],
+    "asset": "PETZ3",
+    "shares_number": 100,
+    "price": 23.98,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 168,
+    "date": [
+        2021,
+        4,
+        22
+    ],
+    "asset": "PETZ3",
+    "shares_number": 100,
+    "price": 22.99,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 171,
+    "date": [
+        2021,
+        3,
+        30
+    ],
+    "asset": "PETZ3",
+    "shares_number": 100,
+    "price": 19.11,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 214,
+    "date": [
+        2021,
+        1,
+        26
+    ],
+    "asset": "PETZ3",
+    "shares_number": 100,
+    "price": 22.19,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 253,
+    "date": [
+        2020,
+        12,
+        9
+    ],
+    "asset": "PETZ3",
+    "shares_number": 200,
+    "price": 18.05,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 475,
+    "date": [
+        2021,
+        7,
+        27
+    ],
+    "asset": "PETZ3",
+    "shares_number": 100,
+    "price": 22.77,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 481,
+    "date": [
+        2021,
+        8,
+        4
+    ],
+    "asset": "PETZ3",
+    "shares_number": 100,
+    "price": 25.0,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 484,
+    "date": [
+        2021,
+        8,
+        20
+    ],
+    "asset": "PETZ3",
+    "shares_number": 100,
+    "price": 27.24,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 229,
+    "date": [
+        2020,
+        12,
+        30
+    ],
+    "asset": "ITSA4",
+    "shares_number": null,
+    "price": 32.0,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 279,
+    "date": [
+        2020,
+        11,
+        10
+    ],
+    "asset": "ITSA4",
+    "shares_number": 200,
+    "price": 10.68,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 297,
+    "date": [
+        2020,
+        10,
+        6
+    ],
+    "asset": "ITSA4",
+    "shares_number": 100,
+    "price": 9.02,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 357,
+    "date": [
+        2020,
+        6,
+        4
+    ],
+    "asset": "ITSA4",
+    "shares_number": 100,
+    "price": 9.83,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 376,
+    "date": [
+        2020,
+        5,
+        14
+    ],
+    "asset": "ITSA4",
+    "shares_number": 100,
+    "price": 8.05,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 384,
+    "date": [
+        2020,
+        4,
+        24
+    ],
+    "asset": "ITSA4",
+    "shares_number": 100,
+    "price": 8.18,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 385,
+    "date": [
+        2020,
+        4,
+        23
+    ],
+    "asset": "ITSA4",
+    "shares_number": 100,
+    "price": 8.94,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 386,
+    "date": [
+        2020,
+        4,
+        17
+    ],
+    "asset": "ITSA4",
+    "shares_number": 100,
+    "price": 9.22,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 387,
+    "date": [
+        2020,
+        4,
+        15
+    ],
+    "asset": "ITSA4",
+    "shares_number": 100,
+    "price": 9.52,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 389,
+    "date": [
+        2020,
+        4,
+        2
+    ],
+    "asset": "ITSA4",
+    "shares_number": 100,
+    "price": 8.35,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 404,
+    "date": [
+        2019,
+        12,
+        27
+    ],
+    "asset": "ITSA4",
+    "shares_number": null,
+    "price": 240.3,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 413,
+    "date": [
+        2019,
+        10,
+        28
+    ],
+    "asset": "ITSA4",
+    "shares_number": 100,
+    "price": 13.89,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 414,
+    "date": [
+        2019,
+        10,
+        28
+    ],
+    "asset": "ITSA4",
+    "shares_number": 100,
+    "price": 13.95,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 415,
+    "date": [
+        2019,
+        10,
+        25
+    ],
+    "asset": "ITSA4",
+    "shares_number": 100,
+    "price": 13.8,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 420,
+    "date": [
+        2019,
+        9,
+        9
+    ],
+    "asset": "ITSA4",
+    "shares_number": 300,
+    "price": 13.13,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 434,
+    "date": [
+        2019,
+        3,
+        25
+    ],
+    "asset": "ITSA4",
+    "shares_number": 100,
+    "price": 11.9,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 439,
+    "date": [
+        2019,
+        3,
+        18
+    ],
+    "asset": "ITSA4",
+    "shares_number": 100,
+    "price": 12.27,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 446,
+    "date": [
+        2019,
+        3,
+        7
+    ],
+    "asset": "ITSA4",
+    "shares_number": null,
+    "price": 158.67,
+    "type": "JCP",
+    "username": "flaskoski"
+},
+{
+    "id": 447,
+    "date": [
+        2019,
+        3,
+        7
+    ],
+    "asset": "ITSA4",
+    "shares_number": null,
+    "price": 271.92,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 454,
+    "date": [
+        2019,
+        2,
+        18
+    ],
+    "asset": "ITSA4",
+    "shares_number": 100,
+    "price": 13.11,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 455,
+    "date": [
+        2019,
+        2,
+        18
+    ],
+    "asset": "ITSA4",
+    "shares_number": 100,
+    "price": 13.06,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 456,
+    "date": [
+        2019,
+        2,
+        15
+    ],
+    "asset": "ITSA4",
+    "shares_number": 100,
+    "price": 13.1,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 467,
+    "date": [
+        2019,
+        2,
+        4
+    ],
+    "asset": "ITSA4",
+    "shares_number": 100,
+    "price": 13.47,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 468,
+    "date": [
+        2019,
+        2,
+        1
+    ],
+    "asset": "ITSA4",
+    "shares_number": 200,
+    "price": 13.34,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 185,
+    "date": [
+        2021,
+        3,
+        4
+    ],
+    "asset": "B3SA3",
+    "shares_number": 120,
+    "price": 18.78,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 217,
+    "date": [
+        2021,
+        1,
+        15
+    ],
+    "asset": "B3SA3",
+    "shares_number": 120,
+    "price": 20.263,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 133,
+    "date": [
+        2021,
+        7,
+        15
+    ],
+    "asset": "ENAT3",
+    "shares_number": 200,
+    "price": 15.06,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 142,
+    "date": [
+        2021,
+        7,
+        1
+    ],
+    "asset": "ENAT3",
+    "shares_number": 100,
+    "price": 18.64,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 166,
+    "date": [
+        2021,
+        4,
+        28
+    ],
+    "asset": "ENAT3",
+    "shares_number": 100,
+    "price": 15.58,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 188,
+    "date": [
+        2021,
+        3,
+        3
+    ],
+    "asset": "ENAT3",
+    "shares_number": 100,
+    "price": 14.99,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 192,
+    "date": [
+        2021,
+        2,
+        26
+    ],
+    "asset": "ENAT3",
+    "shares_number": 100,
+    "price": 13.21,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 193,
+    "date": [
+        2021,
+        2,
+        25
+    ],
+    "asset": "ENAT3",
+    "shares_number": 100,
+    "price": 14.89,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 215,
+    "date": [
+        2021,
+        1,
+        26
+    ],
+    "asset": "ENAT3",
+    "shares_number": 100,
+    "price": 11.74,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 227,
+    "date": [
+        2020,
+        12,
+        30
+    ],
+    "asset": "ITUB4",
+    "shares_number": null,
+    "price": 104.39,
+    "type": "JCP",
+    "username": "flaskoski"
+},
+{
+    "id": 228,
+    "date": [
+        2020,
+        12,
+        30
+    ],
+    "asset": "ITUB4",
+    "shares_number": null,
+    "price": 132.64,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 424,
+    "date": [
+        2019,
+        8,
+        23
+    ],
+    "asset": "ITUB4",
+    "shares_number": null,
+    "price": 157.38,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 441,
+    "date": [
+        2019,
+        3,
+        13
+    ],
+    "asset": "ITUB4",
+    "shares_number": null,
+    "price": 27.0,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 444,
+    "date": [
+        2019,
+        3,
+        7
+    ],
+    "asset": "ITUB4",
+    "shares_number": null,
+    "price": 127.4,
+    "type": "JCP",
+    "username": "flaskoski"
+},
+{
+    "id": 445,
+    "date": [
+        2019,
+        3,
+        7
+    ],
+    "asset": "ITUB4",
+    "shares_number": null,
+    "price": 210.14,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 459,
+    "date": [
+        2019,
+        2,
+        13
+    ],
+    "asset": "ITUB4",
+    "shares_number": 100,
+    "price": 37.22,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 464,
+    "date": [
+        2019,
+        2,
+        5
+    ],
+    "asset": "ITUB4",
+    "shares_number": 100,
+    "price": 38.58,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 140,
+    "date": [
+        2021,
+        7,
+        2
+    ],
+    "asset": "DISB34",
+    "shares_number": 30,
+    "price": 59.56,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 178,
+    "date": [
+        2021,
+        3,
+        11
+    ],
+    "asset": "DISB34",
+    "shares_number": 30,
+    "price": 73.02,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 260,
+    "date": [
+        2020,
+        12,
+        2
+    ],
+    "asset": "DISB34",
+    "shares_number": 4,
+    "price": 784.99,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 262,
+    "date": [
+        2020,
+        11,
+        30
+    ],
+    "asset": "DISB34",
+    "shares_number": 4,
+    "price": 791.4,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 478,
+    "date": [
+        2021,
+        7,
+        29
+    ],
+    "asset": "DISB34",
+    "shares_number": 30,
+    "price": 60.11,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 213,
+    "date": [
+        2021,
+        1,
+        29
+    ],
+    "asset": "BRFS3",
+    "shares_number": 100,
+    "price": 22.09,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 331,
+    "date": [
+        2020,
+        8,
+        17
+    ],
+    "asset": "BRFS3",
+    "shares_number": 100,
+    "price": 21.09,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 218,
+    "date": [
+        2021,
+        1,
+        15
+    ],
+    "asset": "JBSS3",
+    "shares_number": 100,
+    "price": 24.69,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 251,
+    "date": [
+        2020,
+        12,
+        16
+    ],
+    "asset": "JBSS3",
+    "shares_number": 100,
+    "price": 23.73,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 274,
+    "date": [
+        2020,
+        11,
+        12
+    ],
+    "asset": "JBSS3",
+    "shares_number": 100,
+    "price": 21.99,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 281,
+    "date": [
+        2020,
+        10,
+        29
+    ],
+    "asset": "JBSS3",
+    "shares_number": 100,
+    "price": 19.73,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 286,
+    "date": [
+        2020,
+        10,
+        15
+    ],
+    "asset": "JBSS3",
+    "shares_number": 100,
+    "price": 22.51,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 293,
+    "date": [
+        2020,
+        10,
+        8
+    ],
+    "asset": "JBSS3",
+    "shares_number": 100,
+    "price": 19.84,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 330,
+    "date": [
+        2020,
+        8,
+        17
+    ],
+    "asset": "JBSS3",
+    "shares_number": 100,
+    "price": 24.53,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 337,
+    "date": [
+        2020,
+        8,
+        13
+    ],
+    "asset": "JBSS3",
+    "shares_number": 100,
+    "price": 22.55,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 345,
+    "date": [
+        2020,
+        7,
+        7
+    ],
+    "asset": "JBSS3",
+    "shares_number": 100,
+    "price": 22.99,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 347,
+    "date": [
+        2020,
+        7,
+        2
+    ],
+    "asset": "JBSS3",
+    "shares_number": 100,
+    "price": 20.94,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 354,
+    "date": [
+        2020,
+        6,
+        10
+    ],
+    "asset": "JBSS3",
+    "shares_number": 100,
+    "price": 22.12,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 358,
+    "date": [
+        2020,
+        6,
+        4
+    ],
+    "asset": "JBSS3",
+    "shares_number": 100,
+    "price": 21.14,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 360,
+    "date": [
+        2020,
+        6,
+        2
+    ],
+    "asset": "JBSS3",
+    "shares_number": 100,
+    "price": 21.67,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 369,
+    "date": [
+        2020,
+        5,
+        21
+    ],
+    "asset": "JBSS3",
+    "shares_number": 100,
+    "price": 20.48,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 372,
+    "date": [
+        2020,
+        5,
+        20
+    ],
+    "asset": "JBSS3",
+    "shares_number": 100,
+    "price": 20.86,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 375,
+    "date": [
+        2020,
+        5,
+        18
+    ],
+    "asset": "JBSS3",
+    "shares_number": 100,
+    "price": 22.4,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 378,
+    "date": [
+        2020,
+        5,
+        13
+    ],
+    "asset": "JBSS3",
+    "shares_number": 100,
+    "price": 24.56,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 382,
+    "date": [
+        2020,
+        5,
+        11
+    ],
+    "asset": "JBSS3",
+    "shares_number": 100,
+    "price": 23.34,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 409,
+    "date": [
+        2019,
+        11,
+        19
+    ],
+    "asset": "GGBR4",
+    "shares_number": 200,
+    "price": 15.31,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 410,
+    "date": [
+        2019,
+        11,
+        11
+    ],
+    "asset": "GGBR4",
+    "shares_number": 300,
+    "price": 15.26,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 411,
+    "date": [
+        2019,
+        11,
+        5
+    ],
+    "asset": "GGBR4",
+    "shares_number": 200,
+    "price": 14.82,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 412,
+    "date": [
+        2019,
+        10,
+        30
+    ],
+    "asset": "GGBR4",
+    "shares_number": 100,
+    "price": 13.46,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 416,
+    "date": [
+        2019,
+        10,
+        10
+    ],
+    "asset": "GGBR4",
+    "shares_number": 100,
+    "price": 12.6,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 423,
+    "date": [
+        2019,
+        8,
+        28
+    ],
+    "asset": "GGBR4",
+    "shares_number": null,
+    "price": 57.0,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 425,
+    "date": [
+        2019,
+        8,
+        1
+    ],
+    "asset": "GGBR4",
+    "shares_number": 100,
+    "price": 13.85,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 426,
+    "date": [
+        2019,
+        8,
+        1
+    ],
+    "asset": "GGBR4",
+    "shares_number": 100,
+    "price": 13.74,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 431,
+    "date": [
+        2019,
+        5,
+        29
+    ],
+    "asset": "GGBR4",
+    "shares_number": null,
+    "price": 65.0,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 440,
+    "date": [
+        2019,
+        3,
+        18
+    ],
+    "asset": "GGBR4",
+    "shares_number": 100,
+    "price": 14.65,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 442,
+    "date": [
+        2019,
+        3,
+        11
+    ],
+    "asset": "GGBR4",
+    "shares_number": 100,
+    "price": 14.74,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 443,
+    "date": [
+        2019,
+        3,
+        8
+    ],
+    "asset": "GGBR4",
+    "shares_number": 100,
+    "price": 14.25,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 448,
+    "date": [
+        2019,
+        3,
+        7
+    ],
+    "asset": "GGBR4",
+    "shares_number": 100,
+    "price": 14.75,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 451,
+    "date": [
+        2019,
+        2,
+        21
+    ],
+    "asset": "GGBR4",
+    "shares_number": 200,
+    "price": 15.21,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 461,
+    "date": [
+        2019,
+        2,
+        12
+    ],
+    "asset": "GGBR4",
+    "shares_number": 100,
+    "price": 15.56,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 405,
+    "date": [
+        2019,
+        12,
+        27
+    ],
+    "asset": "CMIG4",
+    "shares_number": null,
+    "price": 90.15,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 429,
+    "date": [
+        2019,
+        6,
+        3
+    ],
+    "asset": "CMIG4",
+    "shares_number": 200,
+    "price": 14.85,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 436,
+    "date": [
+        2019,
+        3,
+        19
+    ],
+    "asset": "CMIG4",
+    "shares_number": 200,
+    "price": 14.79,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 383,
+    "date": [
+        2020,
+        5,
+        11
+    ],
+    "asset": "ARZZ3",
+    "shares_number": 100,
+    "price": 40.77,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 398,
+    "date": [
+        2020,
+        3,
+        3
+    ],
+    "asset": "ARZZ3",
+    "shares_number": 100,
+    "price": 58.8,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 230,
+    "date": [
+        2020,
+        12,
+        30
+    ],
+    "asset": "HGRU11",
+    "shares_number": null,
+    "price": 92.9,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 242,
+    "date": [
+        2020,
+        12,
+        30
+    ],
+    "asset": "HGRU11",
+    "shares_number": null,
+    "price": 73.74,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 284,
+    "date": [
+        2020,
+        10,
+        20
+    ],
+    "asset": "HGRU11",
+    "shares_number": 25,
+    "price": 123.45,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 285,
+    "date": [
+        2020,
+        10,
+        20
+    ],
+    "asset": "HGRU11",
+    "shares_number": 13,
+    "price": 123.37,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 291,
+    "date": [
+        2020,
+        10,
+        13
+    ],
+    "asset": "HGRU11",
+    "shares_number": null,
+    "price": 44.2,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 309,
+    "date": [
+        2020,
+        9,
+        24
+    ],
+    "asset": "HGRU11",
+    "shares_number": 35,
+    "price": 133.99,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 313,
+    "date": [
+        2020,
+        9,
+        15
+    ],
+    "asset": "HGRU11",
+    "shares_number": null,
+    "price": 44.2,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 332,
+    "date": [
+        2020,
+        8,
+        14
+    ],
+    "asset": "HGRU11",
+    "shares_number": null,
+    "price": 44.2,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 340,
+    "date": [
+        2020,
+        7,
+        14
+    ],
+    "asset": "HGRU11",
+    "shares_number": null,
+    "price": 44.2,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 351,
+    "date": [
+        2020,
+        6,
+        12
+    ],
+    "asset": "HGRU11",
+    "shares_number": null,
+    "price": 44.2,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 370,
+    "date": [
+        2020,
+        5,
+        21
+    ],
+    "asset": "HGRU11",
+    "shares_number": 10,
+    "price": 113.18,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 373,
+    "date": [
+        2020,
+        5,
+        20
+    ],
+    "asset": "HGRU11",
+    "shares_number": 30,
+    "price": 110.85,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 377,
+    "date": [
+        2020,
+        5,
+        14
+    ],
+    "asset": "HGRU11",
+    "shares_number": 10,
+    "price": 112.15,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 379,
+    "date": [
+        2020,
+        5,
+        13
+    ],
+    "asset": "HGRU11",
+    "shares_number": 5,
+    "price": 113.37,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 380,
+    "date": [
+        2020,
+        5,
+        13
+    ],
+    "asset": "HGRU11",
+    "shares_number": 10,
+    "price": 113.35,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 231,
+    "date": [
+        2020,
+        12,
+        30
+    ],
+    "asset": "XPML11",
+    "shares_number": null,
+    "price": 199.39,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 237,
+    "date": [
+        2020,
+        12,
+        30
+    ],
+    "asset": "XPML11",
+    "shares_number": null,
+    "price": 90.4,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 269,
+    "date": [
+        2020,
+        11,
+        17
+    ],
+    "asset": "XPML11",
+    "shares_number": 30,
+    "price": 112.43,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 270,
+    "date": [
+        2020,
+        11,
+        17
+    ],
+    "asset": "XPML11",
+    "shares_number": 1,
+    "price": 112.35,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 295,
+    "date": [
+        2020,
+        10,
+        8
+    ],
+    "asset": "XPML11",
+    "shares_number": 50,
+    "price": 107.97,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 307,
+    "date": [
+        2020,
+        9,
+        28
+    ],
+    "asset": "XPML11",
+    "shares_number": 30,
+    "price": 106.05,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 401,
+    "date": [
+        2020,
+        1,
+        14
+    ],
+    "asset": "XPML11",
+    "shares_number": 20,
+    "price": 140.92,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 402,
+    "date": [
+        2020,
+        1,
+        6
+    ],
+    "asset": "XPML11",
+    "shares_number": 35,
+    "price": 147.42,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 219,
+    "date": [
+        2021,
+        1,
+        15
+    ],
+    "asset": "XPLG11",
+    "shares_number": 17,
+    "price": 117.38,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 232,
+    "date": [
+        2020,
+        12,
+        30
+    ],
+    "asset": "XPLG11",
+    "shares_number": null,
+    "price": 116.0,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 247,
+    "date": [
+        2020,
+        12,
+        28
+    ],
+    "asset": "XPLG11",
+    "shares_number": 12,
+    "price": 117.38,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 338,
+    "date": [
+        2020,
+        8,
+        13
+    ],
+    "asset": "XPLG11",
+    "shares_number": null,
+    "price": 29.0,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 341,
+    "date": [
+        2020,
+        7,
+        14
+    ],
+    "asset": "XPLG11",
+    "shares_number": null,
+    "price": 28.5,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 349,
+    "date": [
+        2020,
+        6,
+        18
+    ],
+    "asset": "XPLG11",
+    "shares_number": 10,
+    "price": 115.9,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 352,
+    "date": [
+        2020,
+        6,
+        12
+    ],
+    "asset": "XPLG11",
+    "shares_number": null,
+    "price": 16.2,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 359,
+    "date": [
+        2020,
+        6,
+        4
+    ],
+    "asset": "XPLG11",
+    "shares_number": 10,
+    "price": 115.16,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 364,
+    "date": [
+        2020,
+        5,
+        25
+    ],
+    "asset": "XPLG11",
+    "shares_number": 15,
+    "price": 116.0,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 366,
+    "date": [
+        2020,
+        5,
+        22
+    ],
+    "asset": "XPLG11",
+    "shares_number": 15,
+    "price": 116.54,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 233,
+    "date": [
+        2020,
+        12,
+        30
+    ],
+    "asset": "RBRR11",
+    "shares_number": null,
+    "price": 40.0,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 239,
+    "date": [
+        2020,
+        12,
+        30
+    ],
+    "asset": "RBRR11",
+    "shares_number": null,
+    "price": 145.0,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 308,
+    "date": [
+        2020,
+        9,
+        24
+    ],
+    "asset": "RBRR11",
+    "shares_number": 30,
+    "price": 100.6,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 326,
+    "date": [
+        2020,
+        8,
+        24
+    ],
+    "asset": "RBRR11",
+    "shares_number": 50,
+    "price": 98.65,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 333,
+    "date": [
+        2020,
+        8,
+        14
+    ],
+    "asset": "RBRR11",
+    "shares_number": null,
+    "price": 11.0,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 342,
+    "date": [
+        2020,
+        7,
+        14
+    ],
+    "asset": "RBRR11",
+    "shares_number": null,
+    "price": 10.0,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 348,
+    "date": [
+        2020,
+        6,
+        19
+    ],
+    "asset": "RBRR11",
+    "shares_number": 20,
+    "price": 99.58,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 136,
+    "date": [
+        2021,
+        7,
+        8
+    ],
+    "asset": "RECR11",
+    "shares_number": 7,
+    "price": 102.13,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 137,
+    "date": [
+        2021,
+        7,
+        8
+    ],
+    "asset": "RECR11",
+    "shares_number": 3,
+    "price": 102.17,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 145,
+    "date": [
+        2021,
+        6,
+        23
+    ],
+    "asset": "RECR11",
+    "shares_number": 10,
+    "price": 98.0,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 148,
+    "date": [
+        2021,
+        6,
+        8
+    ],
+    "asset": "RECR11",
+    "shares_number": 12,
+    "price": 98.0,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 149,
+    "date": [
+        2021,
+        6,
+        8
+    ],
+    "asset": "RECR11",
+    "shares_number": 12,
+    "price": 98.0,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 195,
+    "date": [
+        2021,
+        2,
+        23
+    ],
+    "asset": "RECR11",
+    "shares_number": 3,
+    "price": 98.0,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 196,
+    "date": [
+        2021,
+        2,
+        23
+    ],
+    "asset": "RECR11",
+    "shares_number": 3,
+    "price": 98.0,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 202,
+    "date": [
+        2021,
+        2,
+        4
+    ],
+    "asset": "RECR11",
+    "shares_number": 10,
+    "price": 98.0,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 203,
+    "date": [
+        2021,
+        2,
+        4
+    ],
+    "asset": "RECR11",
+    "shares_number": 10,
+    "price": 98.0,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 234,
+    "date": [
+        2020,
+        12,
+        30
+    ],
+    "asset": "RECR11",
+    "shares_number": null,
+    "price": 117.9,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 243,
+    "date": [
+        2020,
+        12,
+        30
+    ],
+    "asset": "RECR11",
+    "shares_number": null,
+    "price": 39.3,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 277,
+    "date": [
+        2020,
+        11,
+        11
+    ],
+    "asset": "RECR11",
+    "shares_number": 30,
+    "price": 102.87,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 298,
+    "date": [
+        2020,
+        10,
+        6
+    ],
+    "asset": "RECR11",
+    "shares_number": 30,
+    "price": 97.03,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 282,
+    "date": [
+        2020,
+        10,
+        29
+    ],
+    "asset": "HGCR11",
+    "shares_number": 30,
+    "price": 99.78,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 287,
+    "date": [
+        2020,
+        10,
+        15
+    ],
+    "asset": "HGCR11",
+    "shares_number": null,
+    "price": 28.8,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 299,
+    "date": [
+        2020,
+        10,
+        5
+    ],
+    "asset": "HGCR11",
+    "shares_number": 30,
+    "price": 103.43,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 300,
+    "date": [
+        2020,
+        10,
+        3
+    ],
+    "asset": "HGCR11",
+    "shares_number": null,
+    "price": 28.8,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 334,
+    "date": [
+        2020,
+        8,
+        14
+    ],
+    "asset": "HGCR11",
+    "shares_number": null,
+    "price": 28.8,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 343,
+    "date": [
+        2020,
+        7,
+        14
+    ],
+    "asset": "HGCR11",
+    "shares_number": null,
+    "price": 28.8,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 353,
+    "date": [
+        2020,
+        6,
+        12
+    ],
+    "asset": "HGCR11",
+    "shares_number": null,
+    "price": 22.4,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 356,
+    "date": [
+        2020,
+        6,
+        5
+    ],
+    "asset": "HGCR11",
+    "shares_number": 20,
+    "price": 106.2,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 362,
+    "date": [
+        2020,
+        5,
+        27
+    ],
+    "asset": "HGCR11",
+    "shares_number": 10,
+    "price": 103.6,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 365,
+    "date": [
+        2020,
+        5,
+        25
+    ],
+    "asset": "HGCR11",
+    "shares_number": 10,
+    "price": 102.67,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 367,
+    "date": [
+        2020,
+        5,
+        22
+    ],
+    "asset": "HGCR11",
+    "shares_number": 20,
+    "price": 102.23,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 235,
+    "date": [
+        2020,
+        12,
+        30
+    ],
+    "asset": "HGLG11",
+    "shares_number": null,
+    "price": 101.4,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 254,
+    "date": [
+        2020,
+        12,
+        9
+    ],
+    "asset": "HGLG11",
+    "shares_number": 20,
+    "price": 167.7,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 280,
+    "date": [
+        2020,
+        11,
+        9
+    ],
+    "asset": "HGLG11",
+    "shares_number": 30,
+    "price": 169.23,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 288,
+    "date": [
+        2020,
+        10,
+        15
+    ],
+    "asset": "HGLG11",
+    "shares_number": null,
+    "price": 30.0,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 312,
+    "date": [
+        2020,
+        9,
+        21
+    ],
+    "asset": "HGLG11",
+    "shares_number": 50,
+    "price": 165.81,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 479,
+    "date": [
+        2021,
+        8,
+        12
+    ],
+    "asset": "HGLG11",
+    "shares_number": 23,
+    "price": 160.32,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 153,
+    "date": [
+        2021,
+        5,
+        25
+    ],
+    "asset": "CPTS11",
+    "shares_number": 41,
+    "price": 98.35,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 175,
+    "date": [
+        2021,
+        3,
+        18
+    ],
+    "asset": "CPTS11",
+    "shares_number": 39,
+    "price": 97.49,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 186,
+    "date": [
+        2021,
+        3,
+        4
+    ],
+    "asset": "CPTS11",
+    "shares_number": 56,
+    "price": 97.49,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 189,
+    "date": [
+        2021,
+        3,
+        2
+    ],
+    "asset": "CPTS11",
+    "shares_number": 40,
+    "price": 99.71,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 236,
+    "date": [
+        2020,
+        12,
+        30
+    ],
+    "asset": "CPTS11",
+    "shares_number": null,
+    "price": 136.5,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 255,
+    "date": [
+        2020,
+        12,
+        9
+    ],
+    "asset": "CPTS11",
+    "shares_number": 54,
+    "price": 97.49,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 271,
+    "date": [
+        2020,
+        11,
+        17
+    ],
+    "asset": "CPTS11",
+    "shares_number": null,
+    "price": 178.2,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 275,
+    "date": [
+        2020,
+        11,
+        11
+    ],
+    "asset": "CPTS11",
+    "shares_number": 20,
+    "price": 97.84,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 292,
+    "date": [
+        2020,
+        10,
+        13
+    ],
+    "asset": "CPTS11",
+    "shares_number": null,
+    "price": 52.5,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 310,
+    "date": [
+        2020,
+        9,
+        22
+    ],
+    "asset": "CPTS11",
+    "shares_number": 40,
+    "price": 96.02,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 321,
+    "date": [
+        2020,
+        8,
+        28
+    ],
+    "asset": "CPTS11",
+    "shares_number": 70,
+    "price": 95.48,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 276,
+    "date": [
+        2020,
+        11,
+        11
+    ],
+    "asset": "VINO11",
+    "shares_number": 90,
+    "price": 59.96,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 289,
+    "date": [
+        2020,
+        10,
+        15
+    ],
+    "asset": "VINO11",
+    "shares_number": null,
+    "price": 150.5,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 294,
+    "date": [
+        2020,
+        10,
+        8
+    ],
+    "asset": "VINO11",
+    "shares_number": 50,
+    "price": 60.6,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 306,
+    "date": [
+        2020,
+        9,
+        28
+    ],
+    "asset": "VINO11",
+    "shares_number": 80,
+    "price": 59.0,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 216,
+    "date": [
+        2021,
+        1,
+        26
+    ],
+    "asset": "VILG11",
+    "shares_number": 19,
+    "price": 118.0,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 238,
+    "date": [
+        2020,
+        12,
+        30
+    ],
+    "asset": "VILG11",
+    "shares_number": null,
+    "price": 61.2,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 290,
+    "date": [
+        2020,
+        10,
+        15
+    ],
+    "asset": "VILG11",
+    "shares_number": null,
+    "price": 30.0,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 315,
+    "date": [
+        2020,
+        9,
+        9
+    ],
+    "asset": "VILG11",
+    "shares_number": 30,
+    "price": 126.76,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 316,
+    "date": [
+        2020,
+        9,
+        9
+    ],
+    "asset": "VILG11",
+    "shares_number": 30,
+    "price": 126.99,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 240,
+    "date": [
+        2020,
+        12,
+        30
+    ],
+    "asset": "BRCR11",
+    "shares_number": null,
+    "price": 93.98,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 327,
+    "date": [
+        2020,
+        8,
+        24
+    ],
+    "asset": "BRCR11",
+    "shares_number": 50,
+    "price": 88.56,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 179,
+    "date": [
+        2021,
+        3,
+        11
+    ],
+    "asset": "HGBS11",
+    "shares_number": 20,
+    "price": 198.97,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 241,
+    "date": [
+        2020,
+        12,
+        30
+    ],
+    "asset": "HGBS11",
+    "shares_number": null,
+    "price": 16.8,
+    "type": "DIVIDEND",
+    "username": "flaskoski"
+},
+{
+    "id": 266,
+    "date": [
+        2020,
+        11,
+        23
+    ],
+    "asset": "HGBS11",
+    "shares_number": 28,
+    "price": 209.01,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 245,
+    "date": [
+        2020,
+        12,
+        29
+    ],
+    "asset": "HSML11",
+    "shares_number": 40,
+    "price": 93.35,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 180,
+    "date": [
+        2021,
+        3,
+        10
+    ],
+    "asset": "AMZO34",
+    "shares_number": 25,
+    "price": 112.75,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 183,
+    "date": [
+        2021,
+        3,
+        9
+    ],
+    "asset": "AMZO34",
+    "shares_number": 25,
+    "price": 112.75,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 477,
+    "date": [
+        2021,
+        7,
+        29
+    ],
+    "asset": "AMZO34",
+    "shares_number": 50,
+    "price": 116.34,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 433,
+    "date": [
+        2019,
+        3,
+        27
+    ],
+    "asset": "SUZB3",
+    "shares_number": 100,
+    "price": 47.47,
+    "type": "SELL",
+    "username": "flaskoski"
+},
+{
+    "id": 435,
+    "date": [
+        2019,
+        3,
+        20
+    ],
+    "asset": "SUZB3",
+    "shares_number": 100,
+    "price": 45.91,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 165,
+    "date": [
+        2021,
+        4,
+        28
+    ],
+    "asset": "WEGE3",
+    "shares_number": 40,
+    "price": 38.25,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 176,
+    "date": [
+        2021,
+        3,
+        17
+    ],
+    "asset": "WEGE3",
+    "shares_number": 60,
+    "price": 36.3,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 177,
+    "date": [
+        2021,
+        3,
+        16
+    ],
+    "asset": "SSFO34",
+    "shares_number": 44,
+    "price": 55.02,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 143,
+    "date": [
+        2021,
+        6,
+        30
+    ],
+    "asset": "MSCD34",
+    "shares_number": 31,
+    "price": 59.21,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 150,
+    "date": [
+        2021,
+        6,
+        2
+    ],
+    "asset": "MSCD34",
+    "shares_number": 62,
+    "price": 60.13,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 161,
+    "date": [
+        2021,
+        5,
+        5
+    ],
+    "asset": "MSCD34",
+    "shares_number": 31,
+    "price": 64.98,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 173,
+    "date": [
+        2021,
+        3,
+        23
+    ],
+    "asset": "MSCD34",
+    "shares_number": 31,
+    "price": 63.01,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 134,
+    "date": [
+        2021,
+        7,
+        15
+    ],
+    "asset": "BABA34",
+    "shares_number": 56,
+    "price": 38.56,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 169,
+    "date": [
+        2021,
+        4,
+        22
+    ],
+    "asset": "BABA34",
+    "shares_number": 56,
+    "price": 45.19,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 172,
+    "date": [
+        2021,
+        3,
+        24
+    ],
+    "asset": "BABA34",
+    "shares_number": 56,
+    "price": 46.01,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 135,
+    "date": [
+        2021,
+        7,
+        15
+    ],
+    "asset": "BERK34",
+    "shares_number": 20,
+    "price": 71.8,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 141,
+    "date": [
+        2021,
+        7,
+        2
+    ],
+    "asset": "BERK34",
+    "shares_number": 40,
+    "price": 70.33,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 167,
+    "date": [
+        2021,
+        4,
+        27
+    ],
+    "asset": "TSMC34",
+    "shares_number": 32,
+    "price": 82.0,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 486,
+    "date": [
+        2021,
+        8,
+        26
+    ],
+    "asset": "VIIA3",
+    "shares_number": 300,
+    "price": 11.24,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+{
+    "id": 487,
+    "date": [
+        2021,
+        9,
+        3
+    ],
+    "asset": "R1CL34",
+    "shares_number": 26,
+    "price": 205.02,
+    "type": "BUY",
+    "username": "flaskoski"
+},
+        {
+            "id": 49,
+            "date": [
+                2020,
+                10,
+                8
+            ],
+            "asset": "AZUL4",
+            "shares_number": 1,
+            "price": 25.05,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 51,
+            "date": [
+                2020,
+                11,
+                3
+            ],
+            "asset": "AZUL4",
+            "shares_number": 2,
+            "price": 22.7,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 58,
+            "date": [
+                2020,
+                11,
+                30
+            ],
+            "asset": "AZUL4",
+            "shares_number": 2,
+            "price": 39.46,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 60,
+            "date": [
+                2020,
+                12,
+                14
+            ],
+            "asset": "AZUL4",
+            "shares_number": 2,
+            "price": 40.62,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 62,
+            "date": [
+                2020,
+                12,
+                15
+            ],
+            "asset": "AZUL4",
+            "shares_number": 1,
+            "price": 39.76,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 63,
+            "date": [
+                2020,
+                12,
+                21
+            ],
+            "asset": "AZUL4",
+            "shares_number": 2,
+            "price": 36.8,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 67,
+            "date": [
+                2021,
+                3,
+                8
+            ],
+            "asset": "AZUL4",
+            "shares_number": 1,
+            "price": 37.37,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 68,
+            "date": [
+                2021,
+                3,
+                8
+            ],
+            "asset": "AZUL4",
+            "shares_number": 2,
+            "price": 37.99,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 71,
+            "date": [
+                2020,
+                5,
+                29
+            ],
+            "asset": "AZUL4",
+            "shares_number": 1,
+            "price": 14.3,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 72,
+            "date": [
+                2020,
+                5,
+                18
+            ],
+            "asset": "AZUL4",
+            "shares_number": 3,
+            "price": 13.47,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 69,
+            "date": [
+                2020,
+                6,
+                1
+            ],
+            "asset": "ITSA4",
+            "shares_number": 3,
+            "price": 9.04,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 43,
+            "date": [
+                2020,
+                3,
+                9
+            ],
+            "asset": "IRBR3",
+            "shares_number": 6,
+            "price": 14.89,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 44,
+            "date": [
+                2020,
+                4,
+                29
+            ],
+            "asset": "IRBR3",
+            "shares_number": 6,
+            "price": 14.25,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 47,
+            "date": [
+                2020,
+                9,
+                22
+            ],
+            "asset": "IRBR3",
+            "shares_number": 2,
+            "price": 5.7,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 64,
+            "date": [
+                2020,
+                12,
+                30
+            ],
+            "asset": "IRBR3",
+            "shares_number": 20,
+            "price": 8.24,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 70,
+            "date": [
+                2020,
+                5,
+                19
+            ],
+            "asset": "IRBR3",
+            "shares_number": 1,
+            "price": 7.56,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 73,
+            "date": [
+                2020,
+                5,
+                15
+            ],
+            "asset": "IRBR3",
+            "shares_number": 1,
+            "price": 7.06,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 46,
+            "date": [
+                2020,
+                9,
+                9
+            ],
+            "asset": "CVCB3",
+            "shares_number": 6,
+            "price": 17.66,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 48,
+            "date": [
+                2020,
+                10,
+                2
+            ],
+            "asset": "CVCB3",
+            "shares_number": 2,
+            "price": 14.95,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 50,
+            "date": [
+                2020,
+                10,
+                8
+            ],
+            "asset": "CVCB3",
+            "shares_number": 1,
+            "price": 14.97,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 52,
+            "date": [
+                2020,
+                11,
+                3
+            ],
+            "asset": "CVCB3",
+            "shares_number": 3,
+            "price": 12.16,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 53,
+            "date": [
+                2020,
+                11,
+                6
+            ],
+            "asset": "CVCB3",
+            "shares_number": 2,
+            "price": 13.23,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 54,
+            "date": [
+                2020,
+                11,
+                17
+            ],
+            "asset": "CVCB3",
+            "shares_number": 7,
+            "price": 15.97,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 56,
+            "date": [
+                2020,
+                11,
+                20
+            ],
+            "asset": "CVCB3",
+            "shares_number": 4,
+            "price": 16.34,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 59,
+            "date": [
+                2020,
+                11,
+                30
+            ],
+            "asset": "CVCB3",
+            "shares_number": 6,
+            "price": 18.75,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 61,
+            "date": [
+                2020,
+                12,
+                14
+            ],
+            "asset": "CVCB3",
+            "shares_number": 2,
+            "price": 22.73,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 65,
+            "date": [
+                2021,
+                3,
+                4
+            ],
+            "asset": "CVCB3",
+            "shares_number": 5,
+            "price": 15.46,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 66,
+            "date": [
+                2021,
+                3,
+                4
+            ],
+            "asset": "CVCB3",
+            "shares_number": 4,
+            "price": 15.12,
+            "type": "SELL",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 45,
+            "date": [
+                2020,
+                5,
+                5
+            ],
+            "asset": "MRVE3",
+            "shares_number": 6,
+            "price": 14.83,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 55,
+            "date": [
+                2020,
+                11,
+                17
+            ],
+            "asset": "MRVE3",
+            "shares_number": 6,
+            "price": 20.34,
+            "type": "SELL",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 57,
+            "date": [
+                2020,
+                11,
+                20
+            ],
+            "asset": "MRFG3",
+            "shares_number": 4,
+            "price": 14.47,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 79,
+            "date": [
+                2020,
+                11,
+                3
+            ],
+            "asset": "VINO11",
+            "shares_number": 1,
+            "price": 59.1,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 80,
+            "date": [
+                2020,
+                12,
+                14
+            ],
+            "asset": "VINO11",
+            "shares_number": 1,
+            "price": 58.94,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 81,
+            "date": [
+                2020,
+                12,
+                14
+            ],
+            "asset": "VINO11",
+            "shares_number": 1,
+            "price": 58.96,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 77,
+            "date": [
+                2020,
+                7,
+                1
+            ],
+            "asset": "XPML11",
+            "shares_number": 1,
+            "price": 103.79,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+        {
+            "id": 78,
+            "date": [
+                2020,
+                11,
+                3
+            ],
+            "asset": "CPTS11",
+            "shares_number": 1,
+            "price": 96.29,
+            "type": "BUY",
+            "username": "rlaskoski86"
+        },
+                {
+                    "id": 82,
+                    "date": [
+                        2020,
+                        4,
+                        23
+                    ],
+                    "asset": "ITSA4",
+                    "shares_number": 400,
+                    "price": 8.94,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 84,
+                    "date": [
+                        2020,
+                        7,
+                        20
+                    ],
+                    "asset": "ITSA4",
+                    "shares_number": 400,
+                    "price": 10.41,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 99,
+                    "date": [
+                        2020,
+                        12,
+                        23
+                    ],
+                    "asset": "ITSA4",
+                    "shares_number": 200,
+                    "price": 11.64,
+                    "type": "SELL",
+                    "username": "elizete"
+                },
+                {
+                    "id": 83,
+                    "date": [
+                        2020,
+                        5,
+                        20
+                    ],
+                    "asset": "HGRU11",
+                    "shares_number": 45,
+                    "price": 111.14,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 96,
+                    "date": [
+                        2020,
+                        12,
+                        23
+                    ],
+                    "asset": "HGRU11",
+                    "shares_number": 1,
+                    "price": 126.84,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 98,
+                    "date": [
+                        2020,
+                        12,
+                        23
+                    ],
+                    "asset": "HGRU11",
+                    "shares_number": 24,
+                    "price": 126.85,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 112,
+                    "date": [
+                        2020,
+                        10,
+                        20
+                    ],
+                    "asset": "HGRU11",
+                    "shares_number": 17,
+                    "price": 123.37,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 85,
+                    "date": [
+                        2020,
+                        8,
+                        24
+                    ],
+                    "asset": "VALE3",
+                    "shares_number": 100,
+                    "price": 62.63,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 86,
+                    "date": [
+                        2020,
+                        9,
+                        28
+                    ],
+                    "asset": "VALE3",
+                    "shares_number": 60,
+                    "price": 59.6,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 92,
+                    "date": [
+                        2020,
+                        12,
+                        2
+                    ],
+                    "asset": "VALE3",
+                    "shares_number": 1,
+                    "price": 77.45,
+                    "type": "SELL",
+                    "username": "elizete"
+                },
+                {
+                    "id": 94,
+                    "date": [
+                        2020,
+                        12,
+                        23
+                    ],
+                    "asset": "VALE3",
+                    "shares_number": 41,
+                    "price": 87.12,
+                    "type": "SELL",
+                    "username": "elizete"
+                },
+                {
+                    "id": 95,
+                    "date": [
+                        2020,
+                        12,
+                        23
+                    ],
+                    "asset": "VALE3",
+                    "shares_number": 18,
+                    "price": 87.15,
+                    "type": "SELL",
+                    "username": "elizete"
+                },
+                {
+                    "id": 87,
+                    "date": [
+                        2020,
+                        10,
+                        8
+                    ],
+                    "asset": "JBSS3",
+                    "shares_number": 200,
+                    "price": 19.88,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 88,
+                    "date": [
+                        2020,
+                        10,
+                        16
+                    ],
+                    "asset": "JBSS3",
+                    "shares_number": 200,
+                    "price": 23.31,
+                    "type": "SELL",
+                    "username": "elizete"
+                },
+                {
+                    "id": 91,
+                    "date": [
+                        2020,
+                        10,
+                        28
+                    ],
+                    "asset": "JBSS3",
+                    "shares_number": 100,
+                    "price": 20.01,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 89,
+                    "date": [
+                        2020,
+                        10,
+                        16
+                    ],
+                    "asset": "SAPR11",
+                    "shares_number": 200,
+                    "price": 25.9,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 90,
+                    "date": [
+                        2020,
+                        10,
+                        28
+                    ],
+                    "asset": "CNTO3",
+                    "shares_number": 100,
+                    "price": 23.91,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 97,
+                    "date": [
+                        2020,
+                        12,
+                        23
+                    ],
+                    "asset": "CNTO3",
+                    "shares_number": 100,
+                    "price": 28.87,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 93,
+                    "date": [
+                        2020,
+                        12,
+                        2
+                    ],
+                    "asset": "SQIA3",
+                    "shares_number": 200,
+                    "price": 21.39,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 100,
+                    "date": [
+                        2020,
+                        12,
+                        23
+                    ],
+                    "asset": "SQIA3",
+                    "shares_number": 200,
+                    "price": 21.77,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 101,
+                    "date": [
+                        2020,
+                        8,
+                        25
+                    ],
+                    "asset": "BRCR11",
+                    "shares_number": 50,
+                    "price": 88.34,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 102,
+                    "date": [
+                        2020,
+                        8,
+                        25
+                    ],
+                    "asset": "HGCR11",
+                    "shares_number": 50,
+                    "price": 103.39,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 103,
+                    "date": [
+                        2020,
+                        9,
+                        29
+                    ],
+                    "asset": "CPTS11",
+                    "shares_number": 90,
+                    "price": 96.79,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 104,
+                    "date": [
+                        2020,
+                        9,
+                        29
+                    ],
+                    "asset": "VILG11",
+                    "shares_number": 80,
+                    "price": 130.0,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 111,
+                    "date": [
+                        2020,
+                        12,
+                        23
+                    ],
+                    "asset": "VILG11",
+                    "shares_number": 40,
+                    "price": 124.69,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 105,
+                    "date": [
+                        2020,
+                        10,
+                        6
+                    ],
+                    "asset": "RECR11",
+                    "shares_number": 80,
+                    "price": 97.0,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 109,
+                    "date": [
+                        2020,
+                        10,
+                        7
+                    ],
+                    "asset": "RECR11",
+                    "shares_number": 50,
+                    "price": 97.0,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 106,
+                    "date": [
+                        2020,
+                        10,
+                        6
+                    ],
+                    "asset": "VINO11",
+                    "shares_number": 80,
+                    "price": 59.95,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 107,
+                    "date": [
+                        2020,
+                        10,
+                        6
+                    ],
+                    "asset": "XPLG11",
+                    "shares_number": 58,
+                    "price": 130.15,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 108,
+                    "date": [
+                        2020,
+                        10,
+                        6
+                    ],
+                    "asset": "XPLG11",
+                    "shares_number": 12,
+                    "price": 130.12,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 113,
+                    "date": [
+                        2020,
+                        12,
+                        28
+                    ],
+                    "asset": "XPLG11",
+                    "shares_number": 17,
+                    "price": 117.38,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                {
+                    "id": 110,
+                    "date": [
+                        2020,
+                        12,
+                        23
+                    ],
+                    "asset": "XPML11",
+                    "shares_number": 40,
+                    "price": 114.9,
+                    "type": "BUY",
+                    "username": "elizete"
+                },
+                        {
+                            "id": 114,
+                            "date": [
+                                2020,
+                                4,
+                                27
+                            ],
+                            "asset": "PETR4",
+                            "shares_number": 200,
+                            "price": 16.29,
+                            "type": "BUY",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 117,
+                            "date": [
+                                2020,
+                                5,
+                                19
+                            ],
+                            "asset": "PETR4",
+                            "shares_number": 200,
+                            "price": 18.78,
+                            "type": "SELL",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 115,
+                            "date": [
+                                2020,
+                                5,
+                                14
+                            ],
+                            "asset": "BBAS3",
+                            "shares_number": 100,
+                            "price": 25.69,
+                            "type": "BUY",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 119,
+                            "date": [
+                                2020,
+                                5,
+                                21
+                            ],
+                            "asset": "BBAS3",
+                            "shares_number": 100,
+                            "price": 28.56,
+                            "type": "SELL",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 116,
+                            "date": [
+                                2020,
+                                5,
+                                14
+                            ],
+                            "asset": "ITSA4",
+                            "shares_number": 300,
+                            "price": 8.08,
+                            "type": "BUY",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 120,
+                            "date": [
+                                2020,
+                                5,
+                                25
+                            ],
+                            "asset": "ITSA4",
+                            "shares_number": 300,
+                            "price": 9.24,
+                            "type": "SELL",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 118,
+                            "date": [
+                                2020,
+                                5,
+                                20
+                            ],
+                            "asset": "JBSS3",
+                            "shares_number": 200,
+                            "price": 21.01,
+                            "type": "BUY",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 121,
+                            "date": [
+                                2020,
+                                6,
+                                3
+                            ],
+                            "asset": "JBSS3",
+                            "shares_number": 200,
+                            "price": 21.23,
+                            "type": "BUY",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 125,
+                            "date": [
+                                2020,
+                                8,
+                                18
+                            ],
+                            "asset": "JBSS3",
+                            "shares_number": 200,
+                            "price": 24.13,
+                            "type": "SELL",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 122,
+                            "date": [
+                                2020,
+                                6,
+                                5
+                            ],
+                            "asset": "SQIA3",
+                            "shares_number": 100,
+                            "price": 20.15,
+                            "type": "BUY",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 129,
+                            "date": [
+                                2020,
+                                8,
+                                25
+                            ],
+                            "asset": "SQIA3",
+                            "shares_number": 100,
+                            "price": 25.28,
+                            "type": "SELL",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 124,
+                            "date": [
+                                2020,
+                                8,
+                                18
+                            ],
+                            "asset": "CNTO3",
+                            "shares_number": 100,
+                            "price": 28.18,
+                            "type": "BUY",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 123,
+                            "date": [
+                                2020,
+                                8,
+                                18
+                            ],
+                            "asset": "BRFS3",
+                            "shares_number": 100,
+                            "price": 21.18,
+                            "type": "BUY",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 126,
+                            "date": [
+                                2020,
+                                8,
+                                24
+                            ],
+                            "asset": "SAPR11",
+                            "shares_number": 200,
+                            "price": 26.62,
+                            "type": "BUY",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 128,
+                            "date": [
+                                2020,
+                                8,
+                                25
+                            ],
+                            "asset": "SAPR11",
+                            "shares_number": 100,
+                            "price": 26.88,
+                            "type": "BUY",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 131,
+                            "date": [
+                                2020,
+                                9,
+                                28
+                            ],
+                            "asset": "SAPR11",
+                            "shares_number": 100,
+                            "price": 26.29,
+                            "type": "BUY",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 127,
+                            "date": [
+                                2020,
+                                8,
+                                25
+                            ],
+                            "asset": "VALE3",
+                            "shares_number": 35,
+                            "price": 61.82,
+                            "type": "BUY",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 130,
+                            "date": [
+                                2020,
+                                9,
+                                28
+                            ],
+                            "asset": "VILG11",
+                            "shares_number": 15,
+                            "price": 129.89,
+                            "type": "BUY",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 132,
+                            "date": [
+                                2020,
+                                9,
+                                28
+                            ],
+                            "asset": "TRPL4",
+                            "shares_number": 200,
+                            "price": 21.94,
+                            "type": "BUY",
+                            "username": "teodoro"
+                        }
+                    ]

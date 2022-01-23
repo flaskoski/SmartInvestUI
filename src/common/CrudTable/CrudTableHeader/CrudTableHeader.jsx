@@ -18,10 +18,17 @@ class CrudTableHeader extends Component {
         let tableData = []
         this.props.headers.forEach(h =>{
             if(h.type == "choice")
+              if(h.choices instanceof Array)
                 h.choices.forEach((choice, i) =>{
                     if(!tableData[i]) 
                         tableData[i] = {}
                     tableData[i][h.name] = choice
+                })
+              else
+                Object.keys(h.choices).forEach((choice, i) =>{
+                  if(!tableData[i]) 
+                    tableData[i] = {}
+                  tableData[i][h.name] = choice
                 })
         })
         return (

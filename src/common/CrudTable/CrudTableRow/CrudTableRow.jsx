@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactTooltip from 'react-tooltip';
 import {ArrowUpwardIcon, ArrowDownwardIcon} from '@material-ui/icons/ArrowUpward';
 import "./CrudTableRow.css";
+import { getLookupKey } from '../CrudTable';
 
 class CrudTableRow extends Component {
     constructor(props) {
@@ -42,7 +43,11 @@ class CrudTableRow extends Component {
                     if(field.name){
                         if(!field.hide)
                             return(
-                                <td>{this.state.item? this.state.item[field.name] : "" }</td>
+                                <td>{!this.state.item
+                                  ? "" 
+                                  : field.type === 'lookup'
+                                  ? getLookupKey(this.state.item[field.name])
+                                  : this.state.item[field.name]}</td>
                             )
                     }else{
                         console.warning(`Parameter 'name' for field number ${i} not informed`)

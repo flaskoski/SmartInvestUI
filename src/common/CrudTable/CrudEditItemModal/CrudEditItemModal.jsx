@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControl, FormControlLabel, FormLabel, InputLabel, MenuItem, Radio, RadioGroup, Select, TextField  } from '@material-ui/core';
 import "../CrudAddModal/CrudAddModal.css"
 import { getShortDate, getUsaShortDate } from '../../convert';
+import { formatLookupFields, getLookupValue } from '../CrudTable';
 
 class CrudEditItemModal extends Component {
     constructor(props) {
-        //console.log("constructor", props.open)
         super(props);
+        let currentItem = props.item && Object.keys(props.item)?.length ? formatLookupFields(props.item, this.props.itemFields) : {}
         this.state = {
             open: (props.open? props.open : false),
-            newItem: (props.item? props.item: {})
+            newItem: currentItem
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleInput = this.handleInput.bind(this)
@@ -19,12 +20,14 @@ class CrudEditItemModal extends Component {
     // }
 
     handleInput(event){
-        const name = (event.target.id ?event.target.id : event.target.name);
-        const newValue = event.target.value;
-        this.setState({ 
-            newItem : {
-                ...this.state.newItem, 
-                [name]: newValue} });
+      const newValue = {[(event.target.id ?event.target.id : event.target.name)]: event.target.value}
+      console.log(this.state, newValue)
+      this.setState({ 
+        newItem : {
+          ...this.state.newItem, 
+          ...newValue
+        } 
+      });
     };
 
     async handleSubmit(event){
@@ -34,7 +37,10 @@ class CrudEditItemModal extends Component {
         this.props.itemFields.filter(f => f.defaultValue != undefined).forEach(f=>{
             if(!newItem[f.name]) newItem[f.name] = f.defaultValue //TODO if field is empty. Now filling again with default value
         })
-
+        this.props.itemFields.filter(f => f.type === 'float' || f.type === 'int')
+          .forEach(f =>
+            newItem[f.name] = f.type === 'float'? parseFloat(newItem[f.name]) : parseInt(newItem[f.name])
+          )
         let headers = { headers: {'Content-Type': 'application/json'}}
         if(this.props.backendHeaders)
             headers = await this.props.backendHeaders
@@ -43,7 +49,7 @@ class CrudEditItemModal extends Component {
             ...headers,
             body: JSON.stringify(newItem)
         };
-        fetch(this.props.backendUrl + this.props.item.id, requestOptions)
+        fetch(this.props.backendUrl + '/' + this.props.item.id, requestOptions)
             .then(response => {
                 if(response.status != 200)
                     throw new Error(response)
@@ -116,11 +122,29 @@ class CrudEditItemModal extends Component {
                                                     value={this.state.newItem[field.name]?this.state.newItem[field.name]:''}
                                                     onChange={this.handleInput}
                                                     >
-                                                    {field.choices.map(choice => 
+                                                     {field.choices.map(choice => 
                                                         <MenuItem value={choice}>{choice}</MenuItem>)}
                                                 </Select>
                                             </FormControl>
                                         );
+                                case 'lookup': 
+                                  return (<FormControl className={`form-select-label`}>
+                                    <InputLabel id={`select-label-${field.name}`}>{field.label}</InputLabel>
+                                    <Select className={`select-label`} labelId="demo-simple-select-label"
+                                      name={field.name}
+                                      value={ !this.state.newItem?.[field.name]
+                                        ? '' 
+                                        : this.state.newItem[field.name] instanceof Object
+                                        ? getLookupValue(this.props.item[field.name])
+                                        : this.state.newItem[field.name]
+                                      }
+                                      onChange={this.handleInput}
+                                      >
+                                      {Object.entries(field.choices).map(([key, val]) => 
+                                            <MenuItem value={val}>{key}</MenuItem>)
+                                      }
+                                    </Select>
+                                  </FormControl>)
                                 default:
                                     return (	
                                         <TextField

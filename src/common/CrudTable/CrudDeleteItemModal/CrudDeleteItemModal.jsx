@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@material-ui/core';
+import { getLookupKey } from '../CrudTable';
 
 class CrudDeleteItemModal extends Component {
     constructor(props) {
@@ -23,7 +24,7 @@ class CrudDeleteItemModal extends Component {
             method: 'DELETE',
             ...headers,
         };
-        fetch(this.props.backendUrl + this.props.item.id, requestOptions)
+        fetch(this.props.backendUrl + '/' + this.props.item.id, requestOptions)
             .then(data => {
                 if(data.status != 200){
                     console.error(data)
@@ -57,8 +58,11 @@ class CrudDeleteItemModal extends Component {
                         <p>{text}</p>
                         <table>
                         {
-                            (itemFields? itemFields.map( (field, i) =>{
-                            return (<div><b>{field}</b>: {this.props.item[field]}<br/></div>)	
+                            (this.props.fields?  this.props.fields.map( (field, i) =>{
+                            return (<div><b>{field.label}</b>: {
+                              field?.type === 'lookup'
+                                ? getLookupKey(this.props.item?.[field.name])
+                                : this.props.item?.[field.name]}<br/></div>)	
                         }) : "")
                         }
                         </table>      

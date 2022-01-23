@@ -38,7 +38,7 @@ class AnnualReport extends Component {
 
     getTotalsPerMonth(transactions){
         let today = new Date()
-        console.log("terminou:"+ transactions.length)
+        console.log("Transactions loaded:"+ transactions.length)
         //TODO call lambda with transactions    
         Auth.currentAuthenticatedUser().then(user => {
             let body = {

@@ -5,6 +5,8 @@ import "./assets.css"
 import { getAuthorizationHeader } from '../common/apiCalls/ApiCallBuilder';
 import getAssets from '../common/apiCalls/getAssets';
 
+export const AssetsContext = React.createContext();
+
 class Assets extends Component {
     constructor(props){
         super(props);
@@ -13,12 +15,13 @@ class Assets extends Component {
         this.state = { 
             assets: [],
             fields: [
+                // {
+                //     name: "id",
+                //     label: "ID",
+                //     type: "text",
+                //     isInput: false,
+                // },
                 {
-                    name: "id",
-                    label: "ID",
-                    type: "text",
-                    isInput: false,
-                },{
                     name: "username",
                     label: "Username",
                     type: "text",
@@ -48,7 +51,11 @@ class Assets extends Component {
     }
     
     getAssets(removedOptions = {}){
-        return getAssets()
+        return getAssets().then(result => 
+          result?.items?.length > 0 
+          ? this.props.onChange(result?.items) || result 
+          : result 
+        )
     }
 
     getCurrentAssetPrice(asset){
@@ -89,7 +96,7 @@ class Assets extends Component {
                     getItems={this.getAssets}
                     maxRows={8}
                     backendUrl={process.env.REACT_APP_BACKEND_ASSETS}
-                    backendHeaders={getAuthorizationHeader(false)}
+                    backendHeaders={getAuthorizationHeader()}
                     itemUpdateHandler={this.getCurrentAssetPrice}
                 />
                 

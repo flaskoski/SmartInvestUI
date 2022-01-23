@@ -50,7 +50,7 @@ export function getData( assetCode) {
 	// const promiseMSFT = csvParse(dataFile, parseData(parseDate))
 	// const data = raw("./data.json");
 	// const promiseMSFT = parseSeriesJson(JSON.parse(data), parseDate);
-	const promiseMSFT = fetch("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol="+assetCode+".SA&apikey="+ API_KEY +"&outputsize=compact")
+	const promiseMSFT = fetch("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol="+assetCode+".SA&apikey="+ API_KEY +"&outputsize=compact")
 	.then(response => response.text())
 	.then(data => parseSeriesJson(JSON.parse(data), parseDate));
 	return promiseMSFT;

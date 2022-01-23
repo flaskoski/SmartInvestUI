@@ -1,0 +1,476 @@
+[
+        {
+            "id": 83,
+            "code": "AMZO34",
+            "type": "BDR",
+            "username": "flaskoski"
+        },
+        {
+            "id": 69,
+            "code": "ARZZ3",
+            "type": "Stocks",
+            "username": "flaskoski"
+        },
+        {
+            "id": 61,
+            "code": "B3SA3",
+            "type": "Stocks",
+            "username": "flaskoski"
+        },
+        {
+            "id": 88,
+            "code": "BABA34",
+            "type": "BDR",
+            "username": "flaskoski"
+        },
+        {
+            "id": 54,
+            "code": "BBAS3",
+            "type": "Stocks",
+            "username": "flaskoski"
+        },
+        {
+            "id": 89,
+            "code": "BERK34",
+            "type": "BDR",
+            "username": "flaskoski"
+        },
+        {
+            "id": 80,
+            "code": "BRCR11",
+            "type": "REIT",
+            "username": "flaskoski"
+        },
+        {
+            "id": 65,
+            "code": "BRFS3",
+            "type": "Stocks",
+            "username": "flaskoski"
+        },
+        {
+            "id": 68,
+            "code": "CMIG4",
+            "type": "Stocks",
+            "username": "flaskoski"
+        },
+        {
+            "id": 77,
+            "code": "CPTS11",
+            "type": "REIT",
+            "username": "flaskoski"
+        },
+        {
+            "id": 58,
+            "code": "CYRE3",
+            "type": "Stocks",
+            "username": "flaskoski"
+        },
+        {
+            "id": 64,
+            "code": "DISB34",
+            "type": "BDR",
+            "username": "flaskoski"
+        },
+        {
+            "id": 62,
+            "code": "ENAT3",
+            "type": "Stocks",
+            "username": "flaskoski"
+        },
+        {
+            "id": 67,
+            "code": "GGBR4",
+            "type": "Stocks",
+            "username": "flaskoski"
+        },
+        {
+            "id": 81,
+            "code": "HGBS11",
+            "type": "REIT",
+            "username": "flaskoski"
+        },
+        {
+            "id": 75,
+            "code": "HGCR11",
+            "type": "REIT",
+            "username": "flaskoski"
+        },
+        {
+            "id": 76,
+            "code": "HGLG11",
+            "type": "REIT",
+            "username": "flaskoski"
+        },
+        {
+            "id": 70,
+            "code": "HGRU11",
+            "type": "REIT",
+            "username": "flaskoski"
+        },
+        {
+            "id": 82,
+            "code": "HSML11",
+            "type": "REIT",
+            "username": "flaskoski"
+        },
+        {
+            "id": 60,
+            "code": "ITSA4",
+            "type": "Stocks",
+            "username": "flaskoski"
+        },
+        {
+            "id": 63,
+            "code": "ITUB4",
+            "type": "Stocks",
+            "username": "flaskoski"
+        },
+        {
+            "id": 66,
+            "code": "JBSS3",
+            "type": "Stocks",
+            "username": "flaskoski"
+        },
+        {
+            "id": 87,
+            "code": "MSCD34",
+            "type": "BDR",
+            "username": "flaskoski"
+        },
+        {
+            "id": 57,
+            "code": "OIBR3",
+            "type": "Stocks",
+            "username": "flaskoski"
+        },
+        {
+            "id": 56,
+            "code": "PETR4",
+            "type": "Stocks",
+            "username": "flaskoski"
+        },
+        {
+            "id": 59,
+            "code": "PETZ3",
+            "type": "Stocks",
+            "username": "flaskoski"
+        },
+        {
+            "id": 92,
+            "code": "R1CL34",
+            "type": "BDR",
+            "username": "flaskoski"
+        },
+        {
+            "id": 73,
+            "code": "RBRR11",
+            "type": "REIT",
+            "username": "flaskoski"
+        },
+        {
+            "id": 74,
+            "code": "RECR11",
+            "type": "REIT",
+            "username": "flaskoski"
+        },
+        {
+            "id": 50,
+            "code": "SAPR11",
+            "type": "Stocks",
+            "username": "flaskoski"
+        },
+        {
+            "id": 55,
+            "code": "SBFG3",
+            "type": "Stocks",
+            "username": "flaskoski"
+        },
+        {
+            "id": 51,
+            "code": "SQIA3",
+            "type": "Stocks",
+            "username": "flaskoski"
+        },
+        {
+            "id": 86,
+            "code": "SSFO34",
+            "type": "BDR",
+            "username": "flaskoski"
+        },
+        {
+            "id": 84,
+            "code": "SUZB3",
+            "type": "Stocks",
+            "username": "flaskoski"
+        },
+        {
+            "id": 52,
+            "code": "TRPL4",
+            "type": "Stocks",
+            "username": "flaskoski"
+        },
+        {
+            "id": 90,
+            "code": "TSMC34",
+            "type": "BDR",
+            "username": "flaskoski"
+        },
+        {
+            "id": 53,
+            "code": "VALE3",
+            "type": "Stocks",
+            "username": "flaskoski"
+        },
+        {
+            "id": 91,
+            "code": "VIIA3",
+            "type": "Stocks",
+            "username": "flaskoski"
+        },
+        {
+            "id": 79,
+            "code": "VILG11",
+            "type": "REIT",
+            "username": "flaskoski"
+        },
+        {
+            "id": 78,
+            "code": "VINO11",
+            "type": "REIT",
+            "username": "flaskoski"
+        },
+        {
+            "id": 85,
+            "code": "WEGE3",
+            "type": "Stocks",
+            "username": "flaskoski"
+        },
+        {
+            "id": 72,
+            "code": "XPLG11",
+            "type": "REIT",
+            "username": "flaskoski"
+        },
+        {
+            "id": 71,
+            "code": "XPML11",
+            "type": "REIT",
+            "username": "flaskoski"
+        },
+                {
+                    "id": 31,
+                    "code": "BRCR11",
+                    "type": "REIT",
+                    "username": "elizete"
+                },
+                {
+                    "id": 29,
+                    "code": "CNTO3",
+                    "type": "Stocks",
+                    "username": "elizete"
+                },
+                {
+                    "id": 33,
+                    "code": "CPTS11",
+                    "type": "REIT",
+                    "username": "elizete"
+                },
+                {
+                    "id": 32,
+                    "code": "HGCR11",
+                    "type": "REIT",
+                    "username": "elizete"
+                },
+                {
+                    "id": 25,
+                    "code": "HGRU11",
+                    "type": "REIT",
+                    "username": "elizete"
+                },
+                {
+                    "id": 24,
+                    "code": "ITSA4",
+                    "type": "Stocks",
+                    "username": "elizete"
+                },
+                {
+                    "id": 27,
+                    "code": "JBSS3",
+                    "type": "Stocks",
+                    "username": "elizete"
+                },
+                {
+                    "id": 35,
+                    "code": "RECR11",
+                    "type": "REIT",
+                    "username": "elizete"
+                },
+                {
+                    "id": 28,
+                    "code": "SAPR11",
+                    "type": "Stocks",
+                    "username": "elizete"
+                },
+                {
+                    "id": 30,
+                    "code": "SQIA3",
+                    "type": "Stocks",
+                    "username": "elizete"
+                },
+                {
+                    "id": 26,
+                    "code": "VALE3",
+                    "type": "Stocks",
+                    "username": "elizete"
+                },
+                {
+                    "id": 34,
+                    "code": "VILG11",
+                    "type": "REIT",
+                    "username": "elizete"
+                },
+                {
+                    "id": 36,
+                    "code": "VINO11",
+                    "type": "REIT",
+                    "username": "elizete"
+                },
+                {
+                    "id": 37,
+                    "code": "XPLG11",
+                    "type": "REIT",
+                    "username": "elizete"
+                },
+                {
+                    "id": 38,
+                    "code": "XPML11",
+                    "type": "REIT",
+                    "username": "elizete"
+                },
+                        {
+                            "id": 40,
+                            "code": "BBAS3",
+                            "type": "Stocks",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 45,
+                            "code": "BRFS3",
+                            "type": "Stocks",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 44,
+                            "code": "CNTO3",
+                            "type": "Stocks",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 41,
+                            "code": "ITSA4",
+                            "type": "Stocks",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 42,
+                            "code": "JBSS3",
+                            "type": "Stocks",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 39,
+                            "code": "PETR4",
+                            "type": "Stocks",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 46,
+                            "code": "SAPR11",
+                            "type": "Stocks",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 43,
+                            "code": "SQIA3",
+                            "type": "Stocks",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 49,
+                            "code": "TRPL4",
+                            "type": "Stocks",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 47,
+                            "code": "VALE3",
+                            "type": "Stocks",
+                            "username": "teodoro"
+                        },
+                        {
+                            "id": 48,
+                            "code": "VILG11",
+                            "type": "REIT",
+                            "username": "teodoro"
+                        },
+                                {
+                                    "id": 2,
+                                    "code": "AZUL4",
+                                    "type": "Stocks",
+                                    "username": "rlaskoski86"
+                                },
+                                {
+                                    "id": 21,
+                                    "code": "CPTS11",
+                                    "type": "REIT",
+                                    "username": "rlaskoski86"
+                                },
+                                {
+                                    "id": 7,
+                                    "code": "CVCB3",
+                                    "type": "Stocks",
+                                    "username": "rlaskoski86"
+                                },
+                                {
+                                    "id": 6,
+                                    "code": "IRBR3",
+                                    "type": "Stocks",
+                                    "username": "rlaskoski86"
+                                },
+                                {
+                                    "id": 5,
+                                    "code": "ITSA4",
+                                    "type": "Stocks",
+                                    "username": "rlaskoski86"
+                                },
+                                {
+                                    "id": 9,
+                                    "code": "MRFG3",
+                                    "type": "Stocks",
+                                    "username": "rlaskoski86"
+                                },
+                                {
+                                    "id": 8,
+                                    "code": "MRVE3",
+                                    "type": "Stocks",
+                                    "username": "rlaskoski86"
+                                },
+                                {
+                                    "id": 23,
+                                    "code": "PVBI11",
+                                    "type": "REIT",
+                                    "username": "rlaskoski86"
+                                },
+                                {
+                                    "id": 18,
+                                    "code": "VINO11",
+                                    "type": "REIT",
+                                    "username": "rlaskoski86"
+                                },
+                                {
+                                    "id": 19,
+                                    "code": "XPML11",
+                                    "type": "REIT",
+                                    "username": "rlaskoski86"
+                                }
+                            ]

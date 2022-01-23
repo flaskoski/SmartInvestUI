@@ -29,8 +29,6 @@ class CrudTable extends Component {
             openModal: false,
             updatedHash: 0
         }
-        console.log("table construct - this.props.items")
-        console.log(this.props.items)
         this.addItemButtonClicked = this.addItemButtonClicked.bind(this);
         this.deleteItemButtonClicked = this.deleteItemButtonClicked.bind(this);
         this.editItemButtonClicked = this.editItemButtonClicked.bind(this);
@@ -50,7 +48,8 @@ class CrudTable extends Component {
                 <CrudTableTitle title={this.props.itemType} onAddClickedHandler={this.addItemButtonClicked}/>
                     <div id="table-scroll">
                         <table className="custom-table table-striped table-hover fill">
-                        <CrudTableHeader key={`${this.props.itemType}-headers-${this.props.fields.filter(f=> f.choices && f.choices.length>0).length}`} 
+                        <CrudTableHeader key={`${this.props.itemType}-headers-${
+                          this.props.fields.filter(f=> f.choices && ((f.choices.length && f.choices.length>0) || Object.keys(f.choices).length > 0) ).length}`} 
                             headers={this.props.fields.filter(f=> !f.hide)}
                             onFilterChanged={this.onFilterChangedHandler}/>
                          {/* ["ID",  "Code", "Price"] */}
@@ -69,13 +68,16 @@ class CrudTable extends Component {
                         </table>
                         <p style={{paddingLeft:"20px" }}>{this.state.total? `Items found: ${this.state.total}`: ""}</p>
                     </div>
-                <CrudAddModal open={this.state.openModal} itemType={this.props.itemType} 
+                <CrudAddModal key={"addItemModal-"+this.state.openModal} open={this.state.openModal} 
+                    itemType={this.props.itemType} 
                     itemFields={this.props.fields} 
                     backendUrl={this.props.backendUrl}
                     backendHeaders={this.props.backendHeaders}
                     handleAddToTable={this.handleAdd}
                     />
-                <CrudDeleteItemModal key={"deleteItemModal-"+this.state.openDeleteItemModal} open={this.state.openDeleteItemModal} itemType={this.props.itemType} 
+                <CrudDeleteItemModal key={"deleteItemModal-"+this.state.openDeleteItemModal} open={this.state.openDeleteItemModal}      
+                    itemType={this.props.itemType} 
+                    fields={this.props.fields}
                     item={this.state.itemClicked} 
                     backendUrl={this.props.backendUrl}
                     backendHeaders={this.props.backendHeaders}
@@ -93,19 +95,20 @@ class CrudTable extends Component {
     }
 
     getItems(removedOptions = {}){
-        this.props.getItems(removedOptions).then(items => {
-            if(items){
-                if(items.content && items.pageable)//for java pageable backend
-                    this.setState({items: items.content, total: items.totalElements})
-                else if(items.length)
-                    this.setState({items: items, total: undefined})
+        this.props.getItems(removedOptions).then(result => {
+            if(result){
+                if(result?.items)//for java pageable backend
+                    this.setState({items: result.items, total: result.items.length})
+                // else if(result.length)
+                //     this.setState({items: result, total: undefined})
             }
         }).catch(`Error loading ${this.props.itemType}`)
     }
 
     //--filter header used
     onFilterChangedHandler(removedOptions){
-        console.log(removedOptions)
+        if(removedOptions)
+          console.log("removed options:", removedOptions)
         this.getItems(removedOptions)
     }
     
@@ -130,9 +133,9 @@ class CrudTable extends Component {
 
     //---Dialogs events handlers
     handleAdd(isAdded, newItem){
-        if(isAdded){ //TODO validation
+        if(isAdded){
             let allItems = this.state.items
-            allItems.push(newItem)
+            allItems.push(typeof this.props.formatItem === 'function' ? this.props.formatItem(newItem): newItem)
             this.setState({
                 items: allItems,
                 openModal: false
@@ -141,11 +144,11 @@ class CrudTable extends Component {
             this.setState({openModal: false})
     }
 
-    handleUpdateItem(isUpdated, updatedItem){
+    handleUpdateItem(isUpdated, updatedItem){//TODO the ddb doesnt return the whole item
         if(isUpdated){
             let allItems = this.state.items
             allItems.splice(allItems.indexOf(allItems.find(i =>i.id == updatedItem.id)), 1)
-            allItems.push(updatedItem)
+            allItems.push(typeof this.props.formatItem === 'function' ? this.props.formatItem(updatedItem): updatedItem)
             this.setState({
                 items: allItems,
                 openEditItemModal: false,
@@ -169,4 +172,14 @@ class CrudTable extends Component {
     }
 }
  
+export const getLookupKey = field => field? Object.keys(field)[0] : ''
+export const getLookupValue = field => field? Object.values(field)[0] : ''
+export const formatLookupFields = (item, fields) => 
+  Object.entries(item).reduce((ac, [key, val]) => 
+    fields?.find(f => f.name === key)?.type === 'lookup'
+    ? {...ac, [key]: getLookupValue(val)}
+    : {...ac, [key]: val}, {}
+  )
+
+
 export default CrudTable;
