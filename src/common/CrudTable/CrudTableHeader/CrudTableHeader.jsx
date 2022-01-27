@@ -1,55 +1,54 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import TableFilter from 'react-table-filter';
 import "./CrudTableHeader.css";
 import "react-table-filter/lib/styles.css";
 
 
-class CrudTableHeader extends Component {
-    constructor(props){
-        super(props);
-        this.filterUpdated = this.filterUpdated.bind(this);
-        this.state = {
-            removedOptions: {}
-        }
-    }
-    
-    render() { 
-        //--make an array with all the possible values options
-        let tableData = []
-        this.props.headers.forEach(h =>{
-            if(h.type == "choice")
-              if(h.choices instanceof Array)
-                h.choices.forEach((choice, i) =>{
-                    if(!tableData[i]) 
-                        tableData[i] = {}
-                    tableData[i][h.name] = choice
-                })
-              else
-                Object.keys(h.choices).forEach((choice, i) =>{
-                  if(!tableData[i]) 
-                    tableData[i] = {}
-                  tableData[i][h.name] = choice
-                })
+function CrudTableHeader({headers, onFilterChanged}){
+  const [removedOptions, setRemovedOptions] = useState({})
+  const [tableData, setTableData] = useState([])
+  
+  useEffect(() => {
+    let auxTableData = []
+    //--make an array with all the possible values options
+    console.log("useeffect--:::", headers)
+    headers.forEach(h =>{
+      if(h.type == "choice")
+      if(h.choices instanceof Array)
+        h.choices.forEach((choice, i) =>{
+          if(!auxTableData[i]) 
+            auxTableData[i] = {}
+          auxTableData[i][h.name] = choice
         })
-        return (
-            <TableFilter rows={tableData} onFilterUpdate={this.filterUpdated} initialFilters={this.state.removedOptions}>
-                <th key="checkbox" className="borderWhite">
-                    <span className="custom-checkbox">
-                        <input className="margin10" type="checkbox" id="selectAll"/>
-                        <label htmlFor="selectAll"></label>
-                    </span>
-                </th>
-                {this.props.headers.map((h, i) =>{
-                    return (<th key={h.name} filterkey={h.type == "choice"? h.name.toLowerCase(): undefined}>{h.label}</th>);
-                })}
-                <th key="actions">Actions</th>
-            </TableFilter>
-        );
-    }
-    filterUpdated = (newData, removedOptions) => {
-        this.setState({removedOptions: removedOptions})
-        this.props.onFilterChanged(removedOptions)
+      else
+        Object.keys(h.choices).forEach((choice, i) =>{
+          if(!auxTableData[i]) 
+            auxTableData[i] = {}
+          auxTableData[i][h.name] = choice
+        })
+    })
+    setTableData(auxTableData)
+  }, headers)
+
+  const filterUpdated = (newData, newRemovedOptions) => {
+    setRemovedOptions(newRemovedOptions)
+    onFilterChanged(newRemovedOptions)
 	}
+
+  return console.log("rendering--::", tableData) ||(
+    <TableFilter key={tableData.length} rows={tableData} onFilterUpdate={filterUpdated} initialFilters={removedOptions}>
+      <th key="checkbox" className="borderWhite">
+        <span className="custom-checkbox">
+          <input className="margin10" type="checkbox" id="selectAll"/>
+          <label htmlFor="selectAll"></label>
+        </span>
+      </th>
+      {headers.map((h, i) =>{
+        return (<th key={h.name} filterkey={h.type == "choice"? h.name.toLowerCase(): undefined}>{h.label}</th>);
+      })}
+      <th key="actions">Actions</th>
+    </TableFilter>
+  );
 }
 
 export default CrudTableHeader;

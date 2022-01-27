@@ -97,7 +97,7 @@ class CrudTable extends Component {
     getItems(removedOptions = {}){
         this.props.getItems(removedOptions).then(result => {
             if(result){
-                if(result?.items)//for java pageable backend
+                if(result?.items)
                     this.setState({items: result.items, total: result.items.length})
                 // else if(result.length)
                 //     this.setState({items: result, total: undefined})

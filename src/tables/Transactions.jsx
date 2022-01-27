@@ -118,7 +118,7 @@ class Transactions extends Component {
       ? getTransactionsWithFilter(removedOptions)
       : getTransactions())
       .then(result => ({
-        items: result.items.map(this.getTransactionAsset)
+        items: result?.items?.map(this.getTransactionAsset)
       })).then(result => result)
   }
   addFilter(){

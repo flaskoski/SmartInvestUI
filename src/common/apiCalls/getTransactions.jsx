@@ -38,10 +38,14 @@ export function getTransactions(assetId=null, size=30, page=0){
     }).catch(e => console.log("Error loading transactions: "+ e))
 }
 
-export function getTransactionsWithFilter(removedOptions, size=50, page=0){
-    return buildPostCall(process.env.REACT_APP_BACKEND_TRANSACTIONS_WITH_FILTER, removedOptions, `page=${page}&size=${size}`, true)
+export function getTransactionsWithFilter(removedOptions, size=50){
+    return buildPostCall(process.env.REACT_APP_BACKEND_TRANSACTIONS+'-get', 
+      Object.entries(removedOptions).reduce((ac, [key, val]) => ({
+        filters: {...ac, [key]: {notIn: val}} }), {}
+      ), 
+      `size=${size}`, true)
     .then(page => {
-        console.log(`Transactions with filter loaded ${(page.content? page.content.length :"")}`)
+        console.log(`Transactions with filter loaded ${(page.items? page.items?.length :"")}`)
         return page
     })
     .catch(e => console.log("Error loading transactions: "+ e))
