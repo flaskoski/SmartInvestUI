@@ -13,26 +13,37 @@ function CrudTableHeader({headers, onFilterChanged}){
     //--make an array with all the possible values options
     console.log("useeffect--:::", headers)
     headers.forEach(h =>{
-      if(h.type == "choice")
       if(h.choices instanceof Array)
         h.choices.forEach((choice, i) =>{
           if(!auxTableData[i]) 
             auxTableData[i] = {}
           auxTableData[i][h.name] = choice
         })
-      else
+      else if(h.choices)
         Object.keys(h.choices).forEach((choice, i) =>{
           if(!auxTableData[i]) 
             auxTableData[i] = {}
           auxTableData[i][h.name] = choice
         })
     })
+    console.log(auxTableData)
     setTableData(auxTableData)
   }, headers)
 
+  const transformLookupValues = async newRemovedOptions => 
+  newRemovedOptions 
+  ? Object.entries(newRemovedOptions).reduce((ac, [key, val]) => {
+      let currentField = headers.find(({name}) => name === key)
+      console.log("currentField:", currentField, {...ac, [key]: (currentField?.type === 'lookup' ? val.map(option => currentField.choices[option]) : val) })
+      return {...ac, [key]: (currentField?.type === 'lookup' ? val.map(option => currentField.choices[option]) : val) }
+    }, {}) 
+  : {}
+
   const filterUpdated = (newData, newRemovedOptions) => {
-    setRemovedOptions(newRemovedOptions)
-    onFilterChanged(newRemovedOptions)
+    transformLookupValues(newRemovedOptions).then( transformedRemovedOptions => {
+      setRemovedOptions(transformedRemovedOptions)
+      onFilterChanged(transformedRemovedOptions)
+    })
 	}
 
   return console.log("rendering--::", tableData) ||(
@@ -44,7 +55,7 @@ function CrudTableHeader({headers, onFilterChanged}){
         </span>
       </th>
       {headers.map((h, i) =>{
-        return (<th key={h.name} filterkey={h.type == "choice"? h.name.toLowerCase(): undefined}>{h.label}</th>);
+        return (<th key={h.name} filterkey={h.type == "choice" || h.type === 'lookup' ? h.name: undefined}>{h.label}</th>);
       })}
       <th key="actions">Actions</th>
     </TableFilter>
